@@ -1,0 +1,39 @@
+---
+id: send-an-sms-otp-to-the-user
+sidebar_label: Send an SMS OTP to the user
+hide_title: true
+hide_table_of_contents: true
+api: {"deprecated":false,"security":[{"JWT":[]}],"responses":{"200":{"description":"Send SMS OTP response object","content":{"application/json":{"schema":{"description":"","required":["phoneId"],"type":"object","properties":{"phoneId":{"description":"The ID of the phone number","type":"string"}}}}}},"400":{"description":"Invalid request body","content":{"application/json":{"schema":{"description":"","type":"object","properties":{"message":{"description":"Error message","type":"string"},"createTime":{"description":"Error creation time","type":"string"},"code":{"description":"Error code","type":"string"},"data":{"description":"Error data","type":"object"}}}}}}},"parameters":[],"tags":["Auth"],"requestBody":{"content":{"application/json":{"schema":{"description":"","required":["phoneNumber"],"type":"object","properties":{"phoneNumber":{"description":"The phone number to send the SMS OTP to","type":"string"}}}}},"description":"Send SMS OTP request object","required":true},"description":"Send an SMS OTP to the user","method":"post","path":"/auth/otp/sms","servers":[{"url":"http://localhost:3001","description":"Local server"},{"url":"https://api.dev.ratio.me","description":"Development server"},{"url":"https://api.staging.ratio.me","description":"Staging server"},{"url":"https://api.ratio.me","description":"Production server"}],"securitySchemes":{"JWT":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"jsonRequestBodyExample":{"phoneNumber":"string"},"info":{"title":"Ratio API","description":"API endpoints and models for using the Ratio service","contact":{"name":"API Support","url":"https://help.ratio.me","email":"support@ratio.me"},"termsOfService":"http://developer.ratio.me/terms/","version":"1.0.0"},"postman":{"name":"Send an SMS OTP to the user","description":{"type":"text/plain"},"url":{"path":["auth","otp","sms"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}},"auth":{"type":"bearer","bearer":[{"type":"any","value":"<Bearer Token>","key":"token"}]}}}
+sidebar_class_name: "post api-method"
+info_path: ratio/ratio-api
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Send an SMS OTP to the user
+
+
+
+Send an SMS OTP to the user
+
+<MimeTabs><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}><div style={{"marginTop":"1rem","marginBottom":"1rem"}}>
+
+Send SMS OTP request object
+
+</div></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"phoneNumber"} required={true} schemaDescription={"The phone number to send the SMS OTP to"} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem></MimeTabs><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Send SMS OTP response object
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"phoneId"} required={false} schemaDescription={"The ID of the phone number"} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"phoneId\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Invalid request body
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"Error message"} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"createTime"} required={false} schemaDescription={"Error creation time"} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"Error code"} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"data"} required={false} schemaDescription={"Error data"} schemaName={"object"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"string\",\n  \"createTime\": \"string\",\n  \"code\": \"string\",\n  \"data\": {}\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
