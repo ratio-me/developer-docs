@@ -1,0 +1,1914 @@
+openapi: 3.0.0
+info:
+  title: Ratio API
+  description: API endpoints and models for using the Ratio service
+  contact:
+    name: API Support
+    url: https://help.ratio.me
+    email: support@ratio.me
+  termsOfService: http://developer.ratio.me/terms/
+  version: 1.0.0
+  license: 
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://api.staging.ratio.me
+    description: Staging server
+  - url: https://api.ratio.me
+    description: Production server
+security:
+  - JWT: []
+components:
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    SecretKey:
+      type: apiKey
+      in: header
+      name: X-Ratio-Client-Secret
+  schemas:
+    Wallets:
+      description: ""
+      required:
+        - items
+      type: object
+      properties:
+        items:
+          description: The wallets of the user
+          type: array
+          items:
+            $ref: "#/components/schemas/Wallet"
+        totalSize:
+          description: The number of wallets
+          type: number
+    Allocations:
+      description: ""
+      required:
+        - items
+      type: object
+      properties:
+        items:
+          description: The allocations of the user
+          type: array
+          items:
+            $ref: "#/components/schemas/Allocation"
+        totalSize:
+          description: The number of allocations
+          type: number
+    Activities:
+      description: ""
+      required:
+        - items
+      type: object
+      properties:
+        items:
+          description: The activities of the user
+          type: array
+          items:
+            $ref: "#/components/schemas/Activity"
+        totalSize:
+          description: The number of activities
+          type: number
+    ActivateBankLinkResponse:
+      description: ""
+      required:
+        - bankAccount
+      type: object
+      properties:
+        bankAccount:
+          description: The bank account of the user
+          $ref: "#/components/schemas/BankAccount"
+        balance:
+          description: The balance of the bank account
+          type: string
+    Activity:
+      description: ""
+      required:
+        - id
+        - createTime
+        - updateTime
+        - address
+        - network
+      type: object
+      properties:
+        id:
+          description: The unique identifier of the allocation
+          type: string
+        createTime:
+          description: The time the allocation was created
+          type: string
+        updateTime:
+          description: The time the allocation was last updated
+          type: string
+        address:
+          description: The address of the allocation
+          type: string
+        name:
+          description: The nickname of the allocation
+          type: string
+        network:
+          description: The crypto network of the allocation
+          type: string
+        type:
+          description: The type of the activity
+          type: string
+          enum:
+            - BUY_CRYPTO
+        status:
+          description: The status of the activity
+          type: string
+          enum:
+            - PENDING
+            - COMPLETED
+        wallet:
+          description: The wallet of the activity
+          $ref: "#/components/schemas/Wallet"
+        baseCurrency:
+          description: The base currency of the activity
+          type: string
+        quoteCurrency:
+          description: The quoted currency of the activity
+          type: string
+        amount:
+          description: The amount of quote currency acquired
+          type: string
+        price:
+          description: The unit price in base currency
+          type: string
+        cost:
+          description: The total cost in the base currency
+          type: string
+        fee:
+          description: The fee in the base currency
+          type: string
+        accountId:
+          description: The account identifier of the activity
+          type: string
+        transferId:
+          description: The transfer identifier of the activity
+          type: string
+        orderId:
+          description: The order identifier of the activity
+          type: string
+        withdrawalId:
+          description: The withdrawal identifier of the activity
+          type: string
+        transactionHash:
+          description: The chain transaction hash of the activity
+          type: string
+    Allocation:
+      description: ""
+      required:
+        - id
+        - createTime
+        - updateTime
+        - network
+        - currency
+        - value
+        - type
+      type: object
+      properties:
+        id:
+          description: The unique identifier of the allocation
+          type: string
+        createTime:
+          description: The time the allocation was created
+          type: string
+        updateTime:
+          description: The time the allocation was last updated
+          type: string
+        network:
+          description: The crypto network of the allocation
+          type: string
+        currency:
+          description: The crypto currency of the allocation
+          type: string
+        value:
+          description: The fiat value of the allocation
+          type: string
+        type:
+          description: The type of the allocation
+          type: string
+          enum:
+            - PERCENTAGE
+            - DOLLAR
+        wallet:
+          description: The wallet of the allocation
+          $ref: "#/components/schemas/Wallet"
+    AuthenticationResponse:
+      description: ""
+      required:
+        - sessionJwt
+      type: object
+      properties:
+        sessionJwt:
+          description: The authenticated Bearer token
+          type: string
+        user:
+          description: The user object
+          $ref: "#/components/schemas/User"
+        email:
+          description: The email of the user
+          type: string
+    AuthenticateCryptoWalletStartResponse:
+      description: ""
+      required:
+        - challenge
+      type: object
+      properties:
+        challenge:
+          description: The challenge string to be signed by the requested wallet
+          type: string
+    BankAccount:
+      description: ""
+      required:
+        - name
+        - mask
+      type: object
+      properties:
+        name:
+          description: The name of the bank account
+          type: string
+        mask:
+          description: The account number mask
+          type: string
+    BankBalance:
+      description: ""
+      required:
+        - balance
+      type: object
+      properties:
+        balance:
+          description: The balance of the bank account
+          type: string
+    CreateTotpResponse:
+      description: ""
+      required:
+        - secret
+        - qrCode
+        - recoveryCodes
+        - totpId
+      type: object
+      properties:
+        secret:
+          description: The secret to be used by the users authenticator app
+          type: string
+        qrCode:
+          description: The QR code that can be scanned by the users authenticator app
+          type: string
+        recoveryCodes:
+          description: The recovery codes to be used if the users authenticator app is lost
+          type: string
+        totpId:
+          description: The TOTP unique identifier
+          type: string
+    Error:
+      description: ""
+      type: object
+      properties:
+        message:
+          description: Error message
+          type: string
+        createTime:
+          description: Error creation time
+          type: string
+        code:
+          description: Error code
+          type: string
+        data:
+          description: Error data
+          type: object
+    IdvStatus:
+      description: ""
+      required:
+        - status
+        - url
+      type: object
+      properties:
+        status:
+          description: The status of the user's identity verification
+          type: string
+        url:
+          description: The URL to provide the user to complete identity verification
+          type: string
+    PlaidLinkToken:
+      description: ""
+      required:
+        - linkToken
+      type: object
+      properties:
+        linkToken:
+          description: The link token for the Plaid integration
+          type: string
+    NetworkFee:
+      description: ""
+      type: object
+      properties:
+        baseCurrency:
+          description: Base currency
+          type: string
+        baseFee:
+          description: Fee amount in base currency
+          type: string
+        quoteCurrency:
+          description: Quote currency
+          type: string
+        quoteFee:
+          description: Fee amount in quote currency
+          type: string
+    Price:
+      description: ""
+      type: object
+      properties:
+        baseCurrency:
+          description: Base currency
+          type: string
+        quoteCurrency:
+          description: Quote currency
+          type: string
+        price:
+          description: Price
+          type: string
+    PriceResponse:
+      description: ""
+      required:
+        - prices
+        - networkFees
+      type: object
+      properties:
+        prices:
+          description: The quoted prices
+          type: array
+          items:
+            $ref: "#/components/schemas/Price"
+        networkFees:
+          description: The current network fees
+          type: array
+          items:
+            $ref: "#/components/schemas/NetworkFee"
+    AuthenticateCryptoWalletStartRequest:
+      description: ""
+      required:
+        - cryptoWalletAddress
+        - cryptoWalletType
+      type: object
+      properties:
+        cryptoWalletAddress:
+          description: The wallet address to authenticate
+          type: string
+        cryptoWalletType:
+          description: The wallet network to authenticate
+          type: string
+          enum:
+            - ethereum
+            - solana
+    AuthenticateCryptoWalletRequest:
+      description: ""
+      required:
+        - cryptoWalletAddress
+        - cryptoWalletType
+        - signature
+      type: object
+      properties:
+        cryptoWalletAddress:
+          description: The wallet address to authenticate
+          type: string
+        cryptoWalletType:
+          description: The wallet network to authenticate
+          type: string
+          enum:
+            - ethereum
+            - solana
+        signature:
+          description: The signature of the challenge
+          type: string
+    AuthenticateSmsOtpRequest:
+      description: ""
+      required:
+        - otp
+        - phoneId
+      type: object
+      properties:
+        otp:
+          description: The OTP to authenticate
+          type: string
+        phoneId:
+          description: The phone identifier to authenticate
+          type: string
+    AuthenticateEmailOtpRequest:
+      description: ""
+      required:
+        - otp
+        - emailId
+      type: object
+      properties:
+        otp:
+          description: The OTP to authenticate
+          type: string
+        phoneId:
+          description: The email identifier to authenticate
+          type: string
+    AuthenticateTokenRequest:
+      description: ""
+      required:
+        - token
+      type: object
+      properties:
+        token:
+          description: The token to authenticate
+          type: string
+    AuthenticateTotpRequest:
+      description: ""
+      required:
+        - totp
+        - totpId
+      type: object
+      properties:
+        totp:
+          description: The TOTP to authenticate
+          type: string
+        totpId:
+          description: The TOTP identifier to authenticate
+          type: string
+    CreateAllocationRequest:
+      description: ""
+      required:
+        - currency
+        - network
+      type: object
+      properties:
+        currency:
+          description: The currency of the allocation
+          type: string
+        network:
+          description: The crypto network of the allocation
+          type: string
+        walletAddress:
+          description: The wallet address of the allocation
+          type: string
+        walletName:
+          description: The wallet name of the allocation
+          type: string
+        walletId:
+          description: The existing wallet ID of the allocation
+          type: string
+    CreateBankAllocationRequest:
+      description: ""
+      required:
+        - currency
+        - network
+        - amount
+      type: object
+      properties:
+        currency:
+          description: The currency of the allocation
+          type: string
+        network:
+          description: The crypto network of the allocation
+          type: string
+        amount:
+          description: The fiat amount of the allocation
+          type: string
+        walletAddress:
+          description: The wallet address of the allocation
+          type: string
+        walletName:
+          description: The wallet name of the allocation
+          type: string
+        walletId:
+          description: The existing wallet ID of the allocation
+          type: string
+    CreateWalletRequest:
+      description: ""
+      required:
+        - address
+      type: object
+      properties:
+        address:
+          description: The address of the wallet
+          type: string
+        name:
+          description: The name of the wallet
+          type: string
+        network:
+          description: The network of the wallet
+          type: string
+          enum:
+            - ETH
+            - BTC
+            - SOL
+            - POLYGON
+    PayrollTokenRequest:
+      description: ""
+      type: object
+      properties:
+        totalAllocation:
+          description: The total payroll allocation amount
+          type: string
+        payrollProvider:
+          description: The payroll provider of the user
+          type: string
+          enum:
+            - OTHER
+            - ADP
+            - WORKDAY
+            - PAYCHEX
+            - GUSTO
+    PlaidActivateLinkRequest:
+      description: ""
+      required:
+        - publicToken
+      type: object
+      properties:
+        publicToken:
+          description: The public token from the Plaid integration
+          type: string
+    SendSmsOtpRequest:
+      description: ""
+      required:
+        - phoneNumber
+      type: object
+      properties:
+        phoneNumber:
+          description: The phone number to send the SMS OTP to
+          type: string
+    SendEmailOtpRequest:
+      description: ""
+      required:
+        - emailAddress
+      type: object
+      properties:
+        email:
+          description: The email address to send the Email OTP to
+          type: string
+    UpdateAllocationRequest:
+      description: ""
+      type: object
+      properties:
+        currency:
+          description: The currency of the allocation
+          type: string
+        network:
+          description: The crypto network of the allocation
+          type: string
+        walletAddress:
+          description: The wallet address of the allocation
+          type: string
+        walletName:
+          description: The wallet name of the allocation
+          type: string
+        walletId:
+          description: The existing wallet ID of the allocation
+          type: string
+    UpdateWalletRequest:
+      description: ""
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          description: The name of the wallet
+          type: string
+    SendSmsOtpResponse:
+      description: ""
+      required:
+        - phoneId
+      type: object
+      properties:
+        phoneId:
+          description: The ID of the phone number
+          type: string
+    SendEmailOtpResponse:
+      description: ""
+      required:
+        - emailId
+      type: object
+      properties:
+        emailId:
+          description: The ID of the email address
+          type: string
+    User:
+      description: ""
+      required:
+        - id
+        - status
+        - email
+        - firstName
+        - lastName
+        - country
+        - phone
+        - nationality
+        - occupation
+        - currency
+        - preferredMfaMethod
+      type: object
+      properties:
+        id:
+          description: The unique identifier of the user
+          type: string
+        createTime:
+          description: The time the user was created
+          type: string
+        updateTime:
+          description: The time the user was last updated
+          type: string
+        status:
+          description: The status of the user
+          type: string
+          enum:
+            - ONBOARDING
+            - KYC_SUBMITTED
+            - KYC_DECLINED
+            - FLAGGED
+            - ACTIVE
+        email:
+          description: The email of the user
+          type: string
+        firstName:
+          description: The first name of the user
+          type: string
+        middleName:
+          description: The middle name of the user
+          type: string
+        lastName:
+          description: The last name of the user
+          type: string
+        country:
+          description: The country of the user
+          type: string
+        phone:
+          description: The phone number of the user
+          type: string
+        payrollProvider:
+          description: The payroll provider of the user
+          type: string
+          enum:
+            - OTHER
+            - ADP
+            - WORKDAY
+            - PAYCHEX
+            - GUSTO
+            - MANUAL
+        nationality:
+          description: The nationality of the user
+          type: string
+        occupation:
+          description: The occupation of the user
+          type: string
+        currency:
+          description: The fiat currency of the user
+          type: string
+        totalAllocation:
+          description: The total payroll allocation of the user
+          type: string
+        preferredMfaMethod:
+          description: The preferred MFA method of the user
+          type: string
+          enum:
+            - OTP_SMS
+            - TOTP
+        accountNumber:
+          description: The Ratio bank account number of the user
+          type: string
+        routingNumber:
+          description: The Ratio bank routing number of the user
+          type: string
+        bankAccount:
+          description: The bank account of the user
+          $ref: "#/components/schemas/BankAccount"
+    Wallet:
+      description: ""
+      required:
+        - id
+        - createTime
+        - updateTime
+        - address
+        - network
+      type: object
+      properties:
+        id:
+          description: The unique identifier of the wallet
+          type: string
+        createTime:
+          description: The time the wallet was created
+          type: string
+        updateTime:
+          description: The time the wallet was last updated
+          type: string
+        address:
+          description: The address of the wallet
+          type: string
+        name:
+          description: The nickname of the wallet
+          type: string
+        network:
+          description: The crypto network of the wallet
+          type: string
+    PartnerSessionResponse:
+      description: ""
+      type: object
+      properties:
+        partnerSessionUrl:
+          description: The URL of the user's unique session, tied to your client. This URL would be opened in a webview within your app to begin the embedded Ratio flow.
+          type: string
+    CreateUserRequest:
+      description: ""
+      required:
+        - email
+        - firstName
+        - lastName
+        - country
+        - phone
+        - nationality
+        - occupation
+      type: object
+      properties:
+        email:
+          description: The email of the user
+          type: string
+        firstName:
+          description: The first name of the user
+          type: string
+        middleName:
+          description: The middle name of the user
+          type: string
+        lastName:
+          description: The last name of the user
+          type: string
+        country:
+          description: The country of the user
+          type: string
+        phone:
+          description: The phone number of the user
+          type: string
+        nationality:
+          description: The nationality of the user
+          type: string
+        occupation:
+          description: The occupation of the user
+          type: string
+    StartKycRequest:
+      description: ""
+      required:
+        - dateOfBirth
+        - idType
+        - idNumber
+        - address
+      type: object
+      properties:
+        dateOfBirth:
+          description: The DOB of the user
+          type: string
+        idType:
+          description: The ID type of the user
+          type: string
+          enum:
+            - "ssn"
+        idNumber:
+          description: The ID number of the user
+          type: string
+        address:
+          description: The user's address
+          $ref: "#/components/schemas/KycAddress"
+    KycAddress:
+      description: ""
+      required:
+        - line1
+        - city
+        - state
+        - postalCode
+        - country
+      type: object
+      properties:
+        line1:
+          description: The first street line of the user's address
+          type: string
+        line2:
+          description: The second street line of the user's address
+          type: string
+        country:
+          description: The country of the user
+          type: string
+        city:
+          description: The city of the user
+          type: string
+        state:
+          description: The state of the user
+          type: string
+        postalCode:
+          description: The postal code of the user
+          type: string
+  parameters:
+    X-Ratio-Client-Id:
+      in: header
+      required: true
+      name: X-Ratio-Client-Id
+      description: Your application's unique client ID, used for identifying your requests and transactions
+      schema:
+        type: string
+        format: uuid
+    X-Ratio-Client-Secret:
+      in: header
+      required: true
+      name: X-Ratio-Client-Secret
+      description: Your application's unique client secret, used for validating that your client's request was made securely by you
+      schema:
+        type: string
+        format: uuid
+    UserId:
+      name: userId
+      in: path
+      description: The id of the user
+      required: true
+      deprecated: false
+      schema:
+        type: string
+    WalletId:
+      name: walletId
+      in: path
+      description: Wallet ID
+      required: true
+      deprecated: false
+      schema:
+        type: string
+paths:
+  /v1/auth/cryptoWallet:start:
+    post:
+      operationId: cryptoWalletStart
+      deprecated: false
+      summary: Start a crypto wallet authentication flow
+      security:
+        - {}
+        - JWT: []
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      responses:
+        "200":
+          description: Start Crypto wallet auth response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticateCryptoWalletStartResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateCryptoWalletStartRequest"
+        description: Start Crypto wallet auth request object
+        required: true
+  /v1/auth/cryptoWallet:authenticate:
+    post:
+      operationId: cryptoWalletAuthenticate
+      deprecated: false
+      summary: Authenticate a user's crypto wallet
+      security:
+        - {}
+        - JWT: []
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      responses:
+        "200":
+          description: Authentication response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Invalid signature
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateCryptoWalletRequest"
+        description: Crypto wallet auth request object
+        required: true
+  /v1/auth/otp/sms:send:
+    post:
+      operationId: otpSmsSend
+      deprecated: false
+      summary: Send an SMS OTP to the user
+      security:
+        - JWT: []
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      responses:
+        "200":
+          description: Send SMS OTP response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SendSmsOtpResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SendSmsOtpRequest"
+        description: Send SMS OTP request object
+        required: true
+  /v1/auth/otp/sms:authenticate:
+    post:
+      operationId: otpSmsAuthenticate
+      deprecated: false
+      summary: Authenticate a user with an SMS OTP
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Authentication response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Invalid OTP
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateSmsOtpRequest"
+        description: Authenticate SMS OTP request object
+        required: true
+  /v1/auth/otp/email:send:
+    post:
+      operationId: otpEmailSend
+      deprecated: false
+      summary: Send an Email OTP to the user
+      security:
+        - JWT: []
+        - {}
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      responses:
+        "200":
+          description: Send Email OTP response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SendEmailOtpResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SendEmailOtpRequest"
+        description: Send Email OTP request object
+        required: true
+  /v1/auth/otp/email:authenticate:
+    post:
+      operationId: otpEmailAuthenticate
+      deprecated: false
+      summary: Authenticate a user with an Email OTP
+      security:
+        - JWT: []
+        - {}
+      responses:
+        "200":
+          description: Authentication response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Invalid OTP
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateEmailOtpRequest"
+        description: Authenticate Email OTP request object
+        required: true
+  /v1/auth/totp:create:
+    post:
+      operationId: totpCreate
+      deprecated: false
+      summary: Create TOTP authentication for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Create TOTP response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateTotpResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      tags:
+        - Auth
+  /v1/auth/totp:authenticate:
+    post:
+      operationId: totpAuthenticate
+      deprecated: false
+      summary: Authenticate a user with TOTP
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Authentication response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticationResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Invalid TOTP
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      tags:
+        - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateTotpRequest"
+        description: Authenticate TOTP request object
+        required: true
+  /v1/partner/auth/cryptoWallet:start:
+    post:
+      operationId: partnerCryptoWalletStart
+      deprecated: false
+      summary: Start a crypto wallet authentication flow
+      security: []
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      responses:
+        "200":
+          description: Start Crypto wallet auth response object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthenticateCryptoWalletStartResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      tags:
+        - Partner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateCryptoWalletStartRequest"
+        description: Start Crypto wallet auth request object
+        required: true
+  /v1/partner/auth/cryptoWallet:authenticate:
+    post:
+      operationId: partnerCryptoWalletAuthenticate
+      deprecated: false
+      summary: Authenticate a user's crypto wallet in order to launch Ratio
+      security: []
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      responses:
+        "200":
+          description: Partner session response with unique session URL for launching Ratio
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PartnerSessionResponse"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Invalid signature
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      tags:
+        - Partner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AuthenticateCryptoWalletRequest"
+        description: Crypto wallet auth request object
+        required: true
+  /v1/users/{userId}:
+    get:
+      operationId: getUser
+      deprecated: false
+      summary: This returns the current authenticated user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - User
+  /v1/users:
+    post:
+      operationId: createUser
+      deprecated: false
+      summary: This creates a new user
+      security:
+        - JWT: []
+      responses:
+        "201":
+          description: User Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "409":
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateUserRequest"
+        description: User to be created
+        required: true
+    get:
+      operationId: findUser
+      deprecated: false
+      summary: This returns a user given filter criteria
+      security: 
+        -  SecretKey: []
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/X-Ratio-Client-Secret"
+      tags:
+        - User
+  /v1/users/{userId}/kyc:
+    post:
+      operationId: startKyc
+      deprecated: false
+      summary: This initiates the KYC process for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StartKycRequest"
+      tags:
+        - User
+  /v1/users/{userId}/idv:
+    post:
+      operationId: startIdv
+      deprecated: false
+      summary: This initiates the IDV process for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IdvStatus"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: Unprocessable entity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - User
+  /v1/users/{userId}/bank:achPull:
+    post:
+      operationId: bankAchPull
+      deprecated: false
+      summary: This starts an ACH pull transaction for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Bank allocation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Allocation"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Bank
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBankAllocationRequest"
+        description: Bank allocation to be created
+        required: true
+  /v1/users/{userId}/bank:startLink:
+    post:
+      operationId: bankStartLink
+      deprecated: false
+      summary: Requests a Plaid bank link token for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Plaid bank link token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PlaidLinkToken"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Bank
+  /v1/users/{userId}/bank:activateLink:
+    post:
+      operationId: bankActivateLink
+      deprecated: false
+      summary: Activates a Plaid bank link for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Plaid bank link activated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActivateBankLinkResponse"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Bank
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PlaidActivateLinkRequest"
+        description: Plaid public token
+        required: true
+  /v1/users/{userId}/bank:deleteLink:
+    post:
+      operationId: bankDeleteLink
+      deprecated: false
+      summary: Deletes a Plaid bank link for a user
+      security:
+        - JWT: []
+      responses:
+        "204":
+          description: Plaid bank link deleted
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Bank
+  /v1/users/{userId}/activity:
+    get:
+      operationId: getActivity
+      deprecated: false
+      summary: This gets a user's transaction activity
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: User activity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Activities"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Activity
+  /v1/users/{userId}/activity/{activityId}:
+    get:
+      operationId: getActivityById
+      deprecated: false
+      summary: This gets a single activity item for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: User activity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Activity"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+        - name: activityId
+          in: path
+          description: The id of the activity item
+          required: true
+          deprecated: false
+          schema:
+            type: string
+      tags:
+        - Activity
+  /v1/crypto/prices:
+    get:
+      operationId: getCryptoPrices
+      deprecated: false
+      summary: Get crypto prices
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Success response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PriceResponse"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - name: baseCurrencies
+          in: query
+          description: The currencies to get prices for (comma separated)
+          required: false
+          deprecated: false
+          schema:
+            type: string
+        - name: quoteCurrency
+          in: query
+          description: The currency to quote the prices in
+          required: false
+          deprecated: false
+          schema:
+            type: string
+        - name: includeNetworkFees
+          in: query
+          description: Whether to include network fees in the response
+          required: false
+          deprecated: false
+          schema:
+            type: string
+            enum:
+              - "true"
+              - "false"
+      tags:
+        - Crypto
+  /v1/users/{userId}/wallets:
+    get:
+      operationId: getWallets
+      deprecated: false
+      summary: This returns the wallets for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Wallets for the user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wallets"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+        "422":
+          description: User is not ACTIVE
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Wallet
+    post:
+      deprecated: false
+      summary: This connects a wallet to a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Wallet for the user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wallet"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+        "409":
+          description: Wallet already connected or not valid for selected network
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: User is not ACTIVE
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+      tags:
+        - Wallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateWalletRequest"
+        description: Wallet to be connected
+        required: true
+  /v1/users/{userId}/wallets/{walletId}:
+    get:
+      operationId: getWallet
+      deprecated: false
+      summary: This returns the specified wallet for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Wallet for the user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wallet"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: Wallet/User not found
+          content:
+            application/json:
+              schema:
+                type: object
+        "422":
+          description: User is not ACTIVE
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+        - $ref: "#/components/parameters/WalletId"
+      tags:
+        - Wallet
+    post:
+      operationId: updateWallet
+      deprecated: false
+      summary: This updates a wallet for a user
+      security:
+        - JWT: []
+      responses:
+        "200":
+          description: Wallet for the user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wallet"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User or wallet not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: User is not ACTIVE
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+        - $ref: "#/components/parameters/WalletId"
+      tags:
+        - Wallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateWalletRequest"
+        description: Wallet to be updated
+        required: true
+    delete:
+      operationId: deleteWallet
+      deprecated: false
+      summary: This deletes a wallet for a user
+      security:
+        - JWT: []
+      responses:
+        "204":
+          description: Wallet deleted
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          description: User or wallet not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: User is not ACTIVE
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      parameters:
+        - $ref: "#/components/parameters/X-Ratio-Client-Id"
+        - $ref: "#/components/parameters/UserId"
+        - $ref: "#/components/parameters/WalletId"
+      tags:
+        - Wallet
+tags:
+  - name: Auth
+    description: "API Authentication"
+  - name: Activity
+    description: "Retrieve details regarding a user's historical activity on Ratio, such as pending transactions or completed purchases"
+  - name: Bank
+    description: "Functions regarding connecting a user's bank account and withdrawing funds"
+  - name: Crypto
+    description: "Common functions related to crypto, such as retrieving current prices"
+  - name: Payroll
+    description: "Allows for management of payroll connection and automatic contribution configuration"
+  - name: User
+    description: "Details and operations pertaining to the user themselves, such as onboarding and KYC"
+  - name: Wallet
+    description: "Management of a user's connected wallets"
+  - name: Partner
+    description: "Collection of APIs specifically for partner integration, such as Ratio embeds"

@@ -1,0 +1,12 @@
+[
+  {
+    "version": "1.0.0",
+    "label": "v1.0.0",
+    "baseUrl": "/developer-docs/ratio/ratio-api"
+  },
+  {
+    "version": "0.0.1",
+    "label": "v0.0.1",
+    "baseUrl": "/developer-docs/ratio/0.0.1/ratio-api"
+  }
+]

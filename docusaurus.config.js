@@ -44,23 +44,6 @@ const config = {
         },
       }),
     ],
-    [
-      'redocusaurus',
-      {
-        // Plugin Options for loading OpenAPI files
-        specs: [
-          {
-            spec: `${process.env.RATIO_API_URL}/v1/api-docs`,
-            route: '/ratio-api-redoc/',
-          },
-        ],
-        // Theme Options for modifying how redoc renders them
-        theme: {
-          // Change with your site colors
-          primaryColor: '#1890ff',
-        },
-      },
-    ],
   ],
   plugins: [
     [
@@ -70,13 +53,25 @@ const config = {
         docsPluginId: "classic",
         config: {
           ratio: {
-            specPath: `${process.env.RATIO_API_URL}/v1/api-docs`,
+            // specPath: `${process.env.RATIO_API_URL}/v1/api-docs`,
+            specPath: 'openapi/ratio-1.0.0.yaml',
             outputDir: "docs/ratio",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
             },
-            // template: "api.mustache", // Customize API MDX with mustache template
+            template: "api.mustache", // Customize API MDX with mustache template
+            version: "1.0.0", // Current version
+            label: "v1.0.0", // Current version label
+            baseUrl: "/developer-docs/ratio/ratio-api", // Leading slash is important
+            versions: {
+              "0.0.1": {
+                specPath: 'openapi/ratio-0.0.1.yaml',
+                outputDir: "docs/ratio/0.0.1", // No trailing slash
+                label: "v0.0.1",
+                baseUrl: "/developer-docs/ratio/0.0.1/ratio-api", // Leading slash is important
+              },
+            },
           },
         },
       },
@@ -136,10 +131,9 @@ const config = {
             label: 'Guides',
           },{
             position: "left",
-            label: "API Reference (PAN)",
-            to: "/ratio-api-pan",
+            label: "API Reference",
+            to: "/ratio-api",
           },
-          {to: '/ratio-api-redoc', label: 'API Reference (Redoc)', position: 'left'},
           {
             href: 'https://github.com/ratio-me/developer-docs',
             label: 'GitHub',
@@ -159,11 +153,7 @@ const config = {
               },
               {
                 label: 'API Reference',
-                to: '/ratio-api-redoc',
-              },
-              {
-                label: 'API Reference',
-                to: '/ratio-api-pan',
+                to: '/ratio-api',
               },
             ],
           },
@@ -186,7 +176,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Ratio Labs Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
