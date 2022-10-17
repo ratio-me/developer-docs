@@ -241,6 +241,81 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Partner",
+					"item": [
+						{
+							"name": "Start Crypto Wallet",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"walletAddress\": \"{{walletAddress}}\",\r\n    \"walletNetwork\": \"{{walletNetwork}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/partner/auth/cryptoWallet:start",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"partner",
+										"auth",
+										"cryptoWallet:start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Authenticate Crypto Wallet",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"walletAddress\": \"{{walletAddress}}\",\r\n    \"walletNetwork\": \"{{walletNetwork}}\",\r\n    \"signature\": \"0x\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/partner/auth/cryptoWallet:authenticate",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"partner",
+										"auth",
+										"cryptoWallet:authenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
