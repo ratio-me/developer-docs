@@ -168,7 +168,14 @@
 									{
 										"key": "ratio-client-id",
 										"value": "{{clientId}}",
-										"type": "text"
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "ratio-partner-session-id",
+										"value": "{{ratioPartnerSessionId}}",
+										"type": "text",
+										"disabled": true
 									}
 								],
 								"body": {
@@ -214,11 +221,17 @@
 										"key": "ratio-client-id",
 										"value": "{{clientId}}",
 										"type": "text"
+									},
+									{
+										"key": "ratio-partner-session-id",
+										"value": "{{ratioPartnerSessionId}}",
+										"type": "text",
+										"disabled": true
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"otp\": \"\",\r\n    \"phoneId\": \"{{phoneId}}\"\r\n}",
+									"raw": "{\r\n    \"otp\": \"<OTP>\",\r\n    \"phoneId\": \"{{phoneId}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -316,6 +329,319 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Wallet",
+					"item": [
+						{
+							"name": "Get Wallets",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}/wallets",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}",
+										"wallets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Wallet",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}/wallets/{{walletId}}",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}",
+										"wallets",
+										"{{walletId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Connect Wallet",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"{{walletAddress}}\",\n    \"network\": \"{{walletNetwork}}\",\n    \"name\": \"<WALLET NAME>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}/wallets",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}",
+										"wallets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Wallet",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"<WALLET NAME>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}/wallets/{{walletId}}",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}",
+										"wallets",
+										"{{walletId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{authToken}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Get User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"\",\r\n    \"firstName\": \"\",\r\n    \"middleName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"country\": \"\",\r\n    \"phone\": \"\",\r\n    \"acceptedTerms\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Submit KYC",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dateOfBirth\": \"\",\r\n    \"idType\": \"\",\r\n    \"idNumber\": \"\",\r\n    \"line1\": \"\",\r\n    \"line2\": \"\",\r\n    \"city\": \"\",\r\n    \"state\": \"\",\r\n    \"postalCode\": \"\",\r\n    \"nationality\": \"\",\r\n    \"occupation\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}/kyc",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}",
+										"kyc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Submit IDV",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "ratio-client-id",
+										"value": "{{clientId}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{ratioApiUrl}}/v1/users/{{userId}}/idv",
+									"host": [
+										"{{ratioApiUrl}}"
+									],
+									"path": [
+										"v1",
+										"users",
+										"{{userId}}",
+										"idv"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{authToken}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
 				}
 			]
 		}
@@ -393,7 +719,17 @@
 		},
 		{
 			"key": "walletNetwork",
-			"value": "ETH",
+			"value": "ETHEREUM",
+			"type": "string"
+		},
+		{
+			"key": "ratioPartnerSessionId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "walletId",
+			"value": "",
 			"type": "string"
 		}
 	]
