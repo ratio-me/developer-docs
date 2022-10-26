@@ -1,3 +1,8 @@
+---
+cover: .gitbook/assets/Hand Illustration (1).jpeg
+coverY: 0
+---
+
 # Welcome!
 
 ## Welcome to Ratio
