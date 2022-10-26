@@ -15,3 +15,4 @@
   * [Wallets](reference/api-reference/wallets.md)
   * [Bank](reference/api-reference/bank.md)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
+* [Postman](https://github.com/ratio-me/developer-docs/blob/main/postman/Ratio%20API.postman\_collection.json)
