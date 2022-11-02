@@ -31,7 +31,7 @@ Our staging environment is integrated with our partners' testing environments, s
 
 ``![](<../.gitbook/assets/image (4).png>)![](../.gitbook/assets/image.png)![](<../.gitbook/assets/image (1).png>)![](<../.gitbook/assets/image (3).png>)
 
-## Test Networks
+## Test Networks (TBD)
 
 Our staging environment supports the following blockchain test networks:
 
