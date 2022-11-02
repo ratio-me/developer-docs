@@ -13,8 +13,8 @@ Here you'll find all the documentation you need to get up and running with the R
 
 Our quick start guide will help you on your way through Auth and making your first request to create a new user.
 
-{% content-ref url="quick-start.md" %}
-[quick-start.md](quick-start.md)
+{% content-ref url="quick-guides/quick-start.md" %}
+[quick-start.md](quick-guides/quick-start.md)
 {% endcontent-ref %}
 
 ## Want to deep dive?

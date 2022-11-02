@@ -1,7 +1,11 @@
 # Table of contents
 
 * [Welcome!](README.md)
-* [Quick Start](quick-start.md)
+
+## Quick Guides
+
+* [Quick Start](quick-guides/quick-start.md)
+* [Integration Testing](quick-guides/integration-testing.md)
 
 ## Reference
 
