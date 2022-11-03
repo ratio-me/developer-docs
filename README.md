@@ -1,7 +1,6 @@
 ---
 cover: .gitbook/assets/Hand Illustration (1).jpeg
 coverY: 0
-layout: landing
 ---
 
 # Welcome!
