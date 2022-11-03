@@ -7,6 +7,11 @@
 * [Quick Start](quick-guides/quick-start.md)
 * [Integration Testing](quick-guides/integration-testing.md)
 
+## Integration
+
+* [Embedded](integration/embedded.md)
+* [Whitelabel](integration/whitelabel.md)
+
 ## Reference
 
 * [API Reference](reference/api-reference/README.md)
