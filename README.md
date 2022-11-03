@@ -1,6 +1,7 @@
 ---
 cover: .gitbook/assets/Hand Illustration (1).jpeg
 coverY: 0
+layout: landing
 ---
 
 # Welcome!
@@ -19,7 +20,7 @@ Our quick start guide will help you on your way through Auth and making your fir
 
 ## Want to deep dive?
 
-Dive a little deeper and start exploring our API reference to get an idea of everything that's possible with the API:
+Dive a little deeper and checkout our [Postman Collection](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace) or start exploring our API reference to get an idea of everything that's possible with the API:
 
 {% content-ref url="reference/api-reference/" %}
 [api-reference](reference/api-reference/)
