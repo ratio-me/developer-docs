@@ -25,3 +25,7 @@ Once you have called the `authenticate` endpoint and have received a URL, you'll
 {% hint style="info" %}
 The user will have to provide a second authentication factor to ensure their security within the Ratio embed.
 {% endhint %}
+
+## Example
+
+\<TBD>
