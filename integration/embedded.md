@@ -8,6 +8,10 @@ The easiest way to get started with Ratio is through our embedded experience. Th
 
 The first step to integrating our embedded partner flow is to have the user sign in with their crypto wallet, this allows a user to use their wallet as a primary and familiar means of authentication with Ratio, regardless of from where they access it.&#x20;
 
+{% hint style="info" %}
+If you want to provide a different deposit address to be used in the embed than the one used for the signing transaction, you can set that here.
+{% endhint %}
+
 For more information on the APIs themselves, look at our partner auth endpoints:&#x20;
 
 {% content-ref url="../reference/api-reference/auth/partner.md" %}
