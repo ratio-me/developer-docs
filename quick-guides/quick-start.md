@@ -18,26 +18,28 @@ To make your first request, let's start by performing an email OTP authenticatio
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-**Request**
-
+{% tabs %}
+{% tab title="Request" %}
 ```json
 {
     "emailAddress": "ratiouser@example.com"
 }
 ```
+{% endtab %}
 
-**Response**
-
+{% tab title="Response" %}
 ```json
 {
     "emailId": "email-test-01234abc-0000-0000-0000-0123456789"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 **Code**
 
 {% tabs %}
-{% tab title="curl" %}
+{% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
 curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:send' \
@@ -59,27 +61,29 @@ After issuing this first request, the user will receive an email with a code in 
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-**Request**
-
+{% tabs %}
+{% tab title="Request" %}
 ```json
 {
     "emailId": "email-test-01234abc-0000-0000-0000-0123456789",
     "otp": "123456",
 }
 ```
+{% endtab %}
 
-**Response**
-
+{% tab title="Response" %}
 ```json
 {
     "sessionJwt": "eyJ............"
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 **Code**
 
 {% tabs %}
-{% tab title="curl" %}
+{% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
 curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:authenticate' \
@@ -104,26 +108,28 @@ Many of our APIs require two factors of authentication, in this case we'll use S
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-**Request**
-
+{% tabs %}
+{% tab title="Request" %}
 ```json
 {
     "phoneNumber": "+14165551234",
 }
 ```
+{% endtab %}
 
-**Response**
-
+{% tab title="Response" %}
 ```json
 {
     "phoneId": "phone-number-test-01234abc-0000-0000-0000-0123456789",
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 **Code**
 
 {% tabs %}
-{% tab title="curl" %}
+{% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
 curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:send' \
@@ -146,27 +152,27 @@ After the first request is sent, the user should receive a code on their mobile 
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-**Request**
-
+{% tabs %}
+{% tab title="Request" %}
 ```json
 {
     "phoneId": "phone-number-test-01234abc-0000-0000-0000-0123456789",
     "otp": "123456",
 }
 ```
+{% endtab %}
 
-**Response**
-
-```json
-{
-    "sessionJwt": "eyJ............"
-}
-```
+{% tab title="Response" %}
+<pre class="language-json"><code class="lang-json"><strong>{
+</strong>    "sessionJwt": "eyJ............"
+}</code></pre>
+{% endtab %}
+{% endtabs %}
 
 **Code**
 
 {% tabs %}
-{% tab title="curl" %}
+{% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
 curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:authenticate' \
@@ -194,8 +200,8 @@ At this point you now have an authenticated user session, we will use that token
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-**Request**
-
+{% tabs %}
+{% tab title="Request" %}
 ```json
 {
     "email": "ratiouser@example.com",
@@ -207,9 +213,9 @@ At this point you now have an authenticated user session, we will use that token
     "acceptedTerms": true
 }
 ```
+{% endtab %}
 
-**Response**
-
+{% tab title="Response" %}
 ```json
 {
   "id": "01234abc-0000-0000-0000-0123456789",
@@ -222,6 +228,8 @@ At this point you now have an authenticated user session, we will use that token
   "preferredMfaMethod": "OTP_SMS",
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 **Code**
 
