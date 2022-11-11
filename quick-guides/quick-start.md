@@ -12,13 +12,13 @@ Most of our APIs require a user authenticated JWT token to be passed in the head
 
 To make your first request, let's start by performing an email OTP authentication. The first step requires you to provide an email address and in response you will receive an email id. The ID you are given helps us link the code to an auth request.
 
-#### API
+**API**
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/email:send" method="post" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-#### Request
+**Request**
 
 ```json
 {
@@ -26,7 +26,7 @@ To make your first request, let's start by performing an email OTP authenticatio
 }
 ```
 
-#### Response
+**Response**
 
 ```json
 {
@@ -34,7 +34,7 @@ To make your first request, let's start by performing an email OTP authenticatio
 }
 ```
 
-#### Code
+**Code**
 
 {% tabs %}
 {% tab title="curl" %}
@@ -53,13 +53,13 @@ curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:s
 
 After issuing this first request, the user will receive an email with a code in their inbox, follow up by submitting a request to our authenticate step with the email id and code given. If this is valid, you will receive a JWT.
 
-#### API
+**API**
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/email:authenticate" method="post" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-#### Request
+**Request**
 
 ```json
 {
@@ -68,7 +68,7 @@ After issuing this first request, the user will receive an email with a code in 
 }
 ```
 
-#### Response
+**Response**
 
 ```json
 {
@@ -76,7 +76,7 @@ After issuing this first request, the user will receive an email with a code in 
 }
 ```
 
-#### Code
+**Code**
 
 {% tabs %}
 {% tab title="curl" %}
@@ -98,13 +98,13 @@ curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:a
 
 Many of our APIs require two factors of authentication, in this case we'll use SMS to provide us a one time code as a form of verification. The first step is to provide the user's phone number so that they may be sent a code. In the subsequent requests, you want to make sure you set your Authorization header to include the JWT you received from the email authentication. Doing so allows the SMS authentication to be joined with the Email session for a verifiable multi-factor session.
 
-#### API
+**API**
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-#### Request
+**Request**
 
 ```json
 {
@@ -112,7 +112,7 @@ Many of our APIs require two factors of authentication, in this case we'll use S
 }
 ```
 
-#### Response
+**Response**
 
 ```json
 {
@@ -120,7 +120,7 @@ Many of our APIs require two factors of authentication, in this case we'll use S
 }
 ```
 
-#### Code
+**Code**
 
 {% tabs %}
 {% tab title="curl" %}
@@ -140,13 +140,13 @@ curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:sen
 
 After the first request is sent, the user should receive a code on their mobile device. Similar to the Email OTP method, you now need to provide that code along with the phone id you received. Once again, make sure you include the Authorization header with the Bearer JWT. If this is valid, you will actually receive a new JWT, be sure to use this in subsequent calls as this JWT contains both of the auth factors, indicating an MFA session.
 
-#### API
+**API**
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:authenticate" method="post" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-#### Request
+**Request**
 
 ```json
 {
@@ -155,7 +155,7 @@ After the first request is sent, the user should receive a code on their mobile 
 }
 ```
 
-#### Response
+**Response**
 
 ```json
 {
@@ -163,7 +163,7 @@ After the first request is sent, the user should receive a code on their mobile 
 }
 ```
 
-#### Code
+**Code**
 
 {% tabs %}
 {% tab title="curl" %}
@@ -188,13 +188,13 @@ curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:aut
 
 At this point you now have an authenticated user session, we will use that token to create a user on Ratio. Assuming you've gathered the necessary data, submit the user information to Ratio to create that user. In the request, specifying that the user has accepted the terms implies that you have presented to the user the following term (link) and that they have accepted them.
 
-#### API
+**API**
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users" method="post" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-#### Request
+**Request**
 
 ```json
 {
@@ -208,7 +208,7 @@ At this point you now have an authenticated user session, we will use that token
 }
 ```
 
-#### Response
+**Response**
 
 ```json
 {
@@ -223,7 +223,7 @@ At this point you now have an authenticated user session, we will use that token
 }
 ```
 
-#### Code
+**Code**
 
 {% tabs %}
 {% tab title="curl" %}
