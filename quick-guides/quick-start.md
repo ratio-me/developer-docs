@@ -234,7 +234,7 @@ At this point you now have an authenticated user session, we will use that token
 **Code**
 
 {% tabs %}
-{% tab title="curl" %}
+{% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
 curl --location --request POST 'https://api.staging.ratio.me/v1/users' \
