@@ -29,7 +29,9 @@ Our staging environment is integrated with our partners' testing environments, s
 * Password: `pass_good`
 * Account: Recommend using **Plaid Checking**
 
-``![](<../.gitbook/assets/image (4).png>)![](../.gitbook/assets/image.png)![](<../.gitbook/assets/image (1).png>)![](<../.gitbook/assets/image (3).png>)
+``![](<../.gitbook/assets/image (9).png>)``![](<../.gitbook/assets/image (5).png>)``
+
+``![](<../.gitbook/assets/image (7).png>)``![](<../.gitbook/assets/image (8).png>)``
 
 ## Test Networks (TBD)
 
