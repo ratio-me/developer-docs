@@ -2,7 +2,7 @@
 
 ## Get your API keys
 
-All API requests require a client ID and may also require a client secret. You can obtain this information from Ratio directly. \<TODO: Add dev client support>
+All API requests require a client ID and some will also require a client secret. You can obtain this information from Ratio directly by reaching out to [team@ratio.me](mailto:team@ratio.me).
 
 ## Auth
 

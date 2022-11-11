@@ -1,6 +1,6 @@
 # Welcome!
 
-## Welcome to Ratio
+## Welcome to Ratio's Developer Docs
 
 Here you'll find all the documentation you need to get up and running with the Ratio API.
 

@@ -1,8 +1,12 @@
-# Crypto Wallet
+# 🪙 Crypto Wallet
 
 ## Overview
 
-Our wallet signing APIs currently support either `ETHEREUM` or `SOLANA` wallets, and require two steps to authenticate a user: First providing a wallet to retrieve a challenge phrase, that you sign with the user's wallet, and then a second call providing that signature with that wallet. This will return you an authenticated JWT.
+Authenticating with a crypto wallet requires two steps to authenticate a user. The first step to retrieve a challenge phrase to be signed with the user's wallet, and then a second call providing that signature with that wallet address. This will return you an authenticated JWT.
+
+{% hint style="info" %}
+Our wallet signing APIs currently support either <mark style="color:blue;">`ETHEREUM`</mark> or <mark style="color:purple;">`SOLANA`</mark> wallets, and require you to provide your Client ID in the header so that the user's session can be appropriately attributed to you.
+{% endhint %}
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="undefined" method="undefined" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
