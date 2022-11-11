@@ -2,7 +2,7 @@
 
 
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}" method="get" %}
+{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="undefined" method="undefined" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 

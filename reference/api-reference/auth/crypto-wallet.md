@@ -4,7 +4,7 @@
 
 Our wallet signing APIs currently support either `ETHEREUM` or `SOLANA` wallets, and require two steps to authenticate a user: First providing a wallet to retrieve a challenge phrase, that you sign with the user's wallet, and then a second call providing that signature with that wallet. This will return you an authenticated JWT.
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:start" method="post" %}
+{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="undefined" method="undefined" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
