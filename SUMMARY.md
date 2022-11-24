@@ -2,15 +2,10 @@
 
 * [Welcome!](README.md)
 
-## Quick Guides
+## Guides
 
-* [Quick Start](quick-guides/quick-start.md)
-* [Integration Testing](quick-guides/integration-testing.md)
-
-## Integration
-
-* [Embedded](integration/embedded.md)
-* [Whitelabel](integration/whitelabel.md)
+* [Quick Start](guides/quick-start.md)
+* [Integration Testing](guides/integration-testing.md)
 
 ## Reference
 
@@ -26,3 +21,13 @@
   * [👛 Wallets](reference/api-reference/wallets.md)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
+
+## Integration Methods
+
+* [Embedded](integration-methods/embedded.md)
+* [Whitelabel](integration-methods/whitelabel.md)
+
+## Compliance and Risk
+
+* [User Onboarding](compliance-and-risk/user-onboarding.md)
+* [Transaction Limits](compliance-and-risk/transaction-limits.md)
