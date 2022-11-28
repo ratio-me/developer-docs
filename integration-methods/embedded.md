@@ -28,4 +28,4 @@ The user will have to provide a second authentication factor to ensure their sec
 
 ## Example
 
-\<TBD>
+{% embed url="https://www.figma.com/file/w05Slr69znyhMUSh6XNsJl/Ratio-Experience-Flows?node-id=0:1&t=l091gifm0Uv1HJhU-1" %}
