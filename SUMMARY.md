@@ -6,6 +6,18 @@
 
 * [Quick Start](guides/quick-start.md)
 * [Integration Testing](guides/integration-testing.md)
+* [Plaid Bank Linking](guides/plaid-bank-linking.md)
+
+## Compliance and Risk
+
+* [User Onboarding](compliance-and-risk/user-onboarding.md)
+* [Transaction Limits](compliance-and-risk/transaction-limits.md)
+
+## Integration Methods
+
+* [Embedded](integration-methods/embedded.md)
+* [Whitelabel](integration-methods/whitelabel.md)
+* [Webhooks](integration-methods/webhooks.md)
 
 ## Reference
 
@@ -23,13 +35,3 @@
   * [🪝 Webhook Registrations](reference/api-reference/webhook-registrations.md)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
-
-## Integration Methods
-
-* [Embedded](integration-methods/embedded.md)
-* [Whitelabel](integration-methods/whitelabel.md)
-
-## Compliance and Risk
-
-* [User Onboarding](compliance-and-risk/user-onboarding.md)
-* [Transaction Limits](compliance-and-risk/transaction-limits.md)
