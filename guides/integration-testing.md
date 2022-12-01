@@ -2,9 +2,7 @@
 
 We have a staging environment that can be used for you to perform integration testing. In this environment, you can test an entire end-to-end flow including creating a new user, performing KYC, and making purchases.
 
-{% hint style="info" %}
 Our staging URL is: [https://api.staging.ratio.me/](https://api.staging.ratio.me/)
-{% endhint %}
 
 ## Test Data
 
