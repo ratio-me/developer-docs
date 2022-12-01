@@ -40,3 +40,9 @@ When a user connects their bank account to our network, we review their transact
 
 We also consider Ratio network transaction history when calculating a user's transaction limits.
 
+## When do limits reset for a user?
+
+User limits reset on a rolling basis from the moment a transaction is initiated.&#x20;
+
+For example, if a transaction is initiated at 2pm EST then the users daily limit will reset at 2pm EST the following day.
+
