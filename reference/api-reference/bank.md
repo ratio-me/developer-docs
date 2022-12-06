@@ -20,6 +20,10 @@ The following endpoints provide APIs to allow you to manage a user's bank connec
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
+{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}" method="get" %}
+[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% endswagger %}
+
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}" method="delete" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}

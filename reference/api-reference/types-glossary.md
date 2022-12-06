@@ -329,19 +329,17 @@
 | phone                 | string                                             | The phone number of the user                      | No       |
 | nationality           | string                                             | The nationality of the user                       | No       |
 | occupation            | string                                             | The occupation of the user                        | No       |
-| preferredMfaMethod    | [MfaMethod](types-glossary.md#mfamethod)           | The preferred MFA method of the user              | No       |
 | kyc                   | [Kyc](types-glossary.md#kyc)                       | The KYC information of the user                   | No       |
 | connectedBankAccounts | [\[ BankAccount \]](types-glossary.md#bankaccount) | The array of connected bank accounts for the user | No       |
 
 #### UserMask
 
-| Name               | Type                                     | Description                                  | Required |
-| ------------------ | ---------------------------------------- | -------------------------------------------- | -------- |
-| id                 | string                                   | The unique identifier of the user            | No       |
-| createTime         | string                                   | The time the user was created                | No       |
-| updateTime         | string                                   | The time the user was last updated           | No       |
-| phoneMask          | string                                   | The last 4 digits of the user's phone number | No       |
-| preferredMfaMethod | [MfaMethod](types-glossary.md#mfamethod) | The preferred MFA method of the user         | No       |
+| Name       | Type   | Description                                  | Required |
+| ---------- | ------ | -------------------------------------------- | -------- |
+| id         | string | The unique identifier of the user            | No       |
+| createTime | string | The time the user was created                | No       |
+| updateTime | string | The time the user was last updated           | No       |
+| phoneMask  | string | The last 4 digits of the user's phone number | No       |
 
 #### Wallet
 
@@ -458,13 +456,6 @@
 | NOT\_STARTED | This check has not started KYC review         |
 | SUBMITTED    | This check has been submitted for KYC review  |
 | UNKNOWN      | Unknown status                                |
-
-#### MfaMethod
-
-| Value    | Description                  |
-| -------- | ---------------------------- |
-| OTP\_SMS | SMS One-time Password        |
-| TOTP     | Time-based One-time Password |
 
 #### Network
 
