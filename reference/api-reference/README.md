@@ -2,6 +2,14 @@
 
 Dive into the specifics of each API endpoint by checking out our complete documentation.
 
+## Activity
+
+APIs to retrieve a user's transaction activities
+
+{% content-ref url="activity.md" %}
+[activity.md](activity.md)
+{% endcontent-ref %}
+
 ## Auth
 
 All methods involved with authenticating a user to our APIs:
@@ -48,4 +56,20 @@ Everything related to wallets:
 
 {% content-ref url="wallets.md" %}
 [wallets.md](wallets.md)
+{% endcontent-ref %}
+
+## Webhooks
+
+Endpoints to allow you to configure your webhook registrations:
+
+{% content-ref url="webhook-registrations.md" %}
+[webhook-registrations.md](webhook-registrations.md)
+{% endcontent-ref %}
+
+## Types Glossary
+
+A descriptive list of all our models and enums:
+
+{% content-ref url="types-glossary.md" %}
+[types-glossary.md](types-glossary.md)
 {% endcontent-ref %}
