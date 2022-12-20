@@ -479,8 +479,8 @@
 
 #### WebhookEvent
 
-| Value            | Description                                                                  |
-| ---------------- | ---------------------------------------------------------------------------- |
-| activity.updated | Published whenever a user's transaction activity changes.                    |
-| bank.updated     | Published whenever a user's bank accounts or authentication statuses change. |
-| kyc.updated      | Published whenever a user's KYC status changes.                              |
+| Value             | Description                                                                  |
+| ----------------- | ---------------------------------------------------------------------------- |
+| ACTIVITY\_UPDATED | Published whenever a user's transaction activity changes.                    |
+| BANK\_UPDATED     | Published whenever a user's bank accounts or authentication statuses change. |
+| KYC\_UPDATED      | Published whenever a user's KYC status changes.                              |
