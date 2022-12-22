@@ -2,6 +2,15 @@
 
 ### Models
 
+#### AchLimit
+
+| Name      | Type                                   | Description                                                                            | Required |
+| --------- | -------------------------------------- | -------------------------------------------------------------------------------------- | -------- |
+| currency  | [Currency](types-glossary.md#currency) | The fiat currency for the limit                                                        | Yes      |
+| limit     | string                                 | The maximum allowable sum of ACH transaction amounts                                   | Yes      |
+| used      | string                                 | The current sum of ACH transaction amounts by the ACH limit type (e.g. daily)          | Yes      |
+| remaining | string                                 | The remaining allowable sum, calculated as the delta between the limit and used values | Yes      |
+
 #### ActivateBankLinkResponse
 
 | Name        | Type                                         | Description                  | Required |
@@ -102,6 +111,14 @@
 | mask               | string                                                             | The account number mask                                   | No       |
 | linkStatus         | [BankLinkStatus](types-glossary.md#banklinkstatus)                 | The status of the bank account link to the user           | No       |
 | verificationStatus | [BankVerificationStatus](types-glossary.md#bankverificationstatus) | The status of the bank account user identity verification | No       |
+
+#### CalculatedAchLimitsResponse
+
+| Name    | Type                                   | Description                                                 | Required |
+| ------- | -------------------------------------- | ----------------------------------------------------------- | -------- |
+| instant | [AchLimit](types-glossary.md#achlimit) | The ACH limit for transactions processed instantly          | Yes      |
+| daily   | [AchLimit](types-glossary.md#achlimit) | The ACH limit for transactions processed in the last day    | Yes      |
+| weekly  | [AchLimit](types-glossary.md#achlimit) | The ACH limit for transactions processed in the last 7 days | Yes      |
 
 #### ConnectWalletRequest
 
