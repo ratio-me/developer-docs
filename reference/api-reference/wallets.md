@@ -18,6 +18,6 @@ Additionally, a <mark style="color:green;">wallet</mark> can be given a nickname
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/wallets/{walletId}" method="post" %}
+{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/wallets/{walletId}" method="patch" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
