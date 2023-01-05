@@ -213,28 +213,13 @@
 | fiatCurrency   | [Currency](types-glossary.md#currency) | Quoted fiat currency          | No       |
 | fiatFee        | string                                 | Fee amount in fiat currency   | No       |
 
-#### PartnerAuthenticateCryptoWalletStartRequest
+#### CreatePartnerSessionRequest
 
-| Name          | Type                                 | Description                        | Required |
-| ------------- | ------------------------------------ | ---------------------------------- | -------- |
-| walletAddress | string                               | The wallet address to authenticate | Yes      |
-| walletNetwork | [Network](types-glossary.md#network) | The wallet network to authenticate | Yes      |
-
-#### PartnerAuthenticateCryptoWalletRequest
-
-| Name           | Type                                 | Description                                                                                         | Required |
-| -------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------- | -------- |
-| walletAddress  | string                               | The wallet address to authenticate                                                                  | Yes      |
-| walletNetwork  | [Network](types-glossary.md#network) | The wallet network to authenticate                                                                  | Yes      |
-| signature      | string                               | The signature of the challenge                                                                      | Yes      |
-| depositAddress | string                               | The deposit address to use for the session, if not provided the authenticating address will be used | No       |
-
-#### PartnerAuthenticationResponse
-
-| Name       | Type   | Description                                    | Required |
-| ---------- | ------ | ---------------------------------------------- | -------- |
-| sessionId  | string | The partner session ID                         | Yes      |
-| partnerUrl | string | The url to launch the embedded partner session | Yes      |
+| Name           | Type                                 | Description                                                                                                   | Required |
+| -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------- | -------- |
+| signingAddress | string                               | The wallet address that will be used to authenticate                                                          | Yes      |
+| signingNetwork | [Network](types-glossary.md#network) | The wallet network that will be used to authenticate                                                          | Yes      |
+| depositAddress | string                               | The wallet address that will be used as the deposit target. If not provided, the signing address will be used | No       |
 
 #### PartnerSession
 
