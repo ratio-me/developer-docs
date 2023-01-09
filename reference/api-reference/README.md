@@ -26,20 +26,20 @@ Everything related to bank operations:
 [bank.md](bank.md)
 {% endcontent-ref %}
 
+## Client
+
+Everything related to creating a client session for use with the embedded integration:
+
+{% content-ref url="client.md" %}
+[client.md](client.md)
+{% endcontent-ref %}
+
 ## Crypto
 
 API methods regarding cryptocurrencies themselves, such as prices:
 
 {% content-ref url="crypto.md" %}
 [crypto.md](crypto.md)
-{% endcontent-ref %}
-
-## Partner
-
-Everything related to creating a partner session for use with the embedded integration:
-
-{% content-ref url="auth/partner.md" %}
-[partner.md](auth/partner.md)
 {% endcontent-ref %}
 
 ## Users

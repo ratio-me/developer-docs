@@ -14,8 +14,8 @@ If you want to provide a different deposit address to be used in the embed than 
 
 For more information on the APIs themselves, look at our partner auth endpoints:&#x20;
 
-{% content-ref url="../reference/api-reference/auth/partner.md" %}
-[partner.md](../reference/api-reference/auth/partner.md)
+{% content-ref url="../reference/api-reference/client.md" %}
+[client.md](../reference/api-reference/client.md)
 {% endcontent-ref %}
 
 ## Bridge to Embed

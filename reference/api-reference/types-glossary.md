@@ -213,7 +213,7 @@
 | fiatCurrency   | [Currency](types-glossary.md#currency) | Quoted fiat currency          | No       |
 | fiatFee        | string                                 | Fee amount in fiat currency   | No       |
 
-#### CreatePartnerSessionRequest
+#### CreateClientSessionRequest
 
 | Name           | Type                                 | Description                                                                                                   | Required |
 | -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------- | -------- |
@@ -221,7 +221,7 @@
 | signingNetwork | [Network](types-glossary.md#network) | The wallet network that will be used to authenticate                                                          | Yes      |
 | depositAddress | string                               | The wallet address that will be used as the deposit target. If not provided, the signing address will be used | No       |
 
-#### PartnerSession
+#### ClientSession
 
 | Name           | Type                                   | Description                              | Required |
 | -------------- | -------------------------------------- | ---------------------------------------- | -------- |
