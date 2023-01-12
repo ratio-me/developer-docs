@@ -18,6 +18,7 @@
 * [Embedded](integration-methods/embedded.md)
 * [Whitelabel](integration-methods/whitelabel.md)
 * [Webhooks](integration-methods/webhooks.md)
+* [React Native](integration-methods/react-native.md)
 
 ## Reference
 
