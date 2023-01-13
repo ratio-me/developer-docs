@@ -84,7 +84,6 @@ const web3 = new Web3(new Web3.providers.HttpProvider(provider));
 
 export default function App() {
   const [loading, setLoading] = React.useState(false);
-  const [sessionToken, setSessionToken] = React.useState<string>();
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
 
   useEffect(() => {
@@ -95,7 +94,6 @@ export default function App() {
   });
   
   const fetchSessionToken = async () => {
-    setLoading(true);
     try {
       let sessionTokenResponse = await fetch(
         'https://your.api.com/clients/session',
@@ -110,17 +108,12 @@ export default function App() {
       );
 
       let data = await sessionTokenResponse.json();
-
-      setSessionToken(data.id);
-      setLoading(false);
+      return data.id;
     } catch (e) {
-      setLoading(false);
+      console.error(e);
     }
+    return null;
   };
-
-  useEffect(() => {
-    fetchSessionToken();
-  }, []);
 
   const fallBackToDefaultAuth = () => {};
   const handleBiometricAuth = async () => {
@@ -156,7 +149,9 @@ export default function App() {
       </Text>
       <View style={styles.buttonWrapper}>
         <RatioComponent
-          sessionToken={sessionToken}
+          fetchSessionToken={async () => {
+            return await fetchSessionToken();
+          }}
           signingCallback={async (challenge: string) => {
             let result = await handleBiometricAuth();
             if (result.success || true) {
@@ -206,15 +201,46 @@ export default function App() {
 
 ### Props
 
-#### **`sessionToken`**&#x20;
+#### **`fetchSessionToken`**&#x20;
 
-The session token that is generated from the API that is used to wrap the ratio `/v1/clients/session` (documentation [here](../reference/api-reference/#client))
+A function that is used to fetch session token that is generated from the API that is used to wrap the ratio `/v1/clients/session` (documentation [here](../reference/api-reference/#client))
+
+This is an `async` function.
 
 The Ratio API uses client authentication which requires a `client_id` and `client_secret`. It is highly recommended to implement this call in a secure API backend. This will prevent the need of shipping the `clientSecret` with the client application.
 
-| TYPE   | REQUIRED |
-| ------ | -------- |
-| string | Yes      |
+```tsx
+const fetchSessionToken = async () => {
+  try {
+    let sessionTokenResponse = await fetch(
+      'https://your.api.com/clients/session',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          signingAddress: walletAddress,
+          depositAddress: walletAddress,
+          signingNetwork: walletNetwork,
+        }),
+      }
+    );
+
+    let data = await sessionTokenResponse.json();
+    return data.id;
+  } catch (e) {
+    console.error(e);
+  }
+  return null;
+};
+  
+<RatioComponent 
+  fetchSessionToken={async () => {
+            return await fetchSessionToken();
+          }}/>
+```
+
+| TYPE     | REQUIRED |
+| -------- | -------- |
+| function | Yes      |
 
 
 
@@ -530,4 +556,4 @@ export interface Wallet {
 
 ### Sequence diagram
 
-<figure><img src="../.gitbook/assets/Untitled (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled (2).png" alt=""><figcaption></figcaption></figure>
