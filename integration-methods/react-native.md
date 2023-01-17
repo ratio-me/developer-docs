@@ -424,6 +424,7 @@ export interface RatioOrderStatus {
 export interface OrderError {
   errorId: string;
   message: string;
+  statusCode: number;
 }
 ```
 
