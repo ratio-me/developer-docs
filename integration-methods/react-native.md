@@ -154,7 +154,7 @@ export default function App() {
           }}
           signingCallback={async (challenge: string) => {
             let result = await handleBiometricAuth();
-            if (result.success || true) {
+            if (result.success) {
               let sign = web3.eth.accounts.sign(challenge, privateKey);
 
               return Promise.resolve({
@@ -314,7 +314,7 @@ const [loading, setLoading] = useState(false)
 
 #### **`onTransactionComplete`**
 
-A function that is called whenever a transaction is completed. In the case of multiple transactions, this callback will be called after each one.&#x20;
+A function that is called whenever a transaction is completed even if the there was a failure.
 
 Example
 
@@ -392,7 +392,7 @@ Example
 
 #### **`onClose`**
 
-A function that is called after the Ratio Modal WebView. There is no default behaviour if not provided.
+A function that is called after the Ratio Modal WebView. There is no default behaviour if not provided. As of writing this documentation this function will be called when the user presses "Return to wallet" in the application. It will then close the React Native modal and then call "onClose"
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
