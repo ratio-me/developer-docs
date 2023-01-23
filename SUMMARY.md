@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome!](README.md)
+* [Introduction](README.md)
 
 ## Guides
 
@@ -16,10 +16,10 @@
 
 ## Integration Methods
 
-* [Embedded](integration-methods/embedded.md)
-* [Whitelabel](integration-methods/whitelabel.md)
-* [Webhooks](integration-methods/webhooks.md)
+* [Browser Based](integration-methods/browser-based.md)
 * [React Native](integration-methods/react-native.md)
+* [White Label](integration-methods/white-label.md)
+* [Webhooks](integration-methods/webhooks.md)
 
 ## Reference
 

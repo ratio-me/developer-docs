@@ -1,9 +1,5 @@
 # Quick Start
 
-## Get your API keys
-
-All API requests require a client ID and some will also require a client secret. You can obtain this information from Ratio directly by reaching out to [team@ratio.me](mailto:team@ratio.me).
-
 ## Auth
 
 Most of our APIs require a user authenticated JWT token to be passed in the header. We have several primary and secondary authentication factors available, for the purposes of this guide we'll focus on Email and SMS One-Time Passwords.
@@ -165,7 +161,8 @@ After the first request is sent, the user should receive a code on their mobile 
 {% tab title="Response" %}
 <pre class="language-json"><code class="lang-json"><strong>{
 </strong>    "sessionJwt": "eyJ............"
-}</code></pre>
+}
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
