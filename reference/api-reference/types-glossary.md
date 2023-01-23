@@ -463,21 +463,8 @@
 
 | Value    | Description |
 | -------- | ----------- |
-| BITCOIN  |             |
 | ETHEREUM |             |
 | POLYGON  |             |
-| SOLANA   |             |
-
-#### PayrollProvider
-
-| Value   | Description                  |
-| ------- | ---------------------------- |
-| ADP     |                              |
-| GUSTO   |                              |
-| PAYCHEX |                              |
-| WORKDAY |                              |
-| MANUAL  | Manually configured deposits |
-| OTHER   | Other payroll configuration  |
 
 #### WebhookEvent
 
