@@ -25,7 +25,7 @@
   * [👛 Wallets](reference/api-reference/wallets.md)
   * [🪝 Webhook Registrations](reference/api-reference/webhook-registrations.md)
   * [🔎 Types Glossary](reference/api-reference/types-glossary.md)
-* [🪙 Supported Currencies](reference/supported-currencies.md)
+* [Supported Currencies](reference/supported-currencies.md)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
 
