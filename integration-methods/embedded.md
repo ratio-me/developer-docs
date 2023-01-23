@@ -1,4 +1,4 @@
-# Embedded
+# Browser Based
 
 ## Overview
 

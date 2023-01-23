@@ -1,4 +1,4 @@
-# Whitelabel
+# White Label
 
 If you wish to build a fully white-labeled solution using Ratio, you may do so by obtaining a `Client Id` and then integrating our [RESTful APIs](../reference/api-reference/).&#x20;
 

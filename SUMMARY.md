@@ -8,18 +8,18 @@
 * [Integration Testing](guides/integration-testing.md)
 * [Plaid Bank Linking](guides/plaid-bank-linking.md)
 
-## Compliance and Risk
-
-* [User Onboarding](compliance-and-risk/user-onboarding.md)
-* [Transaction Limits](compliance-and-risk/transaction-limits.md)
-* [Transactional Emails](compliance-and-risk/transactional-emails.md)
-
 ## Integration Methods
 
-* [Browser Based](integration-methods/browser-based.md)
+* [Browser Based](integration-methods/embedded.md)
 * [React Native](integration-methods/react-native.md)
-* [White Label](integration-methods/white-label.md)
+* [White Label](integration-methods/whitelabel.md)
 * [Webhooks](integration-methods/webhooks.md)
+
+## Supporting End Users
+
+* [User Onboarding](supporting-end-users/user-onboarding.md)
+* [Transaction Limits](supporting-end-users/transaction-limits.md)
+* [Transactional Emails](supporting-end-users/transactional-emails.md)
 
 ## Reference
 
