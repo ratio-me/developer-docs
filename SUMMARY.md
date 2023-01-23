@@ -12,6 +12,7 @@
 
 * [User Onboarding](compliance-and-risk/user-onboarding.md)
 * [Transaction Limits](compliance-and-risk/transaction-limits.md)
+* [Transactional Emails](compliance-and-risk/transactional-emails.md)
 
 ## Integration Methods
 
