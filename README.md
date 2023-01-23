@@ -12,7 +12,7 @@ All API requests require a client ID and most also require a client secret. You 
 
 ## Integration Methods
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Browser Based</td><td></td><td></td><td><a href="integration-methods/react-native.md">react-native.md</a></td></tr><tr><td>React Native</td><td></td><td></td><td><a href="integration-methods/react-native.md">react-native.md</a></td></tr><tr><td>White Label</td><td></td><td></td><td><a href="integration-methods/whitelabel.md">whitelabel.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Browser Based</td><td></td><td></td><td><a href="integration-methods/react-native.md">react-native.md</a></td></tr><tr><td>React Native</td><td></td><td></td><td><a href="integration-methods/react-native.md">react-native.md</a></td></tr><tr><td>White Label</td><td></td><td></td><td><a href="integration-methods/white-label/">white-label</a></td></tr></tbody></table>
 
 ## API Reference
 

@@ -2,24 +2,13 @@
 
 * [Introduction](README.md)
 
-## Guides
-
-* [Quick Start](guides/quick-start.md)
-* [Integration Testing](guides/integration-testing.md)
-* [Plaid Bank Linking](guides/plaid-bank-linking.md)
-
 ## Integration Methods
 
 * [Browser Based](integration-methods/embedded.md)
 * [React Native](integration-methods/react-native.md)
-* [White Label](integration-methods/whitelabel.md)
+* [White Label](integration-methods/white-label/README.md)
+  * [Quick Start](integration-methods/white-label/quick-start.md)
 * [Webhooks](integration-methods/webhooks.md)
-
-## Supporting End Users
-
-* [User Onboarding](supporting-end-users/user-onboarding.md)
-* [Transaction Limits](supporting-end-users/transaction-limits.md)
-* [Transactional Emails](supporting-end-users/transactional-emails.md)
 
 ## Reference
 
@@ -39,3 +28,14 @@
 * [🪙 Supported Currencies](reference/supported-currencies.md)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
+
+## Guides
+
+* [Integration Testing](guides/integration-testing.md)
+* [Plaid Bank Linking](guides/plaid-bank-linking.md)
+
+## Supporting End Users
+
+* [User Onboarding](supporting-end-users/user-onboarding.md)
+* [Transaction Limits](supporting-end-users/transaction-limits.md)
+* [Transactional Emails](supporting-end-users/transactional-emails.md)

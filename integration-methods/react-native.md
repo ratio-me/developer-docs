@@ -12,7 +12,7 @@ The `RatioComponent` takes a child view that is wrapped using a `<TouchableOpaci
 
 ## Requirements
 
-To use the SDK you must first acquire a `clientId` and `clientSecret` from the Ratio team. Learn how to request API keys [here](../guides/quick-start.md#get-your-api-keys).
+To use the SDK you must first acquire a `clientId` and `clientSecret` from the Ratio team. Learn how to request API keys [here](white-label/quick-start.md#get-your-api-keys).
 
 Ratio will provide an API that you will be required to wrap in your own back end (see example below)
 
