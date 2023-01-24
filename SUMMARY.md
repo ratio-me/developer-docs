@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [User Flows](user-flows.md)
 
 ## Integration Methods
 
