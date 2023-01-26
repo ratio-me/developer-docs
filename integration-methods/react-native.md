@@ -24,6 +24,22 @@ or
 
 `yarn add @ratio.me/ratio-react-native-library`
 
+#### Peer Dependencies
+
+Our library has a peer dependancy on `react-native-webview@11.x`&#x20;
+
+This means you must add `react-native-webview` as a dependency by running the following
+
+`npm install react-native-webview --save`\
+\
+or\
+\
+`yarn add react-native-webview --save`\
+\
+**NOTE**: it is important to make sure you use the `--save` flag, this will make sure the native code is autolinked. Read more about React Native Auto linking [here](https://reactnative.dev/docs/linking-libraries-ios)\
+\
+Read more about `react-native-webview` [here](https://github.com/react-native-webview/react-native-webview)
+
 ## Usage
 
 {% code lineNumbers="true" %}
