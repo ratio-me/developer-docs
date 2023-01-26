@@ -85,7 +85,8 @@ const web3 = new Web3(new Web3.providers.HttpProvider(provider));
 export default function App() {
   const [loading, setLoading] = React.useState(false);
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
-
+  const [ratioUser, setRatioUser] = useState(null)
+  
   useEffect(() => {
     (async () => {
       const compatible = await LocalAuthentication.hasHardwareAsync();
@@ -182,6 +183,7 @@ export default function App() {
             Alert.alert(errorMessage);
           }}
           onClose={() => {}}
+          onLogin={(user: RatioUser)=> { setRatioUser(user) }}
         >
          {/* view used as visible 'button' to press */}
           <View style={styles.buyCryptoButton}>
@@ -314,7 +316,8 @@ const [loading, setLoading] = useState(false)
 
 #### **`onTransactionComplete`**
 
-A function that is called whenever a transaction is completed even if the there was a failure.
+A function that is called whenever a transaction is completed even if there was a failure.\
+As part of the data in the `RatioOrderStatus` object, you will receive the userId for the user that completed the transaction and the ActivityItem detailing the transaction. The userId and activityItem will not be returned if there was an error in processing the order.
 
 Example
 
@@ -398,6 +401,20 @@ A function that is called after the Ratio Modal WebView. There is no default beh
 | -------- | -------- |
 | function | No       |
 
+
+
+#### `onLogin`
+
+A function that is called when the a user is fully authenticated. It is also called when the user's account has been created. The callback returns a `RatioUser` object that is described below.
+
+Example
+
+```tsx
+<RatioComponent onLogin={(user: RatioUser)=> {
+    Alert.alert(user.firstName)
+}}/>
+```
+
 ### Models
 
 #### **`RatioKitSigningResult`**
@@ -412,7 +429,7 @@ export interface RatioKitSigningResult {
 
 ```typescript
 export interface RatioOrderStatus {
-  data: ActivityItem;
+  data: {userId: string, activity: ActivityItem};
   status: 'success' | 'failure';
   error: OrderError;
 }
@@ -550,6 +567,97 @@ export interface Wallet {
   name: string;
   network: string;
   updateTime: string;
+}
+```
+
+#### `RatioUser`
+
+```typescript
+export interface RatioUser {
+  id: string;
+  createTime: string;
+  updateTime: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  email: string;
+  country: string;
+  phone: string;
+  preferredMfaMethod: TwoFactorMethod;
+  nationality: string;
+  occupation: string;
+  kyc: Kyc;
+  connectedBankAccounts: BankAccount[];
+}
+```
+
+#### TwoFactorMethod
+
+```typescript
+export enum TwoFactorMethod {
+  OTP_SMS = 'OTP_SMS',
+  TOTP = 'TOTP'
+}
+```
+
+#### `BankAccount`
+
+```typescript
+export interface BankAccount {
+  id: string;
+  createTime: string;
+  updateTime: string;
+  name: string;
+  mask: string;
+  linkStatus: LinkStatus;
+  verificationStatus: VerificationStatus;
+}
+```
+
+#### `LinkStatus`
+
+```typescript
+export enum LinkStatus {
+  INACTIVE = 'INACTIVE',
+  ACTIVE = 'ACTIVE',
+  LOGIN_REQUIRED = 'LOGIN_REQUIRED'
+}
+```
+
+#### `VerificationStatus`
+
+```typescript
+export enum VerificationStatus {
+  IN_REVIEW = 'IN_REVIEW',
+  APPROVED = 'APPROVED',
+  DECLINED = 'DECLINED'
+}
+```
+
+#### `Kyc`
+
+```typescript
+export type Kyc = {
+  createTime: string;
+  updateTime: string;
+  addressResult: KycResult;
+  dobResult: KycResult;
+  fraudResult: KycResult;
+  idvResult: KycResult;
+};
+
+```
+
+#### `KycResult`
+
+```typescript
+export enum KycResult {
+  UNKNOWN = 'UNKNOWN',
+  NOT_STARTED = 'NOT_STARTED',
+  SUBMITTED = 'SUBMITTED',
+  IN_REVIEW = 'IN_REVIEW',
+  APPROVED = 'APPROVED',
+  DECLINED = 'DECLINED'
 }
 ```
 
