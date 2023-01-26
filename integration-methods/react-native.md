@@ -18,6 +18,8 @@ Ratio will provide an API that you will be required to wrap in your own back end
 
 ## Installation
 
+<figure><img src="https://img.shields.io/npm/v/@ratio.me/ratio-react-native-library?color=blue&#x26;style=flat-square" alt="Library version"><figcaption></figcaption></figure>
+
 `npm install @ratio.me/ratio-react-native-library`
 
 or
@@ -26,19 +28,32 @@ or
 
 #### Peer Dependencies
 
-Our library has a peer dependancy on `react-native-webview@11.x`&#x20;
+Our library has a peer dependancy on the following\
+\
+\- `react-native-webview: "11.x"` \
+\- `react-native-svg: "12.x || 13.x"`
 
-This means you must add `react-native-webview` as a dependency by running the following
 
-`npm install react-native-webview --save`\
-\
-or\
-\
-`yarn add react-native-webview --save`\
-\
-**NOTE**: it is important to make sure you use the `--save` flag, this will make sure the native code is autolinked. Read more about React Native Auto linking [here](https://reactnative.dev/docs/linking-libraries-ios)\
-\
+
+This means you must add `react-native-webview` and `react-native-svg` as dependancies by running the following
+
+```
+npm install react-native-webview --save 
+npm install react-native-svg --save
+```
+
+`or`
+
+```
+yarn add react-native-webview --save 
+yarn add react-native-svg --save
+```
+
+**NOTE**: it is important to make sure you use the `--save` flag, this will make sure the native code is autolinked. Read more about React Native Auto linking [here](https://reactnative.dev/docs/linking-libraries-ios)
+
 Read more about `react-native-webview` [here](https://github.com/react-native-webview/react-native-webview)
+
+Read more about `react-native-svg` [here](https://github.com/software-mansion/react-native-svg)
 
 ## Usage
 
