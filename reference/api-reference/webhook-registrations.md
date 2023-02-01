@@ -10,26 +10,26 @@ Currently, a single client is limited to 10 <mark style="color:green;">webhook</
 Note: When you create a <mark style="color:green;">webhook</mark> registration, you will receive a <mark style="color:red;">secret key</mark>. Store that key securely, as you will later use it to validate your <mark style="color:green;">webhook</mark> data on receipt.
 {% endhint %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks/events" method="get" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks/events" method="get" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks" method="get" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks" method="get" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks/{webhookId}" method="get" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks/{webhookId}" method="get" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks/{webhookId}" method="patch" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks/{webhookId}" method="patch" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks/{webhookId}" method="delete" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks/{webhookId}" method="delete" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}

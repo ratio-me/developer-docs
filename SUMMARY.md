@@ -32,7 +32,6 @@
 
 ## Guides
 
-* [Testing in Staging](guides/testing-in-staging.md)
 * [Plaid Bank Linking](guides/plaid-bank-linking.md)
 
 ## Supporting End Users
