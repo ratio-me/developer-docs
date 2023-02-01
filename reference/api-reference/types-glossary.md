@@ -171,13 +171,6 @@
 | prices      | [\[ Price \]](types-glossary.md#price)           | The quoted prices        | Yes      |
 | networkFees | [\[ NetworkFee \]](types-glossary.md#networkfee) | The current network fees | Yes      |
 
-#### IdvResponse
-
-| Name   | Type                                     | Description                                                   | Required |
-| ------ | ---------------------------------------- | ------------------------------------------------------------- | -------- |
-| status | [KycResult](types-glossary.md#kycresult) | The status of the user's identity verification                | No       |
-| url    | string                                   | The URL to provide the user to complete identity verification | No       |
-
 #### InitiateAchResponse
 
 | Name         | Type                                           | Description               | Required |

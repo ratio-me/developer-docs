@@ -8,8 +8,8 @@ Authenticating with a crypto wallet requires two steps to authenticate a user. T
 Our wallet-signing APIs currently support either <mark style="color:blue;">`ETHEREUM`</mark> or <mark style="color:purple;">`SOLANA`</mark> wallets, and require you to provide your Client ID in the header so that the user's session can be appropriately attributed to you.
 {% endhint %}
 
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:start" method="post" %}
-[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
+{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="undefined" method="undefined" %}
+[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
@@ -46,8 +46,8 @@ curl --location -g --request POST 'https://<RATIO_API_URL>/v1/auth/cryptoWallet:
 {% endtab %}
 {% endtabs %}
 
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:authenticate" method="post" %}
-[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
+{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:authenticate" method="post" %}
+[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
