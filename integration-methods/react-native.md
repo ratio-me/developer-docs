@@ -76,7 +76,7 @@ Here is a sample `apple-app-site-association` file
       "details":[
          {
             "appIDs":[
-               "<BUNDLEID>.me.ratio.sampleapp"
+               "<YOUR APP IDENTIFIER>"
             ],
             "components":[
                {
@@ -104,7 +104,6 @@ Here is an example entitlements file for iOS which should be called `<your-app>.
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:ratio.me</string>
 		<string>applinks:<YOUR-DOMAIN></string>
 	</array>
 </dict>
