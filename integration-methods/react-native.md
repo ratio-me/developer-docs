@@ -31,22 +31,25 @@ or
 Our library has a peer dependancy on the following\
 \
 \- `react-native-webview: "11.x"` \
+\- `react-native-plaid-link-sdk: "9.x"`\
 \- `react-native-svg: "12.x || 13.x"`
 
 
 
-This means you must add `react-native-webview` and `react-native-svg` as dependancies by running the following
+This means you must add `react-native-webview,` `react-native-svg` , and `react-native-plaid-link-sdk`as dependancies by running the following
 
 ```
 npm install react-native-webview --save 
 npm install react-native-svg --save
+npm install react-native-plaid-link-sdk --save
 ```
 
 `or`
 
 ```
-yarn add react-native-webview --save 
-yarn add react-native-svg --save
+yarn add react-native-webview
+yarn add react-native-svg
+yarn add react-native-plaid-link-sdk
 ```
 
 **NOTE**: it is important to make sure you use the `--save` flag, this will make sure the native code is autolinked. Read more about React Native Auto linking [here](https://reactnative.dev/docs/linking-libraries-ios)
@@ -54,6 +57,74 @@ yarn add react-native-svg --save
 Read more about `react-native-webview` [here](https://github.com/react-native-webview/react-native-webview)
 
 Read more about `react-native-svg` [here](https://github.com/software-mansion/react-native-svg)
+
+Read more about `react-native-plaid-link-sdk` [here](https://plaid.com/docs/link/react-native/)
+
+### Integrating Plaid OAuth
+
+**NOTE:** In order to support OAuth with different banks (e.g. Chase) you must follow the instructions in Plaid's documentation to be able to accept Universal Links on iOS and an Android Package Name on Android. This documentation is provided [here](https://plaid.com/docs/link/oauth/). Below is a high level description of a few of the steps.
+
+#### iOS
+
+For iOS: Follow the instructions for adding Universal Links to your app ([here](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?language=objc)) and how to create and Apple App Site Association file that will be hosted at `https://<your-domain>/.well-known/apple-app-site-association`. This will allow the Plaid SDK to return back to your application after OAuth authentication has been complete.
+
+Here is a sample `apple-app-site-association` file
+
+```
+{
+   "applinks":{
+      "details":[
+         {
+            "appIDs":[
+               "<BUNDLEID>.me.ratio.sampleapp"
+            ],
+            "components":[
+               {
+                  "/":"/plaid/*",
+                  "comment":"Matches any URL whose path matches /plaid/*"
+               }
+            ]
+         }
+      ]
+   }
+}
+
+```
+
+You will also need to add Associated Domains Entitlement to your app and the associated domains feature to your app ID. Follow the documentation [here](https://developer.apple.com/documentation/Xcode/supporting-associated-domains?language=objc) to learn how.
+
+Here is an example entitlements file for iOS which should be called `<your-app>.entitlements`
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:ratio.me</string>
+		<string>applinks:<YOUR-DOMAIN></string>
+	</array>
+</dict>
+</plist>
+
+```
+
+**NOTE**: You must provide your redirect URI to the Ratio team so that we can add it to our configuration.
+
+#### Android
+
+To support OAuth with Plaid, you will need to provide your Android Package Name to the `RatioComponent`. This is described below.
+
+**NOTE**: You must provide your app's Android Package Name to the Ratio team so that we can add it to our configuration
+
+#### Expo
+
+If you are using Expo, the above still applies, but also look at the documentation for handling Deep Linking [here](https://docs.expo.dev/guides/deep-linking/)
+
+
 
 ## Usage
 
@@ -77,8 +148,6 @@ import {
   RatioComponent,
   RatioOrderStatus,
 } from '@ratio.me/ratio-react-native-library';
-import * as LocalAuthentication from 'expo-local-authentication';
-import type { LocalAuthenticationResult } from 'expo-local-authentication';
 
 const styles = StyleSheet.create({
   AndroidSafeArea: {
@@ -115,15 +184,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider(provider));
 
 export default function App() {
   const [loading, setLoading] = React.useState(false);
-  const [isBiometricSupported, setIsBiometricSupported] = useState(false);
   const [ratioUser, setRatioUser] = useState(null)
-  
-  useEffect(() => {
-    (async () => {
-      const compatible = await LocalAuthentication.hasHardwareAsync();
-      setIsBiometricSupported(compatible);
-    })();
-  });
   
   const fetchSessionToken = async () => {
     try {
@@ -147,54 +208,34 @@ export default function App() {
     return null;
   };
 
-  const fallBackToDefaultAuth = () => {};
-  const handleBiometricAuth = async () => {
-    const savedBiometrics = await LocalAuthentication.isEnrolledAsync();
-    if (!savedBiometrics) {
-      Alert.alert(
-        'Biometric record not found',
-        'Please verify your identity with your password',
-        [{ text: 'OK' }],
-        { onDismiss: () => fallBackToDefaultAuth() }
-      );
-      return {
-        success: false,
-        error: 'no saved biometrics',
-      } as LocalAuthenticationResult;
+  const redirectUri = () => {
+    if(Platform.OS === 'ios') {
+        return 'https://<YOUR-DOMAIN>/plaid/oauth'
     }
-    const biometricAuth = await LocalAuthentication.authenticateAsync({
-      promptMessage: 'Login with Biometrics',
-      disableDeviceFallback: true,
-      cancelLabel: 'Cancel',
-    });
+    return null
+  }
 
-    return biometricAuth;
-  };
-
+  const androidPackageName = () => {
+      if(Platform.OS === 'android') {
+          return 'me.ratio.sampleapp'
+      }
+      return null
+  }
+    
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
       {loading ? <ActivityIndicator /> : null}
-      <Text>
-        {isBiometricSupported
-          ? 'Your device is compatible with Biometrics'
-          : 'Face or Fingerprint scanner is available on this device'}
-      </Text>
       <View style={styles.buttonWrapper}>
         <RatioComponent
           fetchSessionToken={async () => {
             return await fetchSessionToken();
           }}
           signingCallback={async (challenge: string) => {
-            let result = await handleBiometricAuth();
-            if (result.success) {
-              let sign = web3.eth.accounts.sign(challenge, privateKey);
-
-              return Promise.resolve({
-                signature: sign.signature,
-              });
-            } else {
-              return Promise.reject('failed biometrics');
-            }
+            // if you would like to perform a biometric check, this is where you can place it
+            let sign = web3.eth.accounts.sign(challenge, privateKey);
+            return Promise.resolve({
+              signature: sign.signature,
+            });
           }}
           onPress={() => {
             setLoading(true);
@@ -215,6 +256,8 @@ export default function App() {
           }}
           onClose={() => {}}
           onLogin={(user: RatioUser)=> { setRatioUser(user) }}
+          redirectUri={redirectUri()}
+          androidPackageName={androidPackageName()}
         >
          {/* view used as visible 'button' to press */}
           <View style={styles.buyCryptoButton}>
@@ -445,6 +488,27 @@ Example
     Alert.alert(user.firstName)
 }}/>
 ```
+
+#### `redirectUri`
+
+**iOS Only**\
+\
+A nullable string that points to a universal link. This is used for Plaid OAuth Authentication. For example `http://ratio.me/plaid/oauth`\
+This route should be set up as a Universal link as described [above](react-native.md#integrating-plaid-oauth) \
+\
+**NOTE**: You must provide this URI to the Ratio team so that we can add it to our configuration
+
+If your application is running on Android, pass in `null` as described in the code example
+
+#### `androidPackageName`
+
+**Android Only**
+
+A nullable string that contains your Android package name. This is used for Plaid OAuth Authentication.\
+\
+**NOTE**: You must provide this package to the Ratio team so that we can add it to our configuration
+
+If your application is running on iOS, pass in `null` as described in the code example
 
 ### Models
 
