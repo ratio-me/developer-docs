@@ -1,4 +1,8 @@
-# API Reference
+---
+description: A comprehensive reference for integrating with Ratio API endpoints
+---
+
+# API
 
 Dive into the specifics of each API endpoint by checking out our complete documentation.
 

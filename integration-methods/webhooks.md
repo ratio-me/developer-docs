@@ -4,7 +4,7 @@ Subscribe to Ratio's webhooks to get automatic updates on resources such as KYC,
 
 ### Subscribing
 
-The first thing you need to do is to create a webhook. You should call our [Webhook APIs](../reference/api-reference/webhook-registrations.md) with your <mark style="color:orange;">Client ID</mark> and <mark style="color:orange;">Client Secret</mark> to do this. This endpoint requires a URL and a list of subscribed events; in return, it will provide you with a <mark style="color:green;">secret</mark>.&#x20;
+The first thing you need to do is to create a webhook. You should call our [Webhook APIs](../reference/api/webhook-registrations.md) with your <mark style="color:orange;">Client ID</mark> and <mark style="color:orange;">Client Secret</mark> to do this. This endpoint requires a URL and a list of subscribed events; in return, it will provide you with a <mark style="color:green;">secret</mark>.&#x20;
 
 {% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks" method="post" %}
 [https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
@@ -85,5 +85,5 @@ const valid = hmac === signature;
 }
 ```
 
-* The `event` field will be one of the event types that you subscribed to, [found here](../reference/api-reference/types-glossary.md#webhookevent).
-* The `data` field will be the API object that corresponds to the specific event type. This will be one of [ActivityItem](../reference/api-reference/types-glossary.md#activityitem), [BankAccount](../reference/api-reference/types-glossary.md#bankaccount), or [KycResult](../reference/api-reference/types-glossary.md#kycresult).
+* The `event` field will be one of the event types that you subscribed to, [found here](../reference/api/types-glossary.md#webhookevent).
+* The `data` field will be the API object that corresponds to the specific event type. This will be one of [ActivityItem](../reference/api/types-glossary.md#activityitem), [BankAccount](../reference/api/types-glossary.md#bankaccount), or [KycResult](../reference/api/types-glossary.md#kycresult).

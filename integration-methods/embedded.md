@@ -2,7 +2,11 @@
 
 ## Overview
 
-The easiest way to get started with Ratio is through our embedded experience. This can be deployed anywhere you can embed HTML, such as an iframe or a mobile web view. All you need to get started is a Client ID and a signing wallet.
+The easiest way to get started with Ratio is using our browser-based integration method. This can be deployed anywhere you can embed HTML, such as an iframe or a mobile web view. All you need to get started is a Client ID and a signing wallet.
+
+
+
+If you are integrating Ratio into a mobile app we strongly recommend using our [react-native](react-native/ "mention")SDK instead.  The React Native SDK manages the session token and wallet authentication on your behalf.  It is also handles redirects and provides a series of callbacks you can use to streamline communication between Ratio and your app.&#x20;
 
 ## Wallet Signing
 
@@ -14,8 +18,8 @@ If you want to provide a different deposit address to be used in the embed than 
 
 For more information on the APIs themselves, look at our partner auth endpoints:&#x20;
 
-{% content-ref url="../reference/api-reference/client.md" %}
-[client.md](../reference/api-reference/client.md)
+{% content-ref url="../reference/api/client.md" %}
+[client.md](../reference/api/client.md)
 {% endcontent-ref %}
 
 ## Bridge to Embed
@@ -28,4 +32,4 @@ The user will have to provide a second authentication factor to ensure their sec
 
 ## Example
 
-{% embed url="https://www.figma.com/file/w05Slr69znyhMUSh6XNsJl/Ratio-Experience-Flows?node-id=0:1&t=l091gifm0Uv1HJhU-1" %}
+{% @figma/embed fileId="w05Slr69znyhMUSh6XNsJl" nodeId="0:1" url="https://www.figma.com/file/w05Slr69znyhMUSh6XNsJl/Ratio-Experience-Flows?node-id=0:1&t=l091gifm0Uv1HJhU-1" %}

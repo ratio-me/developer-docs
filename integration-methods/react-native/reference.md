@@ -1,284 +1,10 @@
----
-description: >-
-  The Ratio React Native SDK allows partners to embed and connect to Ratio’s
-  application from their React Native application.
----
+# Reference
 
-# React Native
-
-The React Native SDK provides a `RatioComponent` component that requires a few parameters (listed below). This component allows for a few customizations so that it can be placed anywhere within your app.
-
-The `RatioComponent` takes a child view that is wrapped using a `<TouchableOpacity/>` component. This means that whatever view is passed into the `RatioComponent` will be clickable. Our suggestion is to use the view as a custom "button" to allow users access Ratio services.
-
-## Requirements
-
-To use the SDK you must first acquire a `clientId` and `clientSecret` from the Ratio team. Learn how to request API keys [here](white-label/quick-start.md#get-your-api-keys).
-
-Ratio will provide an API that you will be required to wrap in your own back end (see example below)
-
-## Installation
-
-<figure><img src="https://img.shields.io/npm/v/@ratio.me/ratio-react-native-library?color=blue&#x26;style=flat-square" alt="Library version"><figcaption></figcaption></figure>
-
-`npm install @ratio.me/ratio-react-native-library`
-
-or
-
-`yarn add @ratio.me/ratio-react-native-library`
-
-#### Peer Dependencies
-
-Our library has a peer dependancy on the following\
-\
-\- `react-native-webview: "11.x"` \
-\- `react-native-plaid-link-sdk: "9.x"`\
-\- `react-native-svg: "12.x || 13.x"`
-
-
-
-This means you must add `react-native-webview,` `react-native-svg` , and `react-native-plaid-link-sdk`as dependancies by running the following
-
-```
-npm install react-native-webview --save 
-npm install react-native-svg --save
-npm install react-native-plaid-link-sdk --save
-```
-
-`or`
-
-```
-yarn add react-native-webview
-yarn add react-native-svg
-yarn add react-native-plaid-link-sdk
-```
-
-**NOTE**: it is important to make sure you use the `--save` flag, this will make sure the native code is autolinked. Read more about React Native Auto linking [here](https://reactnative.dev/docs/linking-libraries-ios)
-
-Read more about `react-native-webview` [here](https://github.com/react-native-webview/react-native-webview)
-
-Read more about `react-native-svg` [here](https://github.com/software-mansion/react-native-svg)
-
-Read more about `react-native-plaid-link-sdk` [here](https://plaid.com/docs/link/react-native/)
-
-### Integrating Plaid OAuth
-
-**NOTE:** In order to support OAuth with different banks (e.g. Chase) you must follow the instructions in Plaid's documentation to be able to accept Universal Links on iOS and an Android Package Name on Android. This documentation is provided [here](https://plaid.com/docs/link/oauth/). Below is a high level description of a few of the steps.
-
-#### iOS
-
-For iOS: Follow the instructions for adding Universal Links to your app ([here](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?language=objc)) and how to create and Apple App Site Association file that will be hosted at `https://<your-domain>/.well-known/apple-app-site-association`. This will allow the Plaid SDK to return back to your application after OAuth authentication has been complete.
-
-Here is a sample `apple-app-site-association` file
-
-```
-{
-   "applinks":{
-      "details":[
-         {
-            "appIDs":[
-               "<YOUR APP IDENTIFIER>"
-            ],
-            "components":[
-               {
-                  "/":"/plaid/*",
-                  "comment":"Matches any URL whose path matches /plaid/*"
-               }
-            ]
-         }
-      ]
-   }
-}
-
-```
-
-You will also need to add Associated Domains Entitlement to your app and the associated domains feature to your app ID. Follow the documentation [here](https://developer.apple.com/documentation/Xcode/supporting-associated-domains?language=objc) to learn how.
-
-Here is an example entitlements file for iOS which should be called `<your-app>.entitlements`
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>aps-environment</key>
-	<string>development</string>
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:<YOUR-DOMAIN></string>
-	</array>
-</dict>
-</plist>
-
-```
-
-**NOTE**: You must provide your redirect URI to the Ratio team so that we can add it to our configuration.
-
-#### Android
-
-To support OAuth with Plaid, you will need to provide your Android Package Name to the `RatioComponent`. This is described below.
-
-**NOTE**: You must provide your app's Android Package Name to the Ratio team so that we can add it to our configuration
-
-#### Expo
-
-If you are using Expo, the above still applies, but also look at the documentation for handling Deep Linking [here](https://docs.expo.dev/guides/deep-linking/)
-
-
-
-## Usage
-
-{% code lineNumbers="true" %}
-```tsx
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-
-import {
-  ActivityIndicator,
-  Alert,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import Web3 from 'web3';
-import {
-  RatioComponent,
-  RatioOrderStatus,
-} from '@ratio.me/ratio-react-native-library';
-
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-  },
-  buttonWrapper: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  buyCryptoButton: {
-    backgroundColor: 'black',
-    width: 185,
-    height: 50,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 14,
-  },
-  buyText: {
-    color: 'white',
-  },
-});
-
-const provider ='WEB3_PROVIDER_URL';
-const privateKey =
-  'WALLET_PRIVATE_KEY';
-const walletSigningAddress = 'SIGNING_ADDRESS';
-const walletNetwork = 'WALLET_NETWORK';
-const walletDepositAddress = 'DEPOSIT_ADDRESS';
-
-const web3 = new Web3(new Web3.providers.HttpProvider(provider));
-
-export default function App() {
-  const [loading, setLoading] = React.useState(false);
-  const [ratioUser, setRatioUser] = useState(null)
-  
-  const fetchSessionToken = async () => {
-    try {
-      let sessionTokenResponse = await fetch(
-        'https://your.api.com/clients/session',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            signingAddress: walletAddress,
-            depositAddress: walletAddress,
-            signingNetwork: walletNetwork,
-          }),
-        }
-      );
-
-      let data = await sessionTokenResponse.json();
-      return data.id;
-    } catch (e) {
-      console.error(e);
-    }
-    return null;
-  };
-
-  const redirectUri = () => {
-    if(Platform.OS === 'ios') {
-        return 'https://<YOUR-DOMAIN>/plaid/oauth'
-    }
-    return null
-  }
-
-  const androidPackageName = () => {
-      if(Platform.OS === 'android') {
-          return 'me.ratio.sampleapp'
-      }
-      return null
-  }
-    
-  return (
-    <SafeAreaView style={styles.AndroidSafeArea}>
-      {loading ? <ActivityIndicator /> : null}
-      <View style={styles.buttonWrapper}>
-        <RatioComponent
-          fetchSessionToken={async () => {
-            return await fetchSessionToken();
-          }}
-          signingCallback={async (challenge: string) => {
-            // if you would like to perform a biometric check, this is where you can place it
-            let sign = web3.eth.accounts.sign(challenge, privateKey);
-            return Promise.resolve({
-              signature: sign.signature,
-            });
-          }}
-          onPress={() => {
-            setLoading(true);
-          }}
-          onOpen={() => setLoading(false)}
-          onTransactionComplete={(orderStatus: RatioOrderStatus) => {
-            Alert.alert(orderStatus.status);
-          }}
-          onHelp={() => {
-            Alert.alert('Help button pressed');
-          }}
-          onAccountRecovery={() => {
-            Alert.alert('Account recovery button pressed');
-          }}
-          onError={(errorMessage: string) => {
-            setLoading(false);
-            Alert.alert(errorMessage);
-          }}
-          onClose={() => {}}
-          onLogin={(user: RatioUser)=> { setRatioUser(user) }}
-          redirectUri={redirectUri()}
-          androidPackageName={androidPackageName()}
-        >
-         {/* view used as visible 'button' to press */}
-          <View style={styles.buyCryptoButton}>
-            <Text style={styles.buyText}>Buy Crypto</Text>
-          </View>
-        </RatioComponent>
-      </View>
-    </SafeAreaView>
-  );
-}
-```
-{% endcode %}
-
-
-
-## Reference
-
-### Props
+## Props
 
 #### **`fetchSessionToken`**&#x20;
 
-A function that is used to fetch session token that is generated from the API that is used to wrap the ratio `/v1/clients/session` (documentation [here](../reference/api-reference/#client))
+A function that is used to fetch session token that is generated from the API that is used to wrap the ratio `/v1/clients/session` (documentation [here](../../reference/api/#client))
 
 This is an `async` function.
 
@@ -321,11 +47,11 @@ const fetchSessionToken = async () => {
 
 #### **`signingCallback`**&#x20;
 
-Function that accepts a string which contains the `challenge` that is returned from the Ratio `/v1/auth/cryptoWallet:start` call (documentation [here](../reference/api-reference/#auth))
+Function that accepts a string which contains the `challenge` that is returned from the Ratio `/v1/auth/cryptoWallet:start` call (documentation [here](../../reference/api/#auth))
 
 This is an `async` function that should return a promise. This will allow such asynchronous activities such as a biometrics check to happen during signing.&#x20;
 
-The return value from this function is of type `RatioKitSigningResult`. See the [Models](react-native.md#models) section below.
+The return value from this function is of type `RatioKitSigningResult`. See the [Models](reference.md#models) section below.
 
 Example using Web3.js library
 
@@ -493,7 +219,7 @@ Example
 **iOS Only**\
 \
 A nullable string that points to a universal link. This is used for Plaid OAuth Authentication. For example `http://ratio.me/plaid/oauth`\
-This route should be set up as a Universal link as described [above](react-native.md#integrating-plaid-oauth) \
+This route should be set up as a Universal link as described [above](reference.md#integrating-plaid-oauth) \
 \
 **NOTE**: You must provide this URI to the Ratio team so that we can add it to our configuration
 
@@ -509,7 +235,7 @@ A nullable string that contains your Android package name. This is used for Plai
 
 If your application is running on iOS, pass in `null` as described in the code example
 
-### Models
+## Models
 
 #### **`RatioKitSigningResult`**
 
@@ -754,9 +480,3 @@ export enum KycResult {
   DECLINED = 'DECLINED'
 }
 ```
-
-## Appendix
-
-### Sequence diagram
-
-<figure><img src="../.gitbook/assets/Untitled (2).png" alt=""><figcaption></figcaption></figure>
