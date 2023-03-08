@@ -1,12 +1,13 @@
 ---
-description: Fetch Session Token and Auth with Wallet
+description: >-
+  Here is a full example of using the Ratio React Native Library in a React
+  Native Application
 ---
 
-# Session and Client Auth
+# Example
 
-## Usage
 
-{% code lineNumbers="true" %}
+
 ```tsx
 import * as React from 'react';
 import { useEffect, useState } from 'react';
@@ -145,57 +146,5 @@ export default function App() {
       </View>
     </SafeAreaView>
   );
-}Props
+}
 ```
-{% endcode %}
-
-## Fetching a Session&#x20;
-
-#### **`fetchSessionToken`**&#x20;
-
-A function that is used to fetch the session token.  that is generated from the API that is used to wrap the ratio `/v1/clients/session` (documentation [here](../../reference/api/#client))
-
-This is an `async` function.
-
-The Ratio API uses client authentication which requires a `client_id` and `client_secret`. It is highly recommended to implement this call in a secure API backend. This will prevent the need of shipping the `clientSecret` with the client application.
-
-```tsx
-const fetchSessionToken = async () => {
-  try {
-    let sessionTokenResponse = await fetch(
-      'https://your.api.com/clients/session',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          signingAddress: walletAddress,
-          depositAddress: walletAddress,
-          signingNetwork: walletNetwork,
-        }),
-      }
-    );
-
-    let data = await sessionTokenResponse.json();
-    return data.id;
-  } catch (e) {
-    console.error(e);
-  }
-  return null;
-};
-  
-<RatioComponent 
-  fetchSessionToken={async () => {
-            return await fetchSessionToken();
-          }}/>
-```
-
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | Yes      |
-
-
-
-#### **``**
-
-## Sequence diagram
-
-<figure><img src="../../.gitbook/assets/Untitled (2).png" alt=""><figcaption></figcaption></figure>

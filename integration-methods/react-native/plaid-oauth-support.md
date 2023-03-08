@@ -2,7 +2,7 @@
 description: Support Oauth Insitutions and more
 ---
 
-# Configure Plaid
+# Plaid OAuth Support
 
 {% hint style="success" %}
 Make sure that you have installed **** [`react-native-plaid-link-sdk`](installation.md)``
@@ -86,7 +86,7 @@ Provide your redirect URI to the Ratio team so that we can add it to our configu
 
 ## Android
 
-Provide your Android Package Name to the [`RatioComponent`](session-and-client-auth.md)``
+Provide your Android Package Name to the [`RatioComponent`](session-token-and-wallet-signing.md)``
 
 {% hint style="success" %}
 Provide your app's Android Package Name to the Ratio team so that we can add it to our configuration
