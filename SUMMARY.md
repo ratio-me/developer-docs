@@ -38,6 +38,7 @@
 ## Guides
 
 * [Plaid Bank Linking](guides/plaid-bank-linking.md)
+* [Account Linking](guides/account-linking.md)
 
 ## Supporting End Users
 

@@ -412,13 +412,13 @@
 
 #### Currency
 
-| Value | Description |
-| ----- | ----------- |
-| USD   | US Dollars  |
-| BTC   | Bitcoin     |
-| ETH   | Ether       |
-| MATIC | Polygon     |
-| SOL   | Solana      |
+| Value          | Description |
+| -------------- | ----------- |
+| USD            | US Dollars  |
+| ETH            | Ether       |
+| MATIC          | Polygon     |
+| USDC\_ETHEREUM | USDC        |
+| USDC\_POLYGON  | USDC        |
 
 #### Direction
 

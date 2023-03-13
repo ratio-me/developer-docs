@@ -2,7 +2,7 @@
 
 ## Overview
 
-Most of our APIs require a form of user authentication, for which we have provided several means of obtaining that authentication.
+Most of our APIs require a form of user authentication, for which we have provided several means of obtaining that authentication, any of which can be provided in any order.
 
 Crypto Wallet authentication allows you to have a user sign in with their crypto wallet by performing a signing transaction. Email and SMS OTP will send one-time codes to the method specified.
 
@@ -16,7 +16,7 @@ When a `JWT` nears expiry, we will refresh it in the background and provide you 
 If you encounter this header, you should begin using the new `JWT`.
 {% endhint %}
 
-## Primary Auth Factors
+## Auth Factors
 
 {% content-ref url="crypto-wallet.md" %}
 [crypto-wallet.md](crypto-wallet.md)
@@ -25,8 +25,6 @@ If you encounter this header, you should begin using the new `JWT`.
 {% content-ref url="email-otp.md" %}
 [email-otp.md](email-otp.md)
 {% endcontent-ref %}
-
-## Secondary Auth Factors
 
 {% content-ref url="sms-otp.md" %}
 [sms-otp.md](sms-otp.md)

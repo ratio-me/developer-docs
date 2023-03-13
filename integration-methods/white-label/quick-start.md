@@ -2,11 +2,15 @@
 
 ## Auth
 
-Most of our APIs require a user authenticated JWT token to be passed in the header. We have several primary and secondary authentication factors available, for the purposes of this guide we'll focus on Email and SMS One-Time Passwords.
+Most of our APIs require a user-authenticated JWT token to be passed in the header. We have several authentication factors available, for the purposes of this guide, we'll focus on Email and SMS One-Time Passwords.&#x20;
+
+{% hint style="info" %}
+Check out our [Wallet Auth Reference](../../reference/api/auth/crypto-wallet.md) for a detailed explanation of those APIs.
+{% endhint %}
 
 ### Email OTP
 
-To make your first request, let's start by performing an email OTP authentication. The first step requires you to provide an email address and in response you will receive an email id. The ID you are given helps us link the code to an auth request.
+Let's start by performing an email OTP authentication to make your first request. The first step requires you to provide an email address and in response, you will receive an email id. The ID you are given helps us link the code to an auth request.
 
 **API**
 
@@ -38,8 +42,9 @@ To make your first request, let's start by performing an email OTP authenticatio
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
-curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:send' \
---header 'ratio-client-id: {YOUR CLIENT ID}' \
+curl --location --request POST 'https://api.ratio.me/v1/auth/otp/email:send' \
+--header 'ratio-client-id: <YOUR_CLIENT_ID>' \
+--header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "emailAddress":"ratiouser@example.com"
@@ -70,7 +75,8 @@ After issuing this first request, the user will receive an email with a code in 
 {% tab title="Response" %}
 ```json
 {
-    "sessionJwt": "eyJ............"
+    "sessionJwt": "eyJ............",
+    "emailMask": "rat...@example.com"
 }
 ```
 {% endtab %}
@@ -82,13 +88,14 @@ After issuing this first request, the user will receive an email with a code in 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
-curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:authenticate' \
---header 'ratio-client-id: {YOUR CLIENT ID}' \
+curl --location --request POST 'https://api.ratio.me/v1/auth/otp/email:authenticate' \
+--header 'ratio-client-id: <YOUR_CLIENT_ID>' \
+--header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "otp": "123456",
     "emailId": "email-test-01234abc-0000-0000-0000-0123456789"
-}'sh
+}'
 ```
 {% endcode %}
 {% endtab %}
@@ -96,7 +103,7 @@ curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/email:a
 
 ### SMS OTP
 
-Many of our APIs require two factors of authentication, in this case we'll use SMS to provide us a one time code as a form of verification. The first step is to provide the user's phone number so that they may be sent a code. In the subsequent requests, you want to make sure you set your Authorization header to include the JWT you received from the email authentication. Doing so allows the SMS authentication to be joined with the Email session for a verifiable multi-factor session.
+Many of our APIs require two factors of authentication, in this case, we'll use SMS to provide us with a one-time code as a form of verification. The first step is to give the user's phone number so that they may be sent a code. In the subsequent requests, you want to ensure you set your Authorization header to include the JWT you received from the email authentication. Doing so allows the SMS authentication to be joined with the Email session for a verifiable multi-factor session.
 
 **API**
 
@@ -117,6 +124,7 @@ Many of our APIs require two factors of authentication, in this case we'll use S
 ```json
 {
     "phoneId": "phone-number-test-01234abc-0000-0000-0000-0123456789",
+    "phoneMask": "1234"
 }
 ```
 {% endtab %}
@@ -128,9 +136,10 @@ Many of our APIs require two factors of authentication, in this case we'll use S
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
-curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:send' \
+curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:send' \
 --header 'Authorization: Bearer eyJ......' \
---header 'ratio-client-id: {YOUR CLIENT ID}' \
+--header 'ratio-client-id: <YOUR_CLIENT_ID>' \
+--header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "phoneNumber": "+14165551234"
@@ -172,8 +181,9 @@ After the first request is sent, the user should receive a code on their mobile 
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
-curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:authenticate' \
---header 'ratio-client-id: {YOUR CLIENT ID}' \
+curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:authenticate' \
+--header 'ratio-client-id: <YOUR_CLIENT_ID>' \
+--header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
 --header 'Authorization: Bearer eyJ......' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -190,6 +200,12 @@ curl --location --request POST 'https://api.staging.ratio.me/v1/auth/otp/sms:aut
 ### Create a new user
 
 At this point you now have an authenticated user session, we will use that token to create a user on Ratio. Assuming you've gathered the necessary data, submit the user information to Ratio to create that user. In the request, specifying that the user has accepted the terms implies that you have presented to the user the following term (link) and that they have accepted them.
+
+{% hint style="info" %}
+Creating a user requires a verified phone number through SMS, and this phone number must match the phone number on the Create User request.
+
+Additionally, if you authenticated with an email address, it also must match the one on the Create User request.
+{% endhint %}
 
 **API**
 
@@ -234,7 +250,7 @@ At this point you now have an authenticated user session, we will use that token
 {% tab title="cURL" %}
 {% code overflow="wrap" %}
 ```shell
-curl --location --request POST 'https://api.staging.ratio.me/v1/users' \
+curl --location --request POST 'https://api.ratio.me/v1/users' \
 --header 'ratio-client-id: {YOUR CLIENT ID}' \
 --header 'Authorization: Bearer eyJ.....' \
 --header 'Content-Type: application/json' \
