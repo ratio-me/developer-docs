@@ -94,3 +94,40 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 ```
 {% endtab %}
 {% endtabs %}
+
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:addToUser" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
+{% endswagger %}
+
+{% tabs %}
+{% tab title="Request" %}
+```json
+{
+    "walletAddress": "0x0000000000000000000000000000000000000000",
+    "walletNetwork": "ETHEREUM",
+}
+```
+{% endtab %}
+
+{% tab title="Response" %}
+```json
+{}
+```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="cURL" %}
+```shell
+curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:addToUser' \
+--header 'ratio-client-id: <YOUR_CLIENT_ID>' \
+--header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "walletAddress": "<WALLET_ADDRESS>",
+    "walletNetwork": "<ETHEREUM_OR_POLYGON>",
+}'
+```
+{% endtab %}
+{% endtabs %}
