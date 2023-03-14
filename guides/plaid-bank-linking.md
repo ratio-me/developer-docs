@@ -10,8 +10,8 @@ Note: For detailed examples, check out our [API documentation](../reference/api/
 
 ### Plaid Link
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:requestLink" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:requestLink" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 You now have a link token that looks something like this: `link-sandbox-ab12c3d4-0000-123a-987f-26e621c2ee51`. This token needs to be provided to Plaid through one of several methods:
@@ -32,8 +32,8 @@ You can also launch the Plaid Link flow inside a [webview](https://plaid.com/doc
 
 Now that you have a public token, you can proceed with the next step, which is activating the link between Ratio and Plaid.&#x20;
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:activateLink" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:activateLink" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 If you receive a successful response, the bank account has been linked, and you may proceed to make purchases.
@@ -42,6 +42,6 @@ If you receive a successful response, the bank account has been linked, and you 
 
 Plaid Links can expire or disconnect from time to time, possibly at the request of the user or the financial institution. If a user wishes to perform a transaction, but the bank link has been disconnected, you will receive a response indicating such. To repair this, request an update token and go through the Plaid flow again.&#x20;
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}:requestLink" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}:requestLink" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}

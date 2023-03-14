@@ -6,8 +6,8 @@ Subscribe to Ratio's webhooks to get automatic updates on resources such as KYC,
 
 The first thing you need to do is to create a webhook. You should call our [Webhook APIs](../reference/api/webhook-registrations.md) with your <mark style="color:orange;">Client ID</mark> and <mark style="color:orange;">Client Secret</mark> to do this. This endpoint requires a URL and a list of subscribed events; in return, it will provide you with a <mark style="color:green;">secret</mark>.&#x20;
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/webhooks" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/webhooks" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% hint style="info" %}

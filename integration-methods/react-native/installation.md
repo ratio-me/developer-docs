@@ -4,8 +4,6 @@ description: Follow the steps below to install the Ratio React Native Library
 
 # Installation
 
-
-
 <figure><img src="https://img.shields.io/npm/v/@ratio.me/ratio-react-native-library?color=blue&#x26;style=flat-square" alt="Library version"><figcaption></figcaption></figure>
 
 `npm install @ratio.me/ratio-react-native-library`
@@ -21,8 +19,6 @@ Our library has a peer dependancy on the following\
 \- `react-native-webview: "11.x"` \
 \- `react-native-plaid-link-sdk: "9.x"`\
 \- `react-native-svg: "12.x || 13.x"`
-
-
 
 This means you must add `react-native-webview,` `react-native-svg` , and `react-native-plaid-link-sdk`as dependancies by running the following
 
@@ -51,9 +47,3 @@ Read more about `react-native-plaid-link-sdk` [here](https://plaid.com/docs/link
 {% hint style="warning" %}
 You must configure the Plaid SDK to work with OAuth. Please follow the steps [here](plaid-oauth-support.md)
 {% endhint %}
-
-
-
-
-
-#### **``**

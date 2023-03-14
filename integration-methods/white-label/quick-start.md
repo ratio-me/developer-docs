@@ -14,8 +14,8 @@ Let's start by performing an email OTP authentication to make your first request
 
 **API**
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/email:send" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/email:send" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
@@ -58,8 +58,8 @@ After issuing this first request, the user will receive an email with a code in 
 
 **API**
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/email:authenticate" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/email:authenticate" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
@@ -107,8 +107,8 @@ Many of our APIs require two factors of authentication, in this case, we'll use 
 
 **API**
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
@@ -153,8 +153,8 @@ After the first request is sent, the user should receive a code on their mobile 
 
 **API**
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:authenticate" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:authenticate" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
@@ -209,8 +209,8 @@ Additionally, if you authenticated with an email address, it also must match the
 
 **API**
 
-{% swagger src="https://api.staging.ratio.me/v1/api-docs" path="/v1/users" method="post" %}
-[https://api.staging.ratio.me/v1/api-docs](https://api.staging.ratio.me/v1/api-docs)
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users" method="post" %}
+[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
 {% tabs %}
