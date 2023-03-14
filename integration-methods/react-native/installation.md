@@ -28,7 +28,7 @@ npm install react-native-svg --save
 npm install react-native-plaid-link-sdk --save
 ```
 
-`or`
+or
 
 ```
 yarn add react-native-webview
