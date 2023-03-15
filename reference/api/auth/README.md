@@ -16,6 +16,10 @@ When a `JWT` nears expiry, we will refresh it in the background and provide you 
 If you encounter this header, you should begin using the new `JWT`.
 {% endhint %}
 
+{% hint style="info" %}
+Making calls to read (`GET`) APIs only require a single form of authentication by a user, whether it be wallet signing, SMS, or Email. However, you will require MFA to make a write call (`POST`,`PUT`, etc.) for things such as adding a wallet or sending a transaction.
+{% endhint %}
+
 ## Auth Factors
 
 {% content-ref url="crypto-wallet.md" %}
