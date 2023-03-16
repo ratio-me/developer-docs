@@ -293,7 +293,7 @@
 | state       | string                             | The state of the user's address                    | Yes      |
 | postalCode  | string                             | The postal code of the user's address              | Yes      |
 | nationality | string                             | The nationality of the user                        | Yes      |
-| occupation  | string                             | The occupation of the user                         | Yes      |
+| occupation  | string                             | The occupation of the user                         | No       |
 
 #### UpdateWalletRequest
 
