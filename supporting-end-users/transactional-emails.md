@@ -6,7 +6,9 @@ We will occasionally need to send end-users transactional emails, in order to ke
 
 Our emails are designed to communicate trusted interactions taking place directly with Ratio. As always our goal is to support your relationship with end users.
 
-Here is a comprehensive list of the transactional emails we send and the reason for each.
+To view the design of these emails, please [click here](https://www.figma.com/file/OvpmTRgaGaNa9Ip5SkrL5p/Ratio-Customer-Emails?t=nsRVeTz7MBuYAjST-1).&#x20;
+
+Here is a comprehensive description of the transactional emails we send and the reason for each.
 
 ### Email Verification
 
