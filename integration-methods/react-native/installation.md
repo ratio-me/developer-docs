@@ -49,5 +49,9 @@ Read more about `react-native-svg` [here](https://github.com/software-mansion/re
 Read more about `react-native-plaid-link-sdk` [here](https://plaid.com/docs/link/react-native/)
 
 {% hint style="warning" %}
+If your application requires that external traffic is whitelisted, please reach out to us for a list of domains that will need to be whitelisted in your application package.  The list includes OAuth connected banks such as Chase.
+{% endhint %}
+
+{% hint style="warning" %}
 You must configure the Plaid SDK to work with OAuth. Please follow the steps [here](plaid-oauth-support.md)
 {% endhint %}
