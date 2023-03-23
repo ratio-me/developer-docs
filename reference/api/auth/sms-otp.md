@@ -1,6 +1,12 @@
 # 📲 SMS OTP
 
+Our SMS APIs allow the sending of an SMS one-time code to a user, then obtaining that code for verification.
 
+{% hint style="info" %}
+Note: Phone numbers need to be in E.164 format, ie. `+14165551234`
+
+If they are not, you will receive a 400 when making an SMS Send call.
+{% endhint %}
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
