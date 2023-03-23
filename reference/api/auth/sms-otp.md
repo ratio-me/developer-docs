@@ -52,6 +52,8 @@ curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:send' \
 {% endtab %}
 {% endtabs %}
 
+Once you receive the one-time code from the user, send it as well as the `phoneId` you received in the first response to the `sms:authenticate` endpoint to obtain a `JWT`.
+
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:authenticate" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
