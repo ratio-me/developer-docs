@@ -4,13 +4,13 @@
 
 Authenticating with a crypto wallet requires two steps to authenticate a user. The first step is to retrieve a challenge phrase to be signed with the user's wallet, and then a second call provides that signature with that wallet address. This will return you an authenticated JWT.
 
-{% hint style="info" %}
-Our wallet-signing APIs currently support either <mark style="color:blue;">`ETHEREUM`</mark> or <mark style="color:purple;">`POLYGON`</mark> wallets, and require you to provide your Client ID in the header so that the user's session can be appropriately attributed to you.
-{% endhint %}
-
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:start" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
+
+{% hint style="info" %}
+Always use <mark style="color:blue;">`ETHEREUM`</mark>as the "walletNetwork". This will allow your users to interact with any supported EVM network. We currently support<mark style="color:blue;">`ETHEREUM`</mark> and <mark style="color:purple;">`POLYGON`</mark>.&#x20;
+{% endhint %}
 
 {% tabs %}
 {% tab title="Request" %}
