@@ -5,7 +5,11 @@ Our SMS APIs allow the sending of an SMS one-time code to a user, then obtaining
 {% hint style="info" %}
 Note: Phone numbers need to be in E.164 format, ie. `+14165551234`
 
-If they are not, you will receive a 400 when making an SMS Send call.
+If they are not, you will receive a 400 error when making an SMS Send call.
+{% endhint %}
+
+{% hint style="info" %}
+Note: We only support US mobile phone numbers, any other country or phone type will be rejected and you will receive a 400 error.
 {% endhint %}
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
