@@ -282,18 +282,18 @@
 
 #### SubmitKycRequest
 
-| Name        | Type                               | Description                                        | Required |
-| ----------- | ---------------------------------- | -------------------------------------------------- | -------- |
-| dateOfBirth | string                             | The date of birth of the user (Format: YYYY-MM-DD) | Yes      |
-| idType      | [IdType](types-glossary.md#idtype) | The type of ID                                     | Yes      |
-| idNumber    | string                             | The number of ID                                   | Yes      |
-| line1       | string                             | The first address line of the user                 | Yes      |
-| line2       | string                             | The second address line of the user                | No       |
-| city        | string                             | The city of the user's address                     | Yes      |
-| state       | string                             | The state of the user's address                    | Yes      |
-| postalCode  | string                             | The postal code of the user's address              | Yes      |
-| nationality | string                             | The nationality of the user                        | Yes      |
-| occupation  | string                             | The occupation of the user                         | No       |
+| Name        | Type                               | Description                                                                    | Required |
+| ----------- | ---------------------------------- | ------------------------------------------------------------------------------ | -------- |
+| dateOfBirth | string                             | The date of birth of the user (Format: YYYY-MM-DD)                             | Yes      |
+| idType      | [IdType](types-glossary.md#idtype) | The type of ID                                                                 | Yes      |
+| idNumber    | string                             | The number of ID                                                               | Yes      |
+| line1       | string                             | The first address line of the user                                             | Yes      |
+| line2       | string                             | The second address line of the user                                            | No       |
+| city        | string                             | The city of the user's address                                                 | Yes      |
+| state       | string                             | The state of the user's address. (Format: 2-Letter state abbreviation. ex: CA) | Yes      |
+| postalCode  | string                             | The postal code of the user's address                                          | Yes      |
+| nationality | string                             | The nationality of the user                                                    | No       |
+| occupation  | string                             | The occupation of the user                                                     | No       |
 
 #### UpdateWalletRequest
 
