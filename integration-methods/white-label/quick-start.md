@@ -199,7 +199,7 @@ curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:authenticat
 
 ### Create a new user
 
-At this point you now have an authenticated user session, we will use that token to create a user on Ratio. Assuming you've gathered the necessary data, submit the user information to Ratio to create that user. In the request, specifying that the user has accepted the terms implies that you have presented to the user the following term (link) and that they have accepted them.
+At this point you now have an authenticated user session, we will use that token to create a user on Ratio. Assuming you've gathered the necessary data, submit the user information to Ratio to create that user. In the request, specifying that the user has accepted the terms implies that you have presented to the user the following term ([link](https://www.ratio.me/legal/ratio-labs-usa-inc-terms-of-service)) and that they have accepted them.
 
 {% hint style="info" %}
 Creating a user requires a verified phone number through SMS, and this phone number must match the phone number on the Create User request.
