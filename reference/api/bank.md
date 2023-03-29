@@ -16,6 +16,10 @@ There are three steps to linking a user's bank account:
 Note: Sometimes bank accounts can become disconnected and require the user to log in once more. We provide an update link token endpoint for this exact reason.
 {% endhint %}
 
+{% hint style="warning" %}
+You will need to provide us with a redirect URI so that we can add it to Plaid
+{% endhint %}
+
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:requestLink" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
