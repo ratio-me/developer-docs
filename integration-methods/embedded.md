@@ -114,7 +114,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 {% endtabs %}
 
 {% hint style="info" %}
-It is important to use the `ratio-client-session-id` header in this instance, this allows us to properly bridge the embedded session with the authenticated user.
+It is important to use the `ratio-client-session-id` header in this instance, and when calling `cryptoWallet:authenticate`, this allows us to properly bridge the embedded session with the authenticated user.
 {% endhint %}
 
 When you receive a successful authentication, you can proceed to the final bridging step.
