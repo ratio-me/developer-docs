@@ -12,6 +12,10 @@ Authenticating with a crypto wallet requires two steps to authenticate a user. T
 Always use <mark style="color:blue;">`ETHEREUM`</mark>as the "walletNetwork". This will allow your users to interact with any supported EVM network. We currently support<mark style="color:blue;">`ETHEREUM`</mark> and <mark style="color:purple;">`POLYGON`</mark>.&#x20;
 {% endhint %}
 
+{% hint style="warning" %}
+If you're calling the Crypto Wallet endpoints for the purposes of starting a **Client Session**, make sure you send the `ratio-client-session-id` header, rather than the `ratio-client-id` and `ratio-client-secret` headers.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Request" %}
 ```json
