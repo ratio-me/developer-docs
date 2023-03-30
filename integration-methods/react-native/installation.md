@@ -53,5 +53,5 @@ If your application requires that external traffic is whitelisted, please reach 
 {% endhint %}
 
 {% hint style="warning" %}
-You must configure the Plaid SDK to work with OAuth. Please follow the steps [here](plaid-oauth-support.md)
+You must configure the Plaid SDK to work with OAuth. Please follow the steps [here](../../guides/plaid-bank-linking/plaid-oauth-support.md)
 {% endhint %}

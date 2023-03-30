@@ -5,17 +5,17 @@ description: Support Oauth Insitutions and more
 # Plaid OAuth Support
 
 {% hint style="success" %}
-Make sure that you have installed **** [`react-native-plaid-link-sdk`](installation.md)``
+Make sure that you have installed **** [`react-native-plaid-link-sdk`](../../integration-methods/react-native/installation.md)``
 {% endhint %}
 
 {% hint style="info" %}
-In order to support the Plaid OAuth flow on iOS you must be able to accept Universal Links.  On Android you must provide Android Package Name. See below for instructions.
+To support the Plaid OAuth flow on iOS you must be able to accept Universal Links.  On Android, you must provide Android Package Name. See below for instructions.
 {% endhint %}
 
 ## Tasks
 
-* [ ] iOS: Provide your redirect URI to the Ratio team so that we can add it to our configuration.
-* [ ] Android: Provide your app's Android Package Name to the Ratio team so that we can add it to our configuration
+* [ ] Browser or iOS: Provide your **redirect URI** to the Ratio team so that we can add it to our configuration.
+* [ ] Android: Provide your app's **Android Package Name** to the Ratio team so that we can add it to our configuration
 
 ## Plaid OAuth Institutions &#x20;
 
@@ -82,7 +82,7 @@ Provide your redirect URI to the Ratio team so that we can add it to our configu
 
 ## Android
 
-Provide your Android Package Name to the [`RatioComponent`](session-token-and-wallet-signing.md)``
+Provide your Android Package Name to the [`RatioComponent`](../../integration-methods/react-native/session-token-and-wallet-signing.md)``
 
 {% hint style="success" %}
 Provide your app's Android Package Name to the Ratio team so that we can add it to our configuration

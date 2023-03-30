@@ -5,7 +5,7 @@ We use Plaid to enable users to [link](https://plaid.com/plaid-link/) their bank
 There are several steps involved in linking a bank account with Plaid, the first of which requires you to request a Link Token on behalf of the user.
 
 {% hint style="info" %}
-Note: For detailed examples, check out our [API documentation](../reference/api/bank.md).
+Note: For detailed examples, check out our [API documentation](../../reference/api/bank.md).
 {% endhint %}
 
 ### Plaid Link

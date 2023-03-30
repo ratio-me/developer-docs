@@ -8,7 +8,6 @@
 * [Browser Based](integration-methods/embedded.md)
 * [React Native](integration-methods/react-native/README.md)
   * [Installation](integration-methods/react-native/installation.md)
-  * [Plaid OAuth Support](integration-methods/react-native/plaid-oauth-support.md)
   * [Session Token and Wallet Signing](integration-methods/react-native/session-token-and-wallet-signing.md)
   * [Example](integration-methods/react-native/example.md)
   * [Reference](integration-methods/react-native/reference.md)
@@ -37,7 +36,8 @@
 
 ## Guides
 
-* [Plaid Bank Linking](guides/plaid-bank-linking.md)
+* [Plaid Bank Linking](guides/plaid-bank-linking/README.md)
+  * [Plaid OAuth Support](guides/plaid-bank-linking/plaid-oauth-support.md)
 * [Account Linking](guides/account-linking.md)
 
 ## Supporting End Users

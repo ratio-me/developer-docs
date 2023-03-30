@@ -4,7 +4,7 @@
 
 The following endpoints provide APIs to allow you to manage a user's bank connections and perform actions with those bank accounts, for example, ACH transactions.
 
-To understand how we link bank accounts with Plaid, check out our documentation on [Plaid Bank Linking](../../guides/plaid-bank-linking.md).
+To understand how we link bank accounts with Plaid, check out our documentation on [Plaid Bank Linking](../../guides/plaid-bank-linking/).
 
 There are three steps to linking a user's bank account:
 
@@ -17,7 +17,7 @@ Note: Sometimes bank accounts can become disconnected and require the user to lo
 {% endhint %}
 
 {% hint style="warning" %}
-You will need to provide us with a redirect URI so that we can add it to Plaid
+You will need to provide us with a **redirect URI** so that we can add it to Plaid
 {% endhint %}
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:requestLink" method="post" %}

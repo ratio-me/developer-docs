@@ -12,4 +12,4 @@ Once you have your JWT, include that in a standard `Authorization: Bearer <jwt>`
 
 You can use our [User](../../reference/api/users.md) endpoints to create a user account with Ratio or our [Wallet](../../reference/api/wallets.md) APIs to add deposit wallets to a user's account.
 
-If you want to use our [Bank](../../reference/api/bank.md) APIs to purchase crypto from fiat in a user's bank account, you need to request a bank link token, which you need to [provide to Plaid](../../guides/plaid-bank-linking.md) to perform a token exchange flow with Ratio.
+If you want to use our [Bank](../../reference/api/bank.md) APIs to purchase crypto from fiat in a user's bank account, you need to request a bank link token, which you need to [provide to Plaid](../../guides/plaid-bank-linking/) to perform a token exchange flow with Ratio.
