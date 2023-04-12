@@ -6,6 +6,14 @@ We use Plaid to enable users to [link](https://plaid.com/plaid-link/) their bank
 Note: For detailed examples of the API calls below, check out our [API documentation](../../reference/api/bank.md).
 {% endhint %}
 
+{% hint style="warning" %}
+You will need to provide us with a **redirect URI** so that we can add it to Plaid
+
+If you are building an Android app, you also need to provide us with the **Android Package Name**
+
+These values you send to Ratio need to match what you send in your `requestLink` calls.
+{% endhint %}
+
 ## Requesting a Link
 
 The first step in connecting a user's bank account is to request a [Link Token](../../reference/api/types-glossary.md#requestbanklinkresponse) from our API, then pass that Link Token into Plaid's SDK.
