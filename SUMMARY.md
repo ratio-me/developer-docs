@@ -29,6 +29,7 @@
   * [👥 Users](reference/api/users.md)
   * [👛 Wallets](reference/api/wallets.md)
   * [🪝 Webhook Registrations](reference/api/webhook-registrations.md)
+  * [🖊 Custom Headers](reference/api/custom-headers.md)
   * [🔎 Types Glossary](reference/api/types-glossary.md)
 * [Supported Currencies](reference/supported-currencies.md)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
