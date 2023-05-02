@@ -6,8 +6,6 @@ Ratio handles the entire scope of compliance on your behalf.
 
 You can ask a user to link their bank account at any point after their user account is created; even before you do KYC.&#x20;
 
-The reason to link a user's bank account in advance of KYC, is because we underwrite customers ACH limits in the background using their bank account transaction history. Linking the user's bank account early in the flow allows us to process their bank account transaction history in the background while they are completing the KYC flow.
-
 ## KYC
 
 {% hint style="info" %}
@@ -21,10 +19,11 @@ All users of the Ratio service must provide information so that we can verify th
 * Social Security Number
 * Current Address
 
-There are 2 common reasons why KYC may fail:
+There are 3 common reasons why KYC may fail:
 
 1. The user has mistyped their Date of Birth
 2. The user has recently moved, and therefore the address provided does not match the addresses available from our underlying data providers
+3. The user has created an account using a phone number that is not under their name
 
 If we cannot match any customer-provided information with their SSN, we recommend displaying a generic failure message to the user.  At this point, you should only take action on that user file in the event that the user reaches out to your support team.  In most cases, when no customer information can be matched to the provided SSN, this is not a real user.
 
