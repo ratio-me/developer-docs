@@ -38,7 +38,7 @@ Please see our list of [supported fiat currencies and crypto tokens](../../refer
 
 ## Initiate ACH
 
-When initiating a crypto purchase, you must present the purchase confirmation according to the Ratio [UI requirements](../../reference/ui-requirements.md).
+When initiating a crypto purchase, you must present a transaction confirmation and required customer notices according to the Ratio [UI requirements](../../reference/ui-requirements.md).
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}/ach" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
