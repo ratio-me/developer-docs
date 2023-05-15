@@ -18,7 +18,7 @@ End Users must always be able to access the End User Terms from within your appl
 
 ## Transaction Confirmation and Receipts
 
-The following table outlines the data that must be presented to End Users during various stages of the Buy Crypto flow.
+The following table outlines the data copy that must be presented to users during purchase confirmation, as well as when viewing transaction detail for a pending or completed purchase.
 
 Font must be no less than 8pt and be clearly legible against any background color or patterns
 
