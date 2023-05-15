@@ -1,29 +1,29 @@
 ---
-description: >-
-  Ratio provides software and APIs for building fiat to crypto payment flows
-  into any application.
+description: Fiat payments infrastructure for the next generation of onchain applications
 ---
 
-# Introduction
+# What is Ratio?
 
-## Requesting Access
+## Ratio
 
-All API requests require a client ID and most also require a client secret. You can obtain this information from Ratio directly by reaching out to [team@ratio.me](mailto:team@ratio.me).
+Crypto businesses use Ratio to embed fiat payments deep into their user experience. Ratio helps you on/off ramp funds, buy any token using a bank account, and enable fiat payment methods for your NFT marketplace.&#x20;
 
-## Integration Methods
+## Why Use Ratio?
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Browser Based</td><td></td><td></td><td><a href="integration-methods/react-native/">react-native</a></td></tr><tr><td>React Native</td><td></td><td></td><td><a href="integration-methods/react-native/">react-native</a></td></tr><tr><td>White Label</td><td></td><td></td><td><a href="integration-methods/white-label/">white-label</a></td></tr></tbody></table>
+Interacting with fiat payment rails is challenging. Most crypto teams don't have the experience or desire to build and operate fiat payment execution, risk, and compliance systems.
 
-## Base URLs
+### Developer-focused Tooling
 
-Staging: [https://api.staging.ratio.me/](https://api.staging.ratio.me/)
+We provide a variety of tools, including full API access, so that you can build at whatever layer of the stack makes sense for your application.  We provide a sensible level of abstraction from the underlying concerns of payment execution, risk, and compliance, so that you can focus on building fiat payments deep into your user experience.&#x20;
 
-Production:  [https://api.ratio.me/](https://api.staging.ratio.me/)
+### Intelligent Payment Routing
 
-## API Reference
+#### Local Payment Rails
 
-Dive a little deeper and checkout our [Postman Collection](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace) or start exploring our API reference to get an idea of everything that's possible with the API
+The #1 issue with fiat on/off ramping is that most providers rely on card networks to process payments.  Card networks are incompatible with crypto on/off ramping because card issuers have the authority to block crypto purchases. Crypto purchases with credit and debit cards fail \~60% of the time.&#x20;
 
-{% content-ref url="reference/api/" %}
-[api](reference/api/)
-{% endcontent-ref %}
+Ratio uses local payment rails (starting with ACH in the United States) to enable on/off ramping with authorization rates over 99%.
+
+#### Visa/Mastercard
+
+While the Visa/Mastercard networks are not a reliable method of payment for on/off ramping; they are still a reliable way to accept fiat payments for digital goods. Ratio has partnered with Checkout.com to enable NFT marketplace payments at authorization rates over 84%. This product will be in private beta in June. Contact us to learn more.

@@ -1,22 +1,18 @@
 # Plaid Bank Linking
 
-We use Plaid to enable users to [link](https://plaid.com/plaid-link/) their bank accounts to Ratio, which they can use to purchase crypto from fiat in their bank.
+Users will link their bank account to Ratio using Plaid. You do not need to set up an account with Plaid.
 
 {% hint style="info" %}
-Note: For detailed examples of the API calls below, check out our [API documentation](../../reference/api/bank.md).
+Note: For detailed examples of the API calls below, check out our [API documentation](broken-reference).
 {% endhint %}
 
 {% hint style="warning" %}
-You will need to provide us with a **redirect URI** so that we can add it to Plaid
-
-If you are building an Android app, you also need to provide us with the **Android Package Name**
-
-These values you send to Ratio need to match what you send in your `requestLink` calls.
+If you are building an iOS or Web application you need to provide us with a **redirect URI** so that we can configure Plaid to properly redirect users to your application. If you are building an Android app, you need to provide us with the **Android Package Name.** These values need to match what you send in your`requestLink` calls
 {% endhint %}
 
-## Requesting a Link
+## Requesting a Plaid Link Token
 
-The first step in connecting a user's bank account is to request a [Link Token](../../reference/api/types-glossary.md#requestbanklinkresponse) from our API, then pass that Link Token into Plaid's SDK.
+The first step in connecting a user's bank account is to request a [Link Token](../../reference/types-glossary.md#requestbanklinkresponse) from our API, then pass that Link Token into Plaid's SDK.
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:requestLink" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
@@ -26,10 +22,10 @@ You now have a link token that looks something like this: `link-sandbox-ab12c3d4
 
 ### SDKs
 
-Below you will find links to the various SDKs Plaid provides to launch Plaid Link.
+Below you will find links to the Plaid SDKs used to launch the Plaid bank account authentication flow.
 
 {% hint style="info" %}
-Note: You only need to install the UI components into your app and handle events such as onSuccess. You do **not** need to go through any Plaid dashboard or account configuration, simply use the link token provided by Ratio.
+Note: You do not need to sign up for a Plaid account.  You will use the link token provided by Ratio in order to initiate the Plaid SDK from within your application.
 {% endhint %}
 
 #### React Native SDK
@@ -58,23 +54,23 @@ Note: You only need to install the UI components into your app and handle events
 * Github Repo ([https://github.com/plaid/react-plaid-link](https://github.com/plaid/react-plaid-link))
 * Documentation ([https://plaid.com/docs/link/web/](https://plaid.com/docs/link/web/))
 
-#### Webview
+## Activate the Plaid Link SDK
 
-You can also launch the Plaid Link flow inside a [webview](https://plaid.com/docs/link/webview/), requiring minimal UI work. To do so,  create a URL like so `https://cdn.plaid.com/link/v2/stable/link.html?isWebview=true&token="GENERATED_LINK_TOKEN"` and open it inside a webview. This will also emit events for you to consume to obtain the public token.
-
-## Activating Link
-
-Now that you have a public token, you can proceed with the next step, which is activating the link between Ratio and Plaid.&#x20;
+Now that you have a public token, you can proceed with the next step, which is to open Plaid Link SDK using the public token you requested from Ratio above.&#x20;
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:activateLink" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
-If you receive a successful response, the bank account has been linked, and you may proceed to make purchases.
+Once you open the Plaid Link SDK, monitor for onSuccess and onExit events.
+
+If onSuccess - the user has successfully linked their bank account and you proceed with adding the bank account to the user account
+
+If onExit - the user did not successfully authenticate their account (closed the Plaid SDK, bank connect was down, etc.) and you should bring them back to the screen that you are launching Plaid from&#x20;
 
 ### Reconnecting Accounts
 
-Plaid Links can expire or disconnect from time to time, possibly at the request of the user or the financial institution. If a user wishes to perform a transaction, but the bank link has been disconnected, you will receive a response indicating such. To repair this, request an update token and go through the Plaid flow again.&#x20;
+Bank account connections can be disconnected from time to time, possibly at the request of the user or the financial institution. If a user wishes to perform a transaction, but the bank link has been disconnected, you will receive a [bankLinkstatus = "LOGIN\_REQUIRED"](https://app.gitbook.com/o/rMOFEmlooWU9OMmsW6eC/s/CUFO0IuHQJVzBX1zbmIL/\~/changes/117/reference/types-glossary#banklinkstatus) . To repair this, request an update token and go through the Plaid flow again.&#x20;
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}:requestLink" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
