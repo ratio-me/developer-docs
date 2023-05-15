@@ -15,7 +15,7 @@ Our Bank account API has four actions
 * [Replace existing bank account](update-bank-account.md)
 * [Remove existing bank account](delete-bank-account.md)
 
-First, [you will need to install the appropriate Plaid SDK ](../../../getting-started.md#below-you-will-find-links-to-the-various-sdks-plaid-provides-to-launch-plaid-link.)for your target device (iOS, Android, Web).
+First, [you will need to install the appropriate Plaid SDK ](<../../../README (1).md#below-you-will-find-links-to-the-various-sdks-plaid-provides-to-launch-plaid-link.>)for your target device (iOS, Android, Web).
 
 You do not need a Plaid account in order to use Ratio because your user is forming a direct relationship with Ratio and Ratio is responsible for all payments, compliance, and risk.
 
@@ -160,7 +160,7 @@ At this point you have two options to notify the user the outcome of their bank 
 
 #### Webhook
 
-Alternatively, you can listen for the bank verification event "BANK\_UPDATED" by subscribing to [webhooks](../../../reference/webhooks/).
+Alternatively, you can listen for the bank verification event "BANK\_UPDATED" by subscribing to [webhooks](../../../integration-methods/webhooks.md).
 
 
 

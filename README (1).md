@@ -12,7 +12,7 @@ Sandbox: _Coming in July. Our React Native SDK is plug and play and does not req
 
 ## Step 2: Select an Implementation Method
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk.</td><td></td><td><a href="integration-guides/api/">api</a></td><td><a href=".gitbook/assets/White Label (5).png">White Label (5).png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications.</td><td></td><td><a href="integration-guides/react-native-sdk/">react-native-sdk</a></td><td><a href=".gitbook/assets/React Native.png">React Native.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk.</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label (5).png">White Label (5).png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications.</td><td></td><td><a href="integration-methods/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native.png">React Native.png</a></td></tr></tbody></table>
 
 ## Step 3: Install the Plaid SDK
 

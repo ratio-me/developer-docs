@@ -24,7 +24,7 @@ You can see more information on our [authentication methods here](broken-referen
 {% hint style="danger" %}
 #### This wallet auth needs to happen with the same wallet used in the create new user flow
 
-If a user is attempting to sign in with a new wallet, please follow our [account linking guide](add-a-new-auth-method-to-an-existing-user.md)
+If a user is attempting to sign in with a new wallet, please follow our [account linking guide](account-linking.md)
 {% endhint %}
 
 Authenticating with a crypto wallet requires two steps
@@ -245,13 +245,13 @@ If a user has completed onboarding they are able to:
 * [Replace an existing bank account](../integration-guides/api/link-and-verify-a-bank-account/update-bank-account.md)
 * [Remove an existing bank account](../integration-guides/api/link-and-verify-a-bank-account/delete-bank-account.md)
 * [Buy crypto](../integration-guides/api/buy-crypto-ach.md)
-* [View their transaction activity](../integration-guides/api/transaction-monitoring.md)
+* [View their transaction activity](../reference/api/activity.md)
 
 ### Scenario 3
 
 In some cases a user may be flagged in our system and prevented from using the application to buy crypto
 
-* [View their transaction activity](../integration-guides/api/transaction-monitoring.md)
+* [View their transaction activity](../reference/api/activity.md)
 * [Re-link a bank account](../integration-guides/api/link-and-verify-a-bank-account/re-link-bank-account.md)
 * [Replace an existing bank account](../integration-guides/api/link-and-verify-a-bank-account/update-bank-account.md)
 * [Remove an existing bank account](../integration-guides/api/link-and-verify-a-bank-account/delete-bank-account.md)

@@ -1,4 +1,4 @@
-# Required End User Consents and Notices
+# UI Requirements
 
 ## Consents
 
@@ -16,7 +16,7 @@ End Users must always be able to access the End User Terms from within your appl
 
 [https://ratio.me/legal/ratio-labs-usa-inc-terms-of-service](https://ratio.me/legal/ratio-labs-usa-inc-terms-of-service)
 
-## Buy Crypto Flow Notices
+## Transaction Confirmation and Receipts
 
 The following table outlines the data that must be presented to End Users during various stages of the Buy Crypto flow.
 

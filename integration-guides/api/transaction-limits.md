@@ -29,4 +29,4 @@ Here is a reference for how we present account limits in our React Native SDK.
 {% endhint %}
 
 * [Buy crypto](buy-crypto-ach.md)
-* [View transaction activity](transaction-monitoring.md)
+* [View transaction activity](../../reference/api/activity.md)

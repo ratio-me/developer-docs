@@ -7,7 +7,7 @@ description: >-
 # User Authentication Methods
 
 {% hint style="info" %}
-Ratio user accounts are accessible across a wide variety of applications. You must [implement Account Linking](../guides/add-a-new-auth-method-to-an-existing-user.md) so that existing Ratio users can link your application to their account and bypass onboarding
+Ratio user accounts are accessible across a wide variety of applications. You must [implement Account Linking](../../../guides/account-linking.md) so that existing Ratio users can link your application to their account and bypass onboarding
 {% endhint %}
 
 

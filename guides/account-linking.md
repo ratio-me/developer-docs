@@ -1,4 +1,4 @@
-# Account Linking
+# Add a new Auth Method to an Existing User
 
 Occasionally, a user will need to link an existing account to a new signing wallet, for example when using a new wallet app on their phone. The following instructions will help you recognize when and how to attach a new wallet to an existing user.
 
