@@ -17,4 +17,4 @@ After assigning a wallet to a created user we have two requirements to initiate 
 * [The user must be KYC approved](kyc.md)
 * [The user must have a verified bank account](link-and-verify-a-bank-account/)
 
-You are free to complete the remaining tasks in any order, however, we recommend assigning the deposit address next, then [KYC](kyc.md), then linking and verifying their bank account.
+You are free to complete the remaining tasks in any order, however we recommend submitting [KYC](kyc.md), then linking and verifying the bank account.
