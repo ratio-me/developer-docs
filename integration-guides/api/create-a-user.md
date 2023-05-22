@@ -11,7 +11,7 @@ To create a new user we require the following user data:
 * Mobile Phone number&#x20;
 
 {% hint style="warning" %}
-Phone numbers need to be in E.164 format, ie. +1 416 555 1234. If they are not, you will receive a 400 error when making an SMS Send call.
+Phone numbers need to be in E.164 format, ie. +14165551234. If they are not, you will receive a 400 error when making an SMS Send call.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -44,9 +44,9 @@ Any one of the three authentication factors below can be used to obtain a sessio
 * Email One-time Passcode
 
 {% hint style="warning" %}
-#### \*SMS OTP must be included as one of the two authentication factors
+#### \*SMS OTP must be included as one of the two authentication factors when creating a user
 
-You can use any combination of SMS + Email or SMS + Wallet to provide second factor authentication. **You cannot use Email + Wallet in any scenario.** Go [here](broken-reference) for more information. If you would like to propose additional authentication methods please contact us.
+You can use any combination of SMS + Email or SMS + Wallet to provide multi-factor authentication. **You cannot use Email + Wallet in this scenario.** Go [here](broken-reference) for more information. If you would like to propose additional authentication methods please contact us.
 {% endhint %}
 
 ### First authentication factor
@@ -59,10 +59,10 @@ If you already let users connect a wallet to your application, you will be able 
 
 Wallet authentication includes two steps:
 
-1. Retrieve a challenge to be signed by the users wallet&#x20;
+1. Retrieve a challenge to be signed by the user's wallet&#x20;
 
 {% hint style="info" %}
-#### Always use Ethereum as the "walletNetwork".&#x20;
+#### Always use "ETHEREUM" as the "walletNetwork".&#x20;
 
 This will allow your users to interact with any supported EVM network. We currently support Ethereum and Polygon.&#x20;
 {% endhint %}
@@ -156,15 +156,15 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 {% endtab %}
 {% endtabs %}
 
-After authenticating the user, you will receive a JWT that must be provided in the header for all subsequent requests within that user session.
+After authenticating the user, you will receive a JWT that must be provided in the Authorization header for all subsequent requests within that user session.
 
 ## Second authentication factor
 
 {% hint style="warning" %}
-#### Reminder: SMS must be one of your authentication factors
+#### Reminder: SMS must be one of your authentication factors to create a user
 {% endhint %}
 
-First we need to send a one-time code to the user using the phone number they provided in sign up.&#x20;
+First, we need to send a one-time code to the user using the phone number they provided during sign-up.&#x20;
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
@@ -204,7 +204,7 @@ curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:send' \
 {% endtab %}
 {% endtabs %}
 
-Once you receive the one-time code send it (with the phone number received in first response) to the sms:authenticate endpoint to obtain a JWT.
+Once you receive the one-time code send it (with the phone id received in the first response) to the sms:authenticate endpoint to obtain a JWT.
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:authenticate" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
@@ -247,7 +247,7 @@ curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:authenticat
 
 ## Create the user
 
-At this point you can create a user
+At this point, you can create a user
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
@@ -261,7 +261,7 @@ After creating a user there are three additional requirements before you can ini
 * [The user must be KYC approved](kyc.md)&#x20;
 * [The user must have a verified bank account](link-and-verify-a-bank-account/)
 
-You are free to complete the remaining tasks in any order, however we recommend the sequence above.
+You are free to complete the remaining tasks in any order, however, we recommend the sequence above.
 
 Our recommended next step is to [assign a deposit address](assign-a-deposit-address.md)
 

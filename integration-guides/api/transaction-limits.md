@@ -6,13 +6,11 @@ description: >-
 
 # Transaction Limits
 
-We recommend polling for the users ACH transaction limits.  The response object for calculateAchlimits is not presenting itself properly below (because Gitbook.. if you know you know). &#x20;
+We recommend polling for the user's ACH transaction limits.  The response object for calculateAchlimits is not presenting itself properly below (because Gitbook.. if you know you know). &#x20;
 
-You will receive 422 status until the limits have been calculated, which will be near instant.
+You will receive `422` status until the limits have been calculated, which will be near instant.
 
 Here is the object:
-
-&#x20;
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}:calculateAchLimits" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)

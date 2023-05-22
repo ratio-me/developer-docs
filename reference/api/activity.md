@@ -28,11 +28,11 @@ If you are going to poll for the crypto status update we recommend every 2 secon
 
 ### If COMPLETE
 
-You can retrieve the `transactionHash`
+You can retrieve the `transactionHash`.
 
 ### If FAILED
 
-you should GET /user and review the flags. There will be a Transaction Processing flag on the account
+You should call `GET /user` and review the flags. There will be a Transaction Processing flag on the account.
 
 ## Fiat Status
 
