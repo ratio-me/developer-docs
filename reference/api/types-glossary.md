@@ -381,13 +381,14 @@
 
 #### Fiat Currencies & Crypto Tokens
 
-| Value          | Description |
-| -------------- | ----------- |
-| USD            | US Dollars  |
-| ETH            | Ether       |
-| MATIC          | Polygon     |
-| USDC\_ETHEREUM | USDC        |
-| USDC\_POLYGON  | USDC        |
+| Value          | Description                         |
+| -------------- | ----------------------------------- |
+| USD            | US Dollars                          |
+| ETH            | Ether                               |
+| MATIC          | Polygon                             |
+| USDC\_ETHEREUM | USDC                                |
+| USDC\_POLYGON  | USDC                                |
+| AMKT\_POLYGON  | Alongside Crypto Market Index (PoS) |
 
 #### Direction
 

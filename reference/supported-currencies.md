@@ -4,12 +4,13 @@ The table below lists all our supported cryptocurrencies, and the networks on wh
 
 #### Crypto
 
-| Token Name | Network  | API Enum Value |
-| ---------- | -------- | -------------- |
-| Ethereum   | Ethereum | ETH            |
-| Polygon    | Polygon  | MATIC          |
-| USDC       | Ethereum | USDC\_ETHEREUM |
-| USDC       | Polygon  | USDC\_POLYGON  |
+| Token Name                          | Network  | API Enum Value |
+| ----------------------------------- | -------- | -------------- |
+| Ethereum                            | Ethereum | ETH            |
+| Polygon                             | Polygon  | MATIC          |
+| USDC                                | Ethereum | USDC\_ETHEREUM |
+| USDC                                | Polygon  | USDC\_POLYGON  |
+| Alongside Crypto Market Index (PoS) | Polygon  | AMKT\_POLYGON  |
 
 #### Fiat
 
