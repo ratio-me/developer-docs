@@ -102,23 +102,11 @@
 
 #### BankAccount
 
-| Name               | Type                                                               | Description                                               | Required |
-| ------------------ | ------------------------------------------------------------------ | --------------------------------------------------------- | -------- |
-| id                 | string                                                             | The unique identifier of the bank account                 | No       |
-| createTime         | string                                                             | The time the bank account connection was created          | No       |
-| updateTime         | string                                                             | The time the bank account connection was last updated     | No       |
-| name               | string                                                             | The name of the bank account                              | No       |
-| mask               | string                                                             | The account number mask                                   | No       |
-| linkStatus         | [BankLinkStatus](types-glossary.md#banklinkstatus)                 | The status of the bank account link to the user           | No       |
-| verificationStatus | [BankVerificationStatus](types-glossary.md#bankverificationstatus) | The status of the bank account user identity verification | No       |
+<table><thead><tr><th width="188">Name</th><th width="211">Type</th><th width="235">Description</th><th>Required</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The unique identifier of the bank account</td><td>No</td></tr><tr><td>createTime</td><td>string</td><td>The time the bank account connection was created</td><td>No</td></tr><tr><td>updateTime</td><td>string</td><td>The time the bank account connection was last updated</td><td>No</td></tr><tr><td>name</td><td>string</td><td>The name of the bank account</td><td>No</td></tr><tr><td>mask</td><td>string</td><td>The account number mask</td><td>No</td></tr><tr><td>linkStatus</td><td><a href="types-glossary.md#banklinkstatus">BankLinkStatus</a></td><td>The status of the bank account link to the user</td><td>No</td></tr><tr><td>verificationStatus</td><td><a href="types-glossary.md#bankverificationstatus">BankVerificationStatus</a></td><td>The status of the bank account user identity verification</td><td>No</td></tr></tbody></table>
 
 #### CalculatedAchLimitsResponse
 
-| Name    | Type                                   | Description                                                 | Required |
-| ------- | -------------------------------------- | ----------------------------------------------------------- | -------- |
-| instant | [AchLimit](types-glossary.md#achlimit) | The ACH limit for transactions processed instantly          | Yes      |
-| daily   | [AchLimit](types-glossary.md#achlimit) | The ACH limit for transactions processed in the last day    | Yes      |
-| weekly  | [AchLimit](types-glossary.md#achlimit) | The ACH limit for transactions processed in the last 7 days | Yes      |
+<table><thead><tr><th>Name</th><th>Type</th><th width="249.33333333333331">Description</th><th>Required</th></tr></thead><tbody><tr><td>instant</td><td><a href="types-glossary.md#achlimit">AchLimit</a></td><td>The ACH limit for transactions processed instantly</td><td>Yes</td></tr><tr><td>daily</td><td><a href="types-glossary.md#achlimit">AchLimit</a></td><td>The ACH limit for transactions processed in the last day</td><td>Yes</td></tr><tr><td>weekly</td><td><a href="types-glossary.md#achlimit">AchLimit</a></td><td>The ACH limit for transactions processed in the last 7 days</td><td>Yes</td></tr></tbody></table>
 
 #### ConnectWalletRequest
 
@@ -311,30 +299,11 @@
 
 #### User
 
-| Name                  | Type                                               | Description                                       | Required |
-| --------------------- | -------------------------------------------------- | ------------------------------------------------- | -------- |
-| id                    | string                                             | The unique identifier of the user                 | No       |
-| createTime            | string                                             | The time the user was created                     | No       |
-| updateTime            | string                                             | The time the user was last updated                | No       |
-| firstName             | string                                             | The first name of the user                        | No       |
-| middleName            | string                                             | The middle name of the user                       | No       |
-| lastName              | string                                             | The last name of the user                         | No       |
-| email                 | string                                             | The email of the user                             | No       |
-| country               | string                                             | The country of the user                           | No       |
-| phone                 | string                                             | The phone number of the user                      | No       |
-| nationality           | string                                             | The nationality of the user                       | No       |
-| occupation            | string                                             | The occupation of the user                        | No       |
-| kyc                   | [Kyc](types-glossary.md#kyc)                       | The KYC information of the user                   | No       |
-| connectedBankAccounts | [\[ BankAccount \]](types-glossary.md#bankaccount) | The array of connected bank accounts for the user | No       |
+<table><thead><tr><th width="210">Name</th><th width="191">Type</th><th width="250">Description</th><th>Required</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The unique identifier of the user</td><td>No</td></tr><tr><td>createTime</td><td>string</td><td>The time the user was created</td><td>No</td></tr><tr><td>updateTime</td><td>string</td><td>The time the user was last updated</td><td>No</td></tr><tr><td>firstName</td><td>string</td><td>The first name of the user</td><td>No</td></tr><tr><td>middleName</td><td>string</td><td>The middle name of the user</td><td>No</td></tr><tr><td>lastName</td><td>string</td><td>The last name of the user</td><td>No</td></tr><tr><td>email</td><td>string</td><td>The email of the user</td><td>No</td></tr><tr><td>country</td><td>string</td><td>The country of the user</td><td>No</td></tr><tr><td>phone</td><td>string</td><td>The phone number of the user</td><td>No</td></tr><tr><td>nationality</td><td>string</td><td>The nationality of the user</td><td>No</td></tr><tr><td>occupation</td><td>string</td><td>The occupation of the user</td><td>No</td></tr><tr><td>kyc</td><td><a href="types-glossary.md#kyc">Kyc</a></td><td>The KYC information of the user</td><td>No</td></tr><tr><td>connectedBankAccounts</td><td><a href="types-glossary.md#bankaccount">[ BankAccount ]</a></td><td>The array of connected bank accounts for the user</td><td>No</td></tr></tbody></table>
 
 #### UserMask
 
-| Name       | Type   | Description                                  | Required |
-| ---------- | ------ | -------------------------------------------- | -------- |
-| id         | string | The unique identifier of the user            | No       |
-| createTime | string | The time the user was created                | No       |
-| updateTime | string | The time the user was last updated           | No       |
-| phoneMask  | string | The last 4 digits of the user's phone number | No       |
+<table><thead><tr><th width="206">Name</th><th>Type</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>The unique identifier of the user</td><td>No</td></tr><tr><td>createTime</td><td>string</td><td>The time the user was created</td><td>No</td></tr><tr><td>updateTime</td><td>string</td><td>The time the user was last updated</td><td>No</td></tr><tr><td>phoneMask</td><td>string</td><td>The last 4 digits of the user's phone number</td><td>No</td></tr></tbody></table>
 
 #### Wallet
 

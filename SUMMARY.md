@@ -46,6 +46,7 @@
 * [UI/UX Starter kit](https://www.figma.com/file/89pkvTfqkMkKuTI0Mrzl7l/UX-Starter-Kit-v1.1?type=design\&node-id=0%3A1\&t=PRCLzsAxfRbkVdFA-1)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
 * [API Specification](https://api.staging.ratio.me/v1/api-docs)
+* [Client Dashboard](reference/client-dashboard.md)
 
 ## Guides
 

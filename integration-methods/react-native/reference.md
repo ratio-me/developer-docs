@@ -87,9 +87,7 @@ const [loading, setLoading] = useState(false)
 
 ```
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="354">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
@@ -107,9 +105,7 @@ const [loading, setLoading] = useState(false)
 }}/>
 ```
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="354">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
@@ -126,9 +122,7 @@ Example
 }}/>
 ```
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="354">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
@@ -146,9 +140,7 @@ Example
 }}/>
 ```
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="354">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
@@ -166,9 +158,7 @@ Example
 }}/>
 ```
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="352">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
@@ -186,9 +176,7 @@ Example
 }}/>
 ```
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="352">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
@@ -196,9 +184,7 @@ Example
 
 A function that is called after the Ratio Modal WebView. There is no default behaviour if not provided. As of writing this documentation this function will be called when the user presses "Return to wallet" in the application. It will then close the React Native modal and then call "onClose"
 
-| TYPE     | REQUIRED |
-| -------- | -------- |
-| function | No       |
+<table><thead><tr><th width="352">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 
