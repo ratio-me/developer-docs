@@ -64,6 +64,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider(provider));
 export default function App() {
   const [loading, setLoading] = React.useState(false);
   const [ratioUser, setRatioUser] = useState(null)
+  const [presetOrder, setPresetOrder] = useState<RatioPresetOrder>(null)
   
   const fetchSessionToken = async () => {
     try {
@@ -116,6 +117,7 @@ export default function App() {
               signature: sign.signature,
             });
           }}
+          presetOrder={presetOrder}
           onPress={() => {
             setLoading(true);
           }}

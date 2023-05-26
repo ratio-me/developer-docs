@@ -70,7 +70,42 @@ Example using Web3.js library
 | -------- | -------- |
 | function | Yes      |
 
+#### `presetOrder`
 
+Since `v0.10.0`
+
+A property that takes a `RatioPresetOrder` object.\
+This is used to allow the order flow to have predetermined values rather than having the enter the Cryptocurrency, or Fiat Amount in the flow manually.
+
+If you do not want to provide this value either omit it or pass in `null`.
+
+See [#ratiopresetorder](reference.md#ratiopresetorder "mention")for more details
+
+Make sure to provide a valid combination for currency and network valid combinations are as follows
+
+| Crypto Network | CryptoCurrencySymbol |
+| -------------- | -------------------- |
+| Ethereum       | ETH                  |
+| Ethereum       | USDC\_ETHEREUM       |
+| Polygon        | MATIC                |
+| Polygon        | USDC\_POLYGON        |
+| Polygon        | AMKT\_POLYGON        |
+
+| TYPE             | REQUIRED |
+| ---------------- | -------- |
+| object or `null` | No       |
+
+Example
+
+```jsx
+<RatioComponent presetOrder={
+              {
+                fiatAmount: 20,
+                cryptoCurrency: CryptoCurrencySymbol.ETH
+              } as RatioPresetOrder
+          }/>
+    
+```
 
 #### **`onPress`**
 
@@ -238,6 +273,27 @@ export interface RatioOrderStatus {
   data: {userId: string, activity: ActivityItem};
   status: 'success' | 'failure';
   error: OrderError;
+}
+```
+
+#### `RatioPresetOrder`
+
+```typescript
+export type RatioPresetOrder = {
+  fiatAmount: number;
+  cryptoCurrency: CryptoCurrencySymbol;
+};
+```
+
+#### `CryptoCurrencySymbol`
+
+```typescript
+export enum CryptoCurrencySymbol {
+  ETH = 'ETH',
+  MATIC = 'MATIC',
+  USDC_ETHEREUM = 'USDC_ETHEREUM',
+  USDC_POLYGON = 'USDC_POLYGON',
+  AMKT_POLYGON = 'AMKT_POLYGON',
 }
 ```
 
