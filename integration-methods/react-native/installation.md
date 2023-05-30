@@ -6,7 +6,7 @@ description: Follow the steps below to install the Ratio React Native Library
 
 <div align="left">
 
-<figure><img src="https://img.shields.io/npm/v/@ratio.me/ratio-react-native-library?color=blue&#x26;style=flat-square" alt="Library version"><figcaption></figcaption></figure>
+<figure><img src="https://img.shields.io/npm/v/@ratio.me/ratio-react-native-library?color=%237EFDCF&#x26;style=flat-square" alt=""><figcaption></figcaption></figure>
 
 </div>
 

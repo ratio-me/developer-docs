@@ -32,6 +32,11 @@
     * [Sign in](integration-guides/react-native-sdk/user-experience/sign-in.md)
     * [Buy crypto](integration-guides/react-native-sdk/user-experience/buy-crypto.md)
     * [Settings & activity](integration-guides/react-native-sdk/user-experience/settings-and-activity.md)
+* [React JS - Alpha](integration-guides/react-js-alpha/README.md)
+  * [Installation](integration-guides/react-js-alpha/installation.md)
+  * [Session Token and Wallet Signing](integration-guides/react-js-alpha/session-token-and-wallet-signing.md)
+  * [Example](integration-guides/react-js-alpha/example.md)
+  * [Release History](integration-guides/react-js-alpha/release-history.md)
 
 ## Reference
 
