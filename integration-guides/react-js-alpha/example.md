@@ -23,8 +23,8 @@ function App() {
         try {
             const requestHeaders: HeadersInit = new Headers();
             requestHeaders.set('Content-Type', 'application/json');
-            requestHeaders.set('ratio-client-id',    clientId || '');
-            requestHeaders.set('ratio-client-secret', clientSecret || '');
+            requestHeaders.set('your-client-id',    clientId || '');
+            requestHeaders.set('your-client-secret', clientSecret || '');
             let sessionTokenResponse = await fetch(
                 'https://api.yourdomain.com/ratio/client/sessions',
                 {
@@ -51,6 +51,7 @@ function App() {
           {isConnected ? (
               <RatioButton 
                   text={'Buy with Ratio'}
+                  redirectUri={'https://yoursite.com/plaid/oauth'}
                   fetchSessionToken={async () => {
                        if(isConnected){
                            return await fetchSessionToken()
