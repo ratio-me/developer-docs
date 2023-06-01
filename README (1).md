@@ -12,17 +12,27 @@ Sandbox: _Coming in July. Our React Native SDK is plug and play and does not req
 
 ## Step 2: Select an Implementation Method
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk.</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label (5).png">White Label (5).png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications.</td><td></td><td><a href="integration-methods/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native.png">React Native.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label (5).png">White Label (5).png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications</td><td></td><td><a href="integration-guides/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native.png">React Native.png</a></td></tr><tr><td></td><td></td><td><strong>React JS (Alpha)</strong><br>An out of the box fiat on/off ramp for your web app</td><td><a href="integration-guides/react-alpha/">react-alpha</a></td><td></td></tr></tbody></table>
 
-## Step 3: Install the Plaid SDK
+## Step 3: Provide a Redirect URI and/or Android Package Name
 
-### Plaid SDK
+Users will link their bank account to Ratio using Plaid. You do not need to set up an account with Plaid, however, you do need to provide a way for us to redirect users to your application once they have linked their bank account to their Ratio user account.
 
-Users will link their bank account to Ratio using Plaid. You do not need to set up an account with Plaid.
+Please send the redirect URI and/or Android Package Name to team@ratio.me.
+
+### If you are building a Web app, React Native app, or iOS app
+
+Provide a **redirect URI**. This value must match what you send in your `requestLink` calls
+
+### If you are building an Android app
+
+Provide an **Android Package Name** that matches what you send in your`requestLink` calls
+
+## Step 4: Install the Plaid SDK (mobile apps only)
 
 <details>
 
-<summary>Install one of the Plaid SDKs below</summary>
+<summary>Expand for info about Plaid's React Native, iOS, and Android SDKs</summary>
 
 #### React Native SDK
 
@@ -44,18 +54,6 @@ Users will link their bank account to Ratio using Plaid. You do not need to set 
 * Github Repo ([https://github.com/plaid/plaid-link-ios](https://github.com/plaid/plaid-link-ios))
 * Documentation ([https://plaid.com/docs/link/ios/](https://plaid.com/docs/link/ios/))
 
-#### Web (React)
 
-* To install, run: `npm install --save react-plaid-link`&#x20;
-* Github Repo ([https://github.com/plaid/react-plaid-link](https://github.com/plaid/react-plaid-link))
-* Documentation ([https://plaid.com/docs/link/web/](https://plaid.com/docs/link/web/))
-
-#### Webview
-
-You can also launch the Plaid Link flow inside a [webview](https://plaid.com/docs/link/webview/), requiring minimal UI work. To do so,  create a URL like so `https://cdn.plaid.com/link/v2/stable/link.html?isWebview=true&token="GENERATED_LINK_TOKEN"` and open it inside a webview. This will also emit events for you to consume to obtain the public token.
 
 </details>
-
-{% hint style="info" %}
-If you are building an iOS or Web application you need to provide us with a **redirect URI** so that we can configure Plaid to properly redirect users to your application. If you are building an Android app, you need to provide us with the **Android Package Name.** These values need to match what you send in your`requestLink` calls
-{% endhint %}

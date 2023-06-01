@@ -17,7 +17,7 @@ Example&#x20;
 
 If you pass null, or omit the attribute, the Ratio flow will have the default functionality when the view is pressed.&#x20;
 
-For more details please see [example.md](../../integration-methods/react-native/example.md "mention") and [Broken link](broken-reference "mention")
+For more details please see [example.md](example.md "mention") and [Broken link](broken-reference "mention")
 
 ### All supported Cryptos can be used with Preset Orders
 
