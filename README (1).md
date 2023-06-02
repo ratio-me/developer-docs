@@ -2,17 +2,17 @@
 
 ## Step 1: Obtain a ClientID & Secret
 
-All API requests require a clientID and a secret. Email us at [team@ratio.me](mailto:team@ratio.me) to obtain a clientID and secret.
+All API requests require a clientID and secret. Request Sandbox credentials by emailing us at [team@ratio.me](mailto:team@ratio.me)
 
 ### Base URLs
 
-Production:  [https://api.ratio.me/](https://api.staging.ratio.me/)
+Production:  [https://api.ratio.me/](https://api.ratio.me/)
 
-Sandbox: _Coming in July. Our React Native SDK is plug and play and does not require testing in lower level environments.  If you ware planning to white label our API we will work with you 1:1 to streamline and test your integration in our production environment._
+Sandbox: [https://api.sandbox.ratio.me/](https://api.sandbox.ratio.me/)
 
 ## Step 2: Select an Implementation Method
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label (5).png">White Label (5).png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications</td><td></td><td><a href="integration-guides/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native.png">React Native.png</a></td></tr><tr><td><strong>React JS - Alpha</strong></td><td>An out of the box fiat on/off ramp for your web app</td><td></td><td><a href="integration-guides/react-alpha/">react-alpha</a></td><td><a href=".gitbook/assets/JS.png">JS.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label.png">White Label.png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications</td><td></td><td><a href="integration-guides/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native (1).png">React Native (1).png</a></td></tr><tr><td><strong>React JS - Alpha</strong></td><td>An out of the box fiat on/off ramp for your web app</td><td></td><td><a href="integration-guides/react-alpha/">react-alpha</a></td><td><a href=".gitbook/assets/JS (1).png">JS (1).png</a></td></tr></tbody></table>
 
 ## Step 3: Provide a Redirect URI and/or Android Package Name
 

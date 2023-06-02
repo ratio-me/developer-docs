@@ -41,6 +41,7 @@
 
 ## Reference
 
+* [Sandbox](reference/sandbox.md)
 * [User Authentication Methods](reference/api/auth/crypto-wallet.md)
 * [User Account Flags](reference/user-account-flags/README.md)
   * [KYC Review](reference/user-account-flags/kyc-review.md)
