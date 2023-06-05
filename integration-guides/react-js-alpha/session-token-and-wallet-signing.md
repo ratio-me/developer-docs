@@ -12,7 +12,7 @@ In order to start the authentication process with Ratio you must provide the lib
 
 An async function that calls your backend to return the session token from the `/v1/clients/session` API.
 
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/client/sessions/{sessionId}" method="get" %}
+{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/client/sessions" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
 
