@@ -12,7 +12,7 @@ If you are building an iOS or Web application you need to provide us with a **re
 
 ## Requesting a Plaid Link Token
 
-The first step in connecting a user's bank account is to request a [Link Token](../../reference/api/types-glossary.md#requestbanklinkresponse) from our API, then pass that Link Token into Plaid's SDK.
+The first step in connecting a user's bank account is to request a [Link Token](../../api-reference/types-glossary.md#requestbanklinkresponse) from our API, then pass that Link Token into Plaid's SDK.
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks:requestLink" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)

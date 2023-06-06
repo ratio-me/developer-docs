@@ -43,11 +43,11 @@ Sandbox: _Coming soon_
 
 ## Resources
 
-* [Authentication methods](../../reference/api/auth/crypto-wallet.md)
+* [Authentication methods](../../api-reference/user-authentication.md)
 * [Custom headers](../../reference/api/custom-headers.md)
-* [Webhooks](../webhooks.md)
-  * [Webhook registrations](../../reference/api/webhook-registrations.md)
-* [Types Glossary](../../reference/api/types-glossary.md)
+* [Webhooks](../../api-reference/webhooks/)
+  * [Webhook registrations](../../api-reference/webhooks/webhook-registrations.md)
+* [Types Glossary](../../api-reference/types-glossary.md)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)
 * [UX/UI starter kit](https://www.figma.com/file/89pkvTfqkMkKuTI0Mrzl7l/UX-Starter-Kit-v1.1?type=design\&node-id=0%3A1\&t=PRCLzsAxfRbkVdFA-1)

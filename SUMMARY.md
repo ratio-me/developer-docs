@@ -4,6 +4,8 @@
 * [Supported Countries and Payment Methods](supported-countries-and-payment-methods.md)
 * [Supported Fiat & Cryptos](reference/supported-currencies.md)
 * [Getting Started](<README (1).md>)
+* [Sandbox](sandbox.md)
+* [Client Dashboard (Alpha)](client-dashboard-alpha.md)
 
 ## Integration Guides
 
@@ -39,23 +41,20 @@
   * [Reference](integration-guides/react-js-alpha/reference.md)
   * [Release History](integration-guides/react-js-alpha/release-history.md)
 
-## Reference
+## API Reference
 
-* [Sandbox](reference/sandbox.md)
-* [User Authentication Methods](reference/api/auth/crypto-wallet.md)
-* [User Account Flags](reference/user-account-flags/README.md)
-  * [KYC Review](reference/user-account-flags/kyc-review.md)
-  * [Transaction Processing](reference/user-account-flags/transaction-processing.md)
-  * [NSFs and Returned Payments](reference/user-account-flags/nsfs-and-returned-payments.md)
-  * [Fraud](reference/user-account-flags/fraud.md)
-* [UI Requirements](reference/ui-requirements.md)
-* [Webhooks](integration-methods/webhooks.md)
-  * [Webhook Registrations](reference/api/webhook-registrations.md)
-* [Types Glossary](reference/api/types-glossary.md)
-* [UI/UX Starter kit](https://www.figma.com/file/89pkvTfqkMkKuTI0Mrzl7l/UX-Starter-Kit-v1.1?type=design\&node-id=0%3A1\&t=PRCLzsAxfRbkVdFA-1)
+* [Custom Headers](api-reference/custom-headers.md)
+* [User Authentication](api-reference/user-authentication.md)
+* [Webhooks](api-reference/webhooks/README.md)
+  * [Webhook Registrations](api-reference/webhooks/webhook-registrations.md)
+* [Types Glossary](api-reference/types-glossary.md)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
-* [API Specification](https://api.staging.ratio.me/v1/api-docs)
-* [Client Dashboard](reference/client-dashboard.md)
+* [Open API Specification](https://api.staging.ratio.me/v1/api-docs)
+
+## Design Reference
+
+* [UI/UX Starter kit](https://www.figma.com/file/89pkvTfqkMkKuTI0Mrzl7l/UX-Starter-Kit-v1.1?type=design\&node-id=0%3A1\&t=PRCLzsAxfRbkVdFA-1)
+* [UI Requirements](design-reference/ui-requirements.md)
 
 ## Guides
 
@@ -64,6 +63,11 @@
 * [Plaid Bank Linking](guides/plaid-bank-linking/README.md)
   * [Plaid OAuth Support](guides/plaid-bank-linking/plaid-oauth-support.md)
 
-## Supporting End Users
+## User Support Reference
 
-* [Transactional Emails](supporting-end-users/transactional-emails.md)
+* [User Account Flags](user-support-reference/user-account-flags/README.md)
+  * [KYC Review](user-support-reference/user-account-flags/kyc-review.md)
+  * [Transaction Processing](user-support-reference/user-account-flags/transaction-processing.md)
+  * [NSFs and Returned Payments](user-support-reference/user-account-flags/nsfs-and-returned-payments.md)
+  * [Fraud](user-support-reference/user-account-flags/fraud.md)
+* [Transactional Emails](user-support-reference/transactional-emails.md)

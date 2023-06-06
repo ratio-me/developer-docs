@@ -29,7 +29,7 @@ We use device biometrics and linked bank account transaction history to determin
 ## Crypto Prices
 
 {% hint style="info" %}
-Please see our list of [supported fiat currencies and crypto tokens](../../reference/supported-currencies.md) and[ enum](../../reference/api/types-glossary.md#currency) for formatting and network support.
+Please see our list of [supported fiat currencies and crypto tokens](../../reference/supported-currencies.md) and[ enum](../../api-reference/types-glossary.md#currency) for formatting and network support.
 {% endhint %}
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/crypto/prices" method="get" %}
@@ -38,7 +38,7 @@ Please see our list of [supported fiat currencies and crypto tokens](../../refer
 
 ## Initiate ACH
 
-When initiating a crypto purchase, you must present a transaction confirmation and required customer notices according to the Ratio [UI requirements](../../reference/ui-requirements.md).
+When initiating a crypto purchase, you must present a transaction confirmation and required customer notices according to the Ratio [UI requirements](../../design-reference/ui-requirements.md).
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/banks/{bankId}/ach" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)

@@ -160,7 +160,7 @@ At this point, you have two options to notify the user of the outcome of their b
 
 #### Webhook
 
-Alternatively, you can listen to the bank verification event "BANK\_UPDATED" by subscribing to [webhooks](../../../integration-methods/webhooks.md).
+Alternatively, you can listen to the bank verification event "BANK\_UPDATED" by subscribing to [webhooks](../../../api-reference/webhooks/).
 
 
 

@@ -20,7 +20,7 @@ Note: This endpoint returns all transaction activity on the user account, regard
 
 ## Transaction Detail View
 
-Refer to the [UI Requirements](../../reference/ui-requirements.md) for the transaction data and customer notices that must be presented to the user when viewing individual transaction records.
+Refer to the [UI Requirements](../../design-reference/ui-requirements.md) for the transaction data and customer notices that must be presented to the user when viewing individual transaction records.
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/users/{userId}/activity/{activityId}" method="get" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)

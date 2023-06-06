@@ -100,7 +100,7 @@ You can simply ask the user to re-enter the flow.
 
 * type: STANDARD or INSTANT
 * fiatAmount: less than $50
-* cryptoCurrency: [Any supported Crypto](supported-currencies.md)
+* cryptoCurrency: [Any supported Crypto](reference/supported-currencies.md)
 * walletId: \<Wallet Resource Id>
 
 ### Unhappy Paths
