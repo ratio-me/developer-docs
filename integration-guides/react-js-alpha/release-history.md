@@ -1,5 +1,14 @@
 # Release History
 
+### v0.0.5-alpha.5
+
+Date: Jun 12, 2023
+
+Notes:
+
+* More styling improvements
+* Improvements to bank linking flow
+
 ### v0.0.5-alpha.2
 
 Date: May 30, 2023
