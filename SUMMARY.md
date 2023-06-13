@@ -44,6 +44,7 @@
 ## API Reference
 
 * [Custom Headers](api-reference/custom-headers.md)
+* [Error Codes](api-reference/error-codes.md)
 * [User Authentication](api-reference/user-authentication.md)
 * [Webhooks](api-reference/webhooks/README.md)
   * [Webhook Registrations](api-reference/webhooks/webhook-registrations.md)
