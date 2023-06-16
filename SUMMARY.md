@@ -37,6 +37,7 @@
 * [React (Alpha)](integration-guides/react-alpha/README.md)
   * [Installation](integration-guides/react-js-alpha/installation.md)
   * [Session Token and Wallet Signing](integration-guides/react-js-alpha/session-token-and-wallet-signing.md)
+  * [Callbacks](integration-guides/react-alpha/callbacks.md)
   * [Example](integration-guides/react-js-alpha/example.md)
   * [Reference](integration-guides/react-js-alpha/reference.md)
   * [Release History](integration-guides/react-js-alpha/release-history.md)

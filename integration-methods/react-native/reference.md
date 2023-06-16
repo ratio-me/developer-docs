@@ -157,7 +157,7 @@ Example
 }}/>
 ```
 
-<table><thead><tr><th width="354">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
+<table><thead><tr><th width="492">TYPE</th><th>REQUIRED</th></tr></thead><tbody><tr><td>function</td><td>No</td></tr></tbody></table>
 
 
 

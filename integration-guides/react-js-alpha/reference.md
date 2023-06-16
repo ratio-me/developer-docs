@@ -90,3 +90,169 @@ Default value: "Buy Crypto"
 | ------ | -------- |
 | string | No       |
 
+### Models
+
+#### `RatioUser`
+
+```tsx
+export interface RatioUser {
+  id: string;
+  createTime: string;
+  updateTime: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  email: string;
+  country: string;
+  phone: string;
+  nationality: string;
+  occupation: string;
+  kyc: Kyc;
+  connectedBankAccounts: BankAccount[];
+}
+```
+
+#### `OrderStatus`
+
+```tsx
+export interface OrderStatus {
+  data: {userId: string, activity: ActivityItem};
+  status: 'success' | 'failure';
+  error: OrderError;
+}
+```
+
+#### **`OrderError`**
+
+```typescript
+export interface OrderError {
+  errorId: string;
+  message: string;
+  statusCode: number;
+}
+```
+
+#### **`ActivityItem`**
+
+```typescript
+export interface ActivityItem {
+  id: string;
+  createTime: string;
+  updateTime: string;
+  fiat: ActivityItemFiat;
+  crypto: ActivityItemCrypto;
+  metadata: any;
+}
+```
+
+#### **`ActivityItemFiat`**
+
+```typescript
+export interface ActivityItemFiat {
+  status: ActivityItemStatus;
+  currency: FiatCurrency;
+  amount: string;
+  direction: Direction;
+  fundingMethod: FundingMethod;
+  bankAccount: BankAccount;
+}
+```
+
+#### **`ActivityItemStatus`**
+
+```typescript
+export enum ActivityItemStatus {
+  PENDING = 'PENDING',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED'
+}
+```
+
+#### **`FiatCurrency`**
+
+```typescript
+export enum FiatCurrency {
+  USD = 'USD'
+}
+```
+
+#### **`Direction`**
+
+```typescript
+export enum Direction {
+  CREDIT = 'CREDIT',
+  DEBIT = 'DEBIT'
+}
+```
+
+#### **`FundingMethod`**
+
+```typescript
+export enum FundingMethod {
+  ACH_ORIGINATED_STANDARD = 'ACH_ORIGINATED_STANDARD',
+  ACH_ORIGINATED_INSTANT = 'ACH_ORIGINATED_INSTANT',
+  ACH_RECEIVED = 'ACH_RECEIVED'
+}
+```
+
+#### **`BankAccount`**
+
+```typescript
+export interface BankAccount {
+  id: string;
+  createTime: string;
+  updateTime: string;
+  name: string;
+  mask: string;
+  linkStatus: LinkStatus;
+  verificationStatus: VerificationStatus;
+}
+```
+
+#### **`LinkStatus`**
+
+```typescript
+export enum LinkStatus {
+  INACTIVE = 'INACTIVE',
+  ACTIVE = 'ACTIVE',
+  LOGIN_REQUIRED = 'LOGIN_REQUIRED'
+}
+```
+
+#### **`VerificationStatus`**
+
+```typescript
+export enum VerificationStatus {
+  IN_REVIEW = 'IN_REVIEW',
+  APPROVED = 'APPROVED',
+  DECLINED = 'DECLINED'
+}
+```
+
+#### **`ActivityItemCrypto`**
+
+```typescript
+export interface ActivityItemCrypto {
+  status: ActivityItemStatus;
+  currency: string;
+  wallet: Wallet;
+  direction: Direction;
+  amount: string;
+  price: string;
+  fee: string;
+  transactionHash: string;
+}
+```
+
+#### **`Wallet`**
+
+```typescript
+export interface Wallet {
+  id: string;
+  address: string;
+  createTime: string;
+  name: string;
+  network: string;
+  updateTime: string;
+}
+```

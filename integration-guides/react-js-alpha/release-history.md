@@ -1,5 +1,13 @@
 # Release History
 
+### v0.0.5-alpha.6
+
+Date: June 15, 2023
+
+Notes:
+
+* Added onLogin, onClose, and onTransactionComplete callbacks
+
 ### v0.0.5-alpha.5
 
 Date: Jun 12, 2023
