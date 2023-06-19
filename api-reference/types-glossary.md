@@ -67,11 +67,11 @@
 
 #### AuthenticateCryptoWalletRequest
 
-| Name          | Type                                 | Description                        | Required |
-| ------------- | ------------------------------------ | ---------------------------------- | -------- |
-| walletAddress | string                               | The wallet address to authenticate | Yes      |
-| walletNetwork | [Network](types-glossary.md#network) | The wallet network to authenticate | Yes      |
-| signature     | string                               | The signature of the challenge     | Yes      |
+| Name          | Type                                       | Description                        | Required |
+| ------------- | ------------------------------------------ | ---------------------------------- | -------- |
+| walletAddress | string                                     | The wallet address to authenticate | Yes      |
+| walletType    | [WalletType](types-glossary.md#wallettype) | The type of wallet to authenticate | Yes      |
+| signature     | string                                     | The signature of the challenge     | Yes      |
 
 #### AuthenticateCryptoWalletStartResponse
 
@@ -81,10 +81,10 @@
 
 #### AuthenticateCryptoWalletStartRequest
 
-| Name          | Type                                 | Description                        | Required |
-| ------------- | ------------------------------------ | ---------------------------------- | -------- |
-| walletAddress | string                               | The wallet address to authenticate | Yes      |
-| walletNetwork | [Network](types-glossary.md#network) | The wallet network to authenticate | Yes      |
+| Name          | Type                                       | Description                        | Required |
+| ------------- | ------------------------------------------ | ---------------------------------- | -------- |
+| walletAddress | string                                     | The wallet address to authenticate | Yes      |
+| walletType    | [WalletType](types-glossary.md#wallettype) | The type of wallet to authenticate | Yes      |
 
 #### AuthenticateEmailOtpRequest
 
@@ -110,11 +110,11 @@
 
 #### ConnectWalletRequest
 
-| Name    | Type                                 | Description                        | Required |
-| ------- | ------------------------------------ | ---------------------------------- | -------- |
-| address | string                               | The network address of the wallet  | Yes      |
-| network | [Network](types-glossary.md#network) | The network this wallet belongs to | Yes      |
-| name    | string                               | A name for the wallet              | No       |
+| Name    | Type                                       | Description                       | Required |
+| ------- | ------------------------------------------ | --------------------------------- | -------- |
+| address | string                                     | The network address of the wallet | Yes      |
+| type    | [WalletType](types-glossary.md#wallettype) | The type of wallet                | Yes      |
+| name    | string                                     | A name for the wallet             | No       |
 
 #### CreateUserRequest
 
@@ -196,22 +196,24 @@
 
 #### CreateClientSessionRequest
 
-| Name           | Type                                 | Description                                                                                                   | Required |
-| -------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------- | -------- |
-| signingAddress | string                               | The wallet address that will be used to authenticate                                                          | Yes      |
-| signingNetwork | [Network](types-glossary.md#network) | The wallet network that will be used to authenticate                                                          | Yes      |
-| depositAddress | string                               | The wallet address that will be used as the deposit target. If not provided, the signing address will be used | No       |
+| Name           | Type                                       | Description                                                                                                   | Required |
+| -------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | -------- |
+| signingAddress | string                                     | The wallet address that will be used to authenticate                                                          | Yes      |
+| signingType    | [WalletType](types-glossary.md#wallettype) | The type of signing wallet to authenticate                                                                    | Yes      |
+| depositAddress | string                                     | The wallet address that will be used as the deposit target. If not provided, the signing address will be used | No       |
 
 #### ClientSession
 
-| Name           | Type                                   | Description                              | Required |
-| -------------- | -------------------------------------- | ---------------------------------------- | -------- |
-| id             | string                                 | The session ID                           | No       |
-| createTime     | string                                 | The time the session was created         | No       |
-| updateTime     | string                                 | The time the session was last updated    | No       |
-| depositAddress | string                                 | The address of the deposit wallet        | No       |
-| depositNetwork | [Network](types-glossary.md#network)   | The crypto network of the deposit wallet | No       |
-| userMask       | [UserMask](types-glossary.md#usermask) | The user mask object                     | No       |
+| Name           | Type                                   | Description                           | Required |
+| -------------- | -------------------------------------- | ------------------------------------- | -------- |
+| id             | string                                 | The session ID                        | Yes      |
+| createTime     | string                                 | The time the session was created      | Yes      |
+| updateTime     | string                                 | The time the session was last updated | Yes      |
+| depositAddress | string                                 | The address of the deposit wallet     | Yes      |
+| depositType    | WalletType                             | The type of deposit wallet            | Yes      |
+| userMask       | [UserMask](types-glossary.md#usermask) | The user mask object                  | No       |
+| signingAddress | string                                 | The address of the signing wallet     | Yes      |
+| signingType    | string                                 | The type of signing wallet            | Yes      |
 
 #### Payroll
 
@@ -307,14 +309,14 @@
 
 #### Wallet
 
-| Name       | Type                                 | Description                          | Required |
-| ---------- | ------------------------------------ | ------------------------------------ | -------- |
-| id         | string                               | The unique identifier of the wallet  | Yes      |
-| createTime | string                               | The time the wallet was created      | Yes      |
-| updateTime | string                               | The time the wallet was last updated | Yes      |
-| address    | string                               | The address of the wallet            | Yes      |
-| name       | string                               | The nickname of the wallet           | No       |
-| network    | [Network](types-glossary.md#network) | The crypto network of the wallet     | Yes      |
+| Name       | Type                                       | Description                          | Required |
+| ---------- | ------------------------------------------ | ------------------------------------ | -------- |
+| id         | string                                     | The unique identifier of the wallet  | Yes      |
+| createTime | string                                     | The time the wallet was created      | Yes      |
+| updateTime | string                                     | The time the wallet was last updated | Yes      |
+| address    | string                                     | The address of the wallet            | Yes      |
+| name       | string                                     | The nickname of the wallet           | No       |
+| type       | [WalletType](types-glossary.md#wallettype) | The type of wallet                   | Yes      |
 
 #### Wallets
 
@@ -428,6 +430,12 @@
 | -------- | ----------- |
 | ETHEREUM |             |
 | POLYGON  |             |
+
+#### WalletType
+
+| Value | Description |
+| ----- | ----------- |
+| EVM   |             |
 
 #### WebhookEvent
 
