@@ -1,5 +1,16 @@
 # Release History
 
+### v0.0.5-alpha.7
+
+Date: June 23, 2023
+
+Notes:
+
+* Handle email already exists error on account creation
+* Handle failures during KYC polling
+* Added screens for different user flags
+* Added call to configuration endpoint
+
 ### v0.0.5-alpha.6
 
 Date: June 15, 2023
