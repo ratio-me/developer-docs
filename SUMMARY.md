@@ -59,7 +59,7 @@
 
 * [Sandbox Testing](guides/sandbox-testing.md)
 * [User Authentication](guides/user-authentication.md)
-* [Add a new Auth Method to an Existing User](guides/account-linking.md)
+* [Link a new Signing Wallet to an Existing User](guides/link-a-new-signing-wallet-to-an-existing-user.md)
 * [Plaid Bank Linking](guides/plaid-bank-linking/README.md)
   * [Plaid OAuth Support](guides/plaid-bank-linking/plaid-oauth-support.md)
 * [Client Dashboard (Alpha)](guides/client-dashboard-alpha.md)

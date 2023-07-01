@@ -24,7 +24,7 @@ You can see more information on our [authentication methods here](broken-referen
 {% hint style="danger" %}
 #### This wallet auth needs to happen with the same wallet used in the create new user flow
 
-If a user is attempting to sign in with a new wallet, please follow our [account linking guide](account-linking.md)
+If a user is attempting to sign in with a new wallet, please follow our [account linking guide](link-a-new-signing-wallet-to-an-existing-user.md)
 {% endhint %}
 
 Authenticating with a crypto wallet requires two steps

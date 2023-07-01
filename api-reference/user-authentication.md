@@ -4,10 +4,10 @@ description: >-
   support: wallet, sms, email.
 ---
 
-# User Authentication Methods
+# User Authentication
 
 {% hint style="info" %}
-Ratio user accounts are accessible across a wide variety of applications. You must [implement Account Linking](../../../guides/account-linking.md) so that existing Ratio users can link your application to their account and bypass onboarding
+Ratio user accounts are accessible across a wide variety of applications. You must [implement Account Linking](../guides/link-a-new-signing-wallet-to-an-existing-user.md) so that existing Ratio users can link your application to their account and bypass onboarding
 {% endhint %}
 
 
