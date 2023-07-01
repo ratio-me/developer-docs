@@ -22,7 +22,7 @@ You do not need a Plaid account in order to use Ratio because your user is formi
 {% hint style="warning" %}
 #### **Reminder!**
 
-For iOS and Web implementations, you will need to provide us with a **redirect URI** so that Plaid can return users to your application. If you are building an Android app, you must provide us with the **Android Package Name.** These values need to match what you send in your _requestLink_ calls.
+For iOS apps, you will need to provide [_sandbox_](../../../guides/sandbox-testing.md#plaid-oauth-redirect-uris) and _production_ **redirect URIs** so that Plaid can return users to your application. For Android apps, you must provide us with the **Android Package Name.** These values need to match what you send in your _requestLink_ calls.
 {% endhint %}
 
 ## Link the bank account

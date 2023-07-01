@@ -7,7 +7,7 @@ Note: For detailed examples of the API calls below, check out our [API documenta
 {% endhint %}
 
 {% hint style="warning" %}
-If you are building an iOS or Web application you need to provide us with a **redirect URI** so that we can configure Plaid to properly redirect users to your application. If you are building an Android app, you need to provide us with the **Android Package Name.** These values need to match what you send in your`requestLink` calls
+If you are building an iOS app you need to provide [_sandbox_](../sandbox-testing.md#plaid-oauth-redirect-uris) and _production_ **redirect URIs**, so that we can configure Plaid to properly redirect users to your application. If you are building an Android app, you need to provide us with the **Android Package Name.** These values need to match what you send in your`requestLink` calls
 {% endhint %}
 
 ## Requesting a Plaid Link Token

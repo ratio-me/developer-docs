@@ -1,8 +1,8 @@
 ---
-description: Use the Sandbox to quickly develop and test your app
+description: Everything you need to know about testing your integration in Sandbox
 ---
 
-# Sandbox
+# Sandbox Testing
 
 ## Account Creation
 
@@ -100,7 +100,7 @@ You can simply ask the user to re-enter the flow.
 
 * type: STANDARD or INSTANT
 * fiatAmount: less than $50
-* cryptoCurrency: [Any supported Crypto](reference/supported-currencies.md)
+* cryptoCurrency: [Any supported Crypto](../reference/supported-currencies.md)
 * walletId: \<Wallet Resource Id>
 
 ### Unhappy Paths

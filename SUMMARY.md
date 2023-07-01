@@ -4,7 +4,6 @@
 * [Supported Countries and Payment Methods](supported-countries-and-payment-methods.md)
 * [Supported Fiat & Cryptos](reference/supported-currencies.md)
 * [Getting Started](<README (1).md>)
-* [Sandbox](sandbox.md)
 * [Client Dashboard (Alpha)](client-dashboard-alpha.md)
 
 ## Integration Guides
@@ -60,6 +59,7 @@
 
 ## Guides
 
+* [Sandbox Testing](guides/sandbox-testing.md)
 * [User Authentication](guides/user-authentication.md)
 * [Add a new Auth Method to an Existing User](guides/account-linking.md)
 * [Plaid Bank Linking](guides/plaid-bank-linking/README.md)

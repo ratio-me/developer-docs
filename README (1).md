@@ -1,34 +1,46 @@
+---
+description: Follow these steps to get started with Ratio
+---
+
 # Getting Started
 
 ## Step 1: Obtain a ClientID & Secret
 
-All API requests require a clientID and secret. Request Sandbox credentials by emailing us at [team@ratio.me](mailto:team@ratio.me)
+Request Sandbox credentials by emailing us at [team@ratio.me](mailto:team@ratio.me)
 
 ### Base URLs
 
-Production:  [https://api.ratio.me/](https://api.ratio.me/)
-
 Sandbox: [https://api.sandbox.ratio.me/](https://api.sandbox.ratio.me/)
 
-## Step 2: Select an Implementation Method
+Production:  [https://api.ratio.me/](https://api.ratio.me/)
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label.png">White Label.png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications</td><td></td><td><a href="integration-guides/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native (1).png">React Native (1).png</a></td></tr><tr><td><strong>React JS - Alpha</strong></td><td>An out of the box fiat on/off ramp for your web app</td><td></td><td><a href="integration-guides/react-alpha/">react-alpha</a></td><td><a href=".gitbook/assets/JS (1).png">JS (1).png</a></td></tr></tbody></table>
+## Step 2: Select an Integration Method
 
-## Step 3: Provide a Redirect URI and/or Android Package Name
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>API</strong></td><td>You own the user experience. We manage user data, compliance, and risk</td><td></td><td><a href="integration-methods/white-label/">white-label</a></td><td><a href=".gitbook/assets/White Label.png">White Label.png</a></td></tr><tr><td><strong>React Native SDK</strong></td><td>A drop-in SDK for iOS and Android applications</td><td></td><td><a href="integration-guides/react-native/">react-native</a></td><td><a href=".gitbook/assets/React Native (1).png">React Native (1).png</a></td></tr><tr><td><strong>React JS - Beta</strong></td><td>An out of the box fiat on/off ramp for your web app</td><td></td><td><a href="integration-guides/react-alpha/">react-alpha</a></td><td><a href=".gitbook/assets/JS (1).png">JS (1).png</a></td></tr></tbody></table>
 
-Users will link their bank account to Ratio using Plaid. You do not need to set up an account with Plaid, however, you do need to provide a way for us to redirect users to your application once they have linked their bank account to their Ratio user account.
+## Step 3: Review the Sandbox Test Data
 
-Please send the redirect URI and/or Android Package Name to team@ratio.me.
+Review the [sandbox test data](https://app.gitbook.com/o/rMOFEmlooWU9OMmsW6eC/s/CUFO0IuHQJVzBX1zbmIL/\~/changes/150/guides/sandbox-testing) you will use to product predictable API responses.
 
-### If you are building a Web app, React Native app, or iOS app
+## Additional Setup for Mobile Apps&#x20;
 
-Provide a **redirect URI**. This value must match what you send in your `requestLink` calls
+### Provide a Redirect URI or Android Package Name
 
-### If you are building an Android app
+Users will link their bank account to their Ratio account using Plaid. You must provide us with a redirect URI or Android package name.
 
-Provide an **Android Package Name** that matches what you send in your`requestLink` calls
+You do not need to set up an account with Plaid since the user is connecting to Ratio directly. &#x20;
 
-## Step 4: Install the Plaid SDK (mobile apps only)
+Please send the redirect URI or Android package name to team@ratio.me.
+
+#### iOS apps
+
+Provide a **redirect URI** that matches what you send in your `requestLink` calls
+
+#### Android apps
+
+Provide an **Android Package Name** that matches what you send in your `requestLink` calls
+
+### Install the Plaid SDK
 
 <details>
 

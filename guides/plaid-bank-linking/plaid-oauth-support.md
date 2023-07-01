@@ -14,8 +14,8 @@ To support the Plaid OAuth flow on iOS you must be able to accept Universal Link
 
 ## Tasks
 
-* [ ] Browser or iOS: Provide your **redirect URI** to the Ratio team so that we can add it to our configuration.
-* [ ] Android: Provide your app's **Android Package Name** to the Ratio team so that we can add it to our configuration
+* [ ] iOS: Provide your [_sandbox_](../sandbox-testing.md#plaid-oauth-redirect-uris) and _production_ **redirect URIs** to the Ratio team so that we can add them to your configuration
+* [ ] Android: Provide your app's **Android Package Name** to the Ratio team so that we can add it to your configuration
 
 ## Plaid OAuth Institutions &#x20;
 
