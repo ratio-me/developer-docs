@@ -1,10 +1,10 @@
 ---
 description: >-
-  NOTE: RatioKit is currently in early alpha. Breaking changes may be released
+  NOTE: RatioKit is currently in alpha. Breaking changes may be released
   frequently and without notice.
 ---
 
-# React (Alpha)
+# React JS (Alpha)
 
 RatioKit includes a `RatioButton` component that requires a few parameters. This component allows for a few customizations so that it can be placed anywhere within your app.
 
