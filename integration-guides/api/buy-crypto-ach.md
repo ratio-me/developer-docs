@@ -29,7 +29,7 @@ We use device biometrics and linked bank account transaction history to determin
 ## Crypto Prices
 
 {% hint style="info" %}
-Please see our list of [supported fiat currencies and crypto tokens](../../reference/supported-currencies.md) and[ enum](../../api-reference/types-glossary.md#currency) for formatting and network support.
+Please see the fiat currencies and crypto token [enum](../../api-reference/types-glossary.md#currency) for formatting and network support.
 {% endhint %}
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/crypto/prices" method="get" %}

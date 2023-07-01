@@ -1,10 +1,8 @@
 # Table of contents
 
-* [What is Ratio?](README.md)
-* [Supported Countries and Payment Methods](supported-countries-and-payment-methods.md)
-* [Supported Fiat & Cryptos](reference/supported-currencies.md)
+* [What We Do](README.md)
+* [Supported Countries, Payment Methods, and Cryptocurrencies](supported-countries-payment-methods-and-cryptocurrencies.md)
 * [Getting Started](<README (1).md>)
-* [Client Dashboard (Alpha)](client-dashboard-alpha.md)
 
 ## Integration Guides
 
@@ -64,6 +62,7 @@
 * [Add a new Auth Method to an Existing User](guides/account-linking.md)
 * [Plaid Bank Linking](guides/plaid-bank-linking/README.md)
   * [Plaid OAuth Support](guides/plaid-bank-linking/plaid-oauth-support.md)
+* [Client Dashboard (Alpha)](guides/client-dashboard-alpha.md)
 
 ## User Support Reference
 

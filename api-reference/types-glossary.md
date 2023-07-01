@@ -1,3 +1,7 @@
+---
+description: A complete list of models and enums
+---
+
 # Types Glossary
 
 ## Models
@@ -348,7 +352,7 @@
 | ----- | ------------------------------------ | --------------------- | -------- |
 | items | [Webhook](types-glossary.md#webhook) | The client's webhooks | Yes      |
 
-### Enums
+## Enums
 
 #### AchType
 
@@ -383,14 +387,12 @@
 
 #### Fiat Currencies & Crypto Tokens
 
-| Value          | Description                         |
-| -------------- | ----------------------------------- |
-| USD            | US Dollars                          |
-| ETH            | Ether                               |
-| MATIC          | Polygon                             |
-| USDC\_ETHEREUM | USDC                                |
-| USDC\_POLYGON  | USDC                                |
-| AMKT\_POLYGON  | Alongside Crypto Market Index (PoS) |
+| Value          | Description |
+| -------------- | ----------- |
+| USD            | US Dollars  |
+| ETH            | Ether       |
+| USDC\_ETHEREUM | USDC        |
+| USDC\_POLYGON  | USDC        |
 
 #### Direction
 
