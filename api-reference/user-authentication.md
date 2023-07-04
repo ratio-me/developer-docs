@@ -23,7 +23,7 @@ Ratio user accounts are accessible across a wide variety of applications. You mu
 ```json
 {
     "walletAddress": "0x0000000000000000000000000000000000000000",
-    "walletNetwork": "ETHEREUM"
+    "walletType": "EVM"
 }
 ```
 {% endtab %}
@@ -47,7 +47,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletNetwork": "<ETHEREUM_OR_POLYGON>"
+    "walletEvm": "EVM"
 }'
 ```
 {% endtab %}
@@ -62,7 +62,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 ```json
 {
     "walletAddress": "0x0000000000000000000000000000000000000000",
-    "walletNetwork": "ETHEREUM",
+    "walletType": "EVM",
     "signature": "2djd2cFZ9VU2zDWvUGqeHwvbiJZfTt3BMzDctDsEW7vM2QUTgTHjeM2rpFX9ZULeic3KptUh5ehipXDFcK5ecYiX"
 }
 ```
@@ -94,7 +94,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletNetwork": "<ETHEREUM_OR_POLYGON>",
+    "walletType": "EVM",
     "signature": "<SIGNED_CHALLENGE_STRING>"
 }'
 ```
@@ -110,7 +110,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 ```json
 {
     "walletAddress": "0x0000000000000000000000000000000000000000",
-    "walletNetwork": "ETHEREUM",
+    "walletType": "EVM",
 }
 ```
 {% endtab %}
@@ -132,7 +132,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:add
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletNetwork": "<ETHEREUM_OR_POLYGON>",
+    "walletType": "EVM",
 }'
 ```
 {% endtab %}
