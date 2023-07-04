@@ -1,7 +1,7 @@
 ---
 description: >-
-  Once the user has a verified bank account, you can retrieve their ACH
-  transaction limits.
+  Once the user has been KYC approved, you can retrieve their ACH transaction
+  limits.
 ---
 
 # Transaction Limits
