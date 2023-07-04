@@ -47,7 +47,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletEvm": "EVM"
+    "walletType": "EVM"
 }'
 ```
 {% endtab %}
