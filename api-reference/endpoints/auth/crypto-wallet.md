@@ -1,22 +1,18 @@
----
-description: >-
-  This page provides information about the three authentication methods we
-  support: wallet, sms, email.
----
+# Crypto Wallet
 
-# User Authentication
+### Overview
 
-{% hint style="info" %}
-Ratio user accounts are accessible across a wide variety of applications. You must [implement Account Linking](../guides/link-a-new-signing-wallet-to-an-existing-user.md) so that existing Ratio users can link your application to their account and bypass onboarding
-{% endhint %}
+Authenticating with a crypto wallet requires two steps to authenticate a user. The first step is to retrieve a challenge phrase to be signed with the user's wallet, and then a second call provides that signature with that wallet address. This will return you an authenticated JWT.
 
-
-
-## Crypto wallet
+#### Start Crypto Wallet Challenge
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:start" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
+
+{% hint style="warning" %}
+If you're calling either of the Crypto Wallet endpoints for the purposes of starting a **Client Session**, make sure you send the `ratio-client-session-id` header, rather than the `ratio-client-id` and `ratio-client-secret` headers.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Request" %}
@@ -52,6 +48,8 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 ```
 {% endtab %}
 {% endtabs %}
+
+#### Authenticate Crypto Wallet
 
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:authenticate" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
@@ -101,6 +99,8 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 {% endtab %}
 {% endtabs %}
 
+#### Add New Signing Wallet
+
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:addToUser" method="post" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
@@ -110,7 +110,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 ```json
 {
     "walletAddress": "0x0000000000000000000000000000000000000000",
-    "walletType": "EVM",
+    "walletType": "EVM"
 }
 ```
 {% endtab %}
@@ -132,100 +132,8 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:add
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletType": "EVM",
+    "walletType": "EVM"
 }'
 ```
 {% endtab %}
 {% endtabs %}
-
-## SMS OTP
-
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:send" method="post" %}
-[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
-{% endswagger %}
-
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/sms:authenticate" method="post" %}
-[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
-{% endswagger %}
-
-{% tabs %}
-{% tab title="Request" %}
-```json
-{
-    "phoneNumber": "+14165551234",
-}
-```
-{% endtab %}
-
-{% tab title="Response" %}
-```json
-{
-    "phoneId": "phone-number-test-01234abc-0000-0000-0000-0123456789",
-    "phoneMask": "1234"
-}
-```
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="cURL" %}
-```bash
-curl --location --request POST 'https://api.ratio.me/v1/auth/otp/sms:send' \
---header 'Authorization: Bearer eyJ......' \
---header 'ratio-client-id: <YOUR_CLIENT_ID>' \
---header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "phoneNumber": "+14165551234"
-}'
-```
-{% endtab %}
-{% endtabs %}
-
-## Email OTP
-
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/email:send" method="post" %}
-[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
-{% endswagger %}
-
-{% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/otp/email:authenticate" method="post" %}
-[https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
-{% endswagger %}
-
-{% tabs %}
-{% tab title="Request" %}
-```json
-{
-    "emailAddress": "ratiouser@example.com"
-}
-```
-
-
-{% endtab %}
-
-{% tab title="Response" %}
-```json
-{
-    "emailId": "email-test-01234abc-0000-0000-0000-0123456789",
-    "emailMask": "rat...@example.com"
-}
-```
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="cURL" %}
-```bash
-curl --location --request POST 'https://api.ratio.me/v1/auth/otp/email:send' \
---header 'ratio-client-id: <YOUR_CLIENT_ID>' \
---header 'ratio-client-secret: <YOUR_CLIENT_SECRET>' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "emailAddress":"ratiouser@example.com"
-}'
-```
-
-
-{% endtab %}
-{% endtabs %}
-

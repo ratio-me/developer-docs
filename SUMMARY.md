@@ -42,14 +42,25 @@
 
 ## API Reference
 
+* [Endpoints](api-reference/endpoints/README.md)
+  * [Auth](api-reference/endpoints/auth/README.md)
+    * [Crypto Wallet](api-reference/endpoints/auth/crypto-wallet.md)
+    * [Email OTP](api-reference/endpoints/auth/email-otp.md)
+    * [SMS OTP](api-reference/endpoints/auth/sms-otp.md)
+  * [Activity](api-reference/endpoints/activity.md)
+  * [Bank](api-reference/endpoints/bank.md)
+  * [Client](api-reference/endpoints/client.md)
+  * [Config](api-reference/endpoints/config.md)
+  * [Crypto](api-reference/endpoints/crypto.md)
+  * [Users](api-reference/endpoints/users.md)
+  * [Wallets](api-reference/endpoints/wallets.md)
+  * [Webhook Registrations](api-reference/endpoints/webhook-registrations.md)
 * [Custom Headers](api-reference/custom-headers.md)
 * [Error Codes](api-reference/error-codes.md)
-* [User Authentication](api-reference/user-authentication.md)
-* [Webhooks](api-reference/webhooks/README.md)
-  * [Webhook Registrations](api-reference/webhooks/webhook-registrations.md)
 * [Types Glossary](api-reference/types-glossary.md)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
 * [Open API Specification](https://api.staging.ratio.me/v1/api-docs)
+* [Webhooks](api-reference/webhooks.md)
 
 ## Design Reference
 

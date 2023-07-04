@@ -33,7 +33,7 @@ You have two options to notify the user the outcome of their KYC:
    * Approved
    * Declined
    * In Review
-2. Listen for the KYC event "KYC\_UPDATED" in our [webhooks](../../api-reference/webhooks/)
+2. Listen for the KYC event "KYC\_UPDATED" in our [webhooks](../../api-reference/webhooks.md)
 
 {% hint style="danger" %}
 #### You should limit the amount of times you poll. Suggested (10 times, every 2 seconds) and retry if needed
@@ -67,4 +67,4 @@ You have two options to notify the user the outcome of their bank verification:
    * Link status = Active
    * Verification status = Approved
    * If Vefification stauts = Declined stop polling and present error.
-2. Listen for the bank verification event "BANK\_UPDATED" in our [webhooks](../../api-reference/webhooks/)
+2. Listen for the bank verification event "BANK\_UPDATED" in our [webhooks](../../api-reference/webhooks.md)

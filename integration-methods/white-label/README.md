@@ -43,10 +43,10 @@ Sandbox: _Coming soon_
 
 ## Resources
 
-* [Authentication methods](../../api-reference/user-authentication.md)
+* [Authentication methods](../../api-reference/endpoints/auth/)
 * [Custom headers](../../reference/api/custom-headers.md)
-* [Webhooks](../../api-reference/webhooks/)
-  * [Webhook registrations](../../api-reference/webhooks/webhook-registrations.md)
+* [Webhooks](../../api-reference/webhooks.md)
+  * [Webhook registrations](../../api-reference/endpoints/webhook-registrations.md)
 * [Types Glossary](../../api-reference/types-glossary.md)
 * [Postman](https://www.postman.com/ratiodotme/workspace/ratio-public-workspace)
 * [Specification](https://api.staging.ratio.me/v1/api-docs)

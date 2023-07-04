@@ -57,7 +57,7 @@ const fetchSessionToken = async () => {
 
 Ratio uses wallet authentication in order to link your client wallet to a Ratio user's account. To set up this authentication method you must provide the Ratio React Native Library with a `signingCallback.`
 
-The signing callback is an async function that accepts a string that contains the `challenge` that is returned from the Ratio `/v1/auth/cryptoWallet:start` call ([documentation](../../api-reference/user-authentication.md#v1-auth-cryptowallet-start)). This will allow you to perform asynchronous activities, such as a biometrics check, during the signing.
+The signing callback is an async function that accepts a string that contains the `challenge` that is returned from the Ratio `/v1/auth/cryptoWallet:start` call ([documentation](../../api-reference/endpoints/auth/crypto-wallet.md#start-crypto-wallet-challenge)). This will allow you to perform asynchronous activities, such as a biometrics check, during the signing.
 
 The return value from this function is of type `string`.
 
