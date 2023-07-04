@@ -68,17 +68,7 @@ Example using Web3.js library
 | -------- | -------- |
 | function | Yes      |
 
-#### `redirectUri`
 
-A  string that points to a URI. This is used for Plaid OAuth Authentication. For example `http://ratio.me/plaid/oauth`
-
-{% hint style="info" %}
-You must provide this URI to the Ratio team so that we can add it to our configuration
-{% endhint %}
-
-| TYPE   | REQUIRED |
-| ------ | -------- |
-| string | Yes      |
 
 #### `text`
 

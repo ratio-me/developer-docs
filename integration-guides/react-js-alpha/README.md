@@ -20,4 +20,6 @@ To use the SDK you must first acquire a `clientId` and `clientSecret` from the R
 
 Ratio will provide an API that you will be required to wrap in your own back end (see example)
 
-Please note that the Ratio ReactJS library does not support embedded webviews
+{% hint style="warning" %}
+Please note that the Ratio ReactJS library does not support being used in embedded webviews
+{% endhint %}

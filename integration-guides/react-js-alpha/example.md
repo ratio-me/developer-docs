@@ -51,7 +51,6 @@ function App() {
           {isConnected ? (
               <RatioButton 
                   text={'Buy with Ratio'}
-                  redirectUri={'https://yoursite.com/plaid/oauth'}
                   fetchSessionToken={async () => {
                        if(isConnected){
                            return await fetchSessionToken()
