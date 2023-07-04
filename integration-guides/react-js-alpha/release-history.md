@@ -1,5 +1,25 @@
 # Release History
 
+### v0.0.5-alpha.11
+
+Date: June 30, 2023
+
+Notes:
+
+* feature: made redirect URI optional
+* feature: added checks for embedded browsers
+
+### v0.0.5-alpha.8
+
+Date: June 29, 2023
+
+Notes:
+
+* feat: refactored out button link to own file, renamed TextButton, added hover states&#x20;
+* feature: added approved limits screen, code clean up
+* feature: added onPress, onError callbacks and disabled button theme
+* feature: added preset order option to be passed into RatioButton
+
 ### v0.0.5-alpha.7
 
 Date: June 23, 2023

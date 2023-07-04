@@ -19,3 +19,5 @@ When RatioKit is generally available, we will open source it so that it can be s
 To use the SDK you must first acquire a `clientId` and `clientSecret` from the Ratio team. Learn how to request API keys [here](<../../README (1).md#requesting-access>).
 
 Ratio will provide an API that you will be required to wrap in your own back end (see example)
+
+Please note that the Ratio ReactJS library does not support embedded webviews

@@ -5,7 +5,7 @@ Below is a full example which uses [RainbowKit](https://www.rainbowkit.com/) for
 ```tsx
 import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
-import {RatioButton} from "@ratio.me/ratiokit-react";
+import {RatioButton, RatioPresetOrder} from "@ratio.me/ratiokit-react";
 import '@rainbow-me/rainbowkit/styles.css';
 import {ConnectButton} from '@rainbow-me/rainbowkit';
 import {useAccount, useNetwork, useSignMessage} from 'wagmi';
@@ -63,6 +63,10 @@ function App() {
                            message: challenge,
                        })
                    }}
+                  presetOrder={{
+                    fiatAmount: fiatAmount,
+                    cryptoCurrency: selectedCurrency,
+                 } as RatioPresetOrder}
               />): null }
               <ConnectButton/>
       </div>

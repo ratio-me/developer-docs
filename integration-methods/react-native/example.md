@@ -56,7 +56,6 @@ const provider ='WEB3_PROVIDER_URL';
 const privateKey =
   'WALLET_PRIVATE_KEY';
 const walletSigningAddress = 'SIGNING_ADDRESS';
-const walletNetwork = 'WALLET_NETWORK';
 const walletDepositAddress = 'DEPOSIT_ADDRESS';
 
 const web3 = new Web3(new Web3.providers.HttpProvider(provider));
@@ -75,7 +74,7 @@ export default function App() {
           body: JSON.stringify({
             signingAddress: walletAddress,
             depositAddress: walletAddress,
-            signingNetwork: walletNetwork,
+            signingType: "EVM",
           }),
         }
       );
