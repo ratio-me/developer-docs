@@ -1,5 +1,14 @@
 # Release History
 
+### v0.0.5-alpha.12
+
+Date: July 4, 2023
+
+Notes:
+
+* feature: Support EVM signing and wallet types
+* fix: Bugs caused by not supporting EVM signing and wallet types
+
 ### v0.0.5-alpha.11
 
 Date: June 30, 2023
