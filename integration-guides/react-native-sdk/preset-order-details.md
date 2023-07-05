@@ -21,7 +21,7 @@ For more details please see [example.md](../../integration-methods/react-native/
 
 ### All supported Cryptos can be used with Preset Orders
 
-<table><thead><tr><th width="189">Crypto Currency</th><th width="115">Network</th><th width="204">Minimum Fiat Amount</th><th>Ach types</th></tr></thead><tbody><tr><td>ETH</td><td>Ethereum</td><td>$20 USD</td><td>Standard, Instant</td></tr><tr><td>USDC_ETHEREUM</td><td>Ethereum</td><td>$20 USD</td><td>Standard, Instant</td></tr><tr><td>MATIC</td><td>Polygon</td><td>$1 USD</td><td>Standard, Instant</td></tr><tr><td>USDC_MATIC</td><td>Polygon</td><td>$1 USD</td><td>Standard, Instant</td></tr><tr><td>AMKT_POLYGON</td><td>Polygon</td><td>$1 USD</td><td>Instant</td></tr></tbody></table>
+<table><thead><tr><th width="189">Crypto Currency</th><th width="115">Network</th><th width="204">Minimum Fiat Amount</th><th>Ach types</th></tr></thead><tbody><tr><td>ETH</td><td>Ethereum</td><td>$20 USD</td><td>Standard, Instant</td></tr><tr><td>USDC_ETHEREUM</td><td>Ethereum</td><td>$20 USD</td><td>Standard, Instant</td></tr><tr><td>MATIC</td><td>Polygon</td><td>$1 USD</td><td>Standard, Instant</td></tr><tr><td>USDC_POLYGON</td><td>Polygon</td><td>$1 USD</td><td>Standard, Instant</td></tr><tr><td>AMKT_POLYGON</td><td>Polygon</td><td>$1 USD</td><td>Instant</td></tr></tbody></table>
 
 ### Handling User Limits&#x20;
 
