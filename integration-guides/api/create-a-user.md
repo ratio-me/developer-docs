@@ -11,6 +11,10 @@ To create a new user we require the following user data:
 * Mobile Phone number&#x20;
 
 {% hint style="warning" %}
+Country needs to be in ISO 3166 alpha-2 format, ie. US.
+{% endhint %}
+
+{% hint style="warning" %}
 Phone numbers need to be in E.164 format, ie. +14165551234. If they are not, you will receive a 400 error when making an SMS Send call.
 {% endhint %}
 
@@ -61,12 +65,6 @@ Wallet authentication includes two steps:
 
 1. Retrieve a challenge to be signed by the user's wallet&#x20;
 
-{% hint style="info" %}
-#### Always use "ETHEREUM" as the "walletNetwork".&#x20;
-
-This will allow your users to interact with any supported EVM network. We currently support Ethereum and Polygon.&#x20;
-{% endhint %}
-
 {% swagger src="https://api.ratio.me/v1/api-docs" path="/v1/auth/cryptoWallet:start" method="post" expanded="false" %}
 [https://api.ratio.me/v1/api-docs](https://api.ratio.me/v1/api-docs)
 {% endswagger %}
@@ -76,7 +74,7 @@ This will allow your users to interact with any supported EVM network. We curren
 ```json
 {
     "walletAddress": "0x0000000000000000000000000000000000000000",
-    "walletNetwork": "ETHEREUM"
+    "walletType": "EVM"
 }
 ```
 {% endtab %}
@@ -100,7 +98,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletNetwork": "<ETHEREUM_OR_POLYGON>"
+    "walletType": "EVM"
 }'
 ```
 {% endtab %}
@@ -117,7 +115,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:sta
 ```json
 {
     "walletAddress": "0x0000000000000000000000000000000000000000",
-    "walletNetwork": "ETHEREUM",
+    "walletType": "EVM",
     "signature": "2djd2cFZ9VU2zDWvUGqeHwvbiJZfTt3BMzDctDsEW7vM2QUTgTHjeM2rpFX9ZULeic3KptUh5ehipXDFcK5ecYiX"
 }
 ```
@@ -149,7 +147,7 @@ curl --location -g --request POST 'https://api.ratio.me/v1/auth/cryptoWallet:aut
 --header 'Accept: application/json' \
 --data-raw '{
     "walletAddress": "<WALLET_ADDRESS>",
-    "walletNetwork": "<ETHEREUM_OR_POLYGON>",
+    "walletType": "EVM",
     "signature": "<SIGNED_CHALLENGE_STRING>"
 }'
 ```
