@@ -6,6 +6,10 @@ description: >-
 
 # Endpoints
 
+In each of the subsequent pages, we detail the API spec for our endpoints. To view more details about the schema of the requests and responses, expand the individual sections of the endpoint module:
+
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Example highlighting request and response schemas of Send SMS OTP</p></figcaption></figure>
+
 ### Activity
 
 APIs to retrieve a user's transaction activities:

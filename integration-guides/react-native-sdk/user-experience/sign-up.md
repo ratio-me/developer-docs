@@ -74,7 +74,7 @@ After a user taps "connect bank account" we launch the Plaid SDK for users to en
 
 Once a user successfully completes the Plaid flow they are redirected back to Ratio where we verify their information against the KYC data collected earlier in the flow.
 
-<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 After a user's bank account is linked, we underwrite the user's ACH limits in the background using their bank account transaction history. We review their transaction history for instances of returned payments, as well as other behaviours that positively or negatively impact the risk score of a given user.
 
