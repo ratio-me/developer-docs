@@ -80,6 +80,16 @@ Default value: "Buy Crypto"
 | ------ | -------- |
 | string | No       |
 
+#### `loadingText`
+
+An option string that allows you to change the text that is displayed when the `RatioButton` is loading during log in
+
+Default value: "Connecting..."
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| string | No       |
+
 ### Models
 
 #### `RatioUser`

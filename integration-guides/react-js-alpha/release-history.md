@@ -1,5 +1,16 @@
 # Release History
 
+### v0.0.5-alpha.13
+
+Date: July 11, 2023
+
+Notes:
+
+* feature: added loadingText prop&#x20;
+* feature: plaid bank account relinking&#x20;
+* feature: handle email OTP errors and user flags after wallet linking
+* feature: added error message to buy crypto dashboard&#x20;
+
 ### v0.0.5-alpha.12
 
 Date: July 4, 2023
