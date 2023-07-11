@@ -8,12 +8,12 @@ description: A complete list of models and enums
 
 #### AchLimit
 
-| Name      | Type                                   | Description                                                                            | Required |
-| --------- | -------------------------------------- | -------------------------------------------------------------------------------------- | -------- |
-| currency  | [Currency](types-glossary.md#currency) | The fiat currency for the limit                                                        | Yes      |
-| limit     | string                                 | The maximum allowable sum of ACH transaction amounts                                   | Yes      |
-| used      | string                                 | The current sum of ACH transaction amounts by the ACH limit type (e.g. daily)          | Yes      |
-| remaining | string                                 | The remaining allowable sum, calculated as the delta between the limit and used values | Yes      |
+| Name      | Type                                                            | Description                                                                            | Required |
+| --------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- |
+| currency  | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | The fiat currency for the limit                                                        | Yes      |
+| limit     | string                                                          | The maximum allowable sum of ACH transaction amounts                                   | Yes      |
+| used      | string                                                          | The current sum of ACH transaction amounts by the ACH limit type (e.g. daily)          | Yes      |
+| remaining | string                                                          | The remaining allowable sum, calculated as the delta between the limit and used values | Yes      |
 
 #### ActivateBankLinkResponse
 
@@ -40,27 +40,27 @@ description: A complete list of models and enums
 
 #### ActivityItemCrypto
 
-| Name            | Type                                                       | Description                                                                           | Required |
-| --------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------- |
-| status          | [ActivityItemStatus](types-glossary.md#activityitemstatus) | The status of the crypto activity item                                                | No       |
-| currency        | [Currency](types-glossary.md#currency)                     | The crypto currency acquired for the activity item                                    | No       |
-| wallet          | [Wallet](types-glossary.md#wallet)                         | The destination wallet for the crypto currency                                        | No       |
-| direction       | [Direction](types-glossary.md#direction)                   | The direction the crypto is moving                                                    | No       |
-| amount          | string                                                     | The amount of crypto currency acquired                                                | No       |
-| price           | string                                                     | The price of a single unit of the crypto currency; specified in the fiat currency     | No       |
-| fee             | string                                                     | The fee to execute the crypto purchase and withdrawal; specified in the fiat currency | No       |
-| transactionHash | string                                                     | The on-chain transaction hash of the activity item                                    | No       |
+| Name            | Type                                                            | Description                                                                           | Required |
+| --------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------- |
+| status          | [ActivityItemStatus](types-glossary.md#activityitemstatus)      | The status of the crypto activity item                                                | No       |
+| currency        | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | The crypto currency acquired for the activity item                                    | No       |
+| wallet          | [Wallet](types-glossary.md#wallet)                              | The destination wallet for the crypto currency                                        | No       |
+| direction       | [Direction](types-glossary.md#direction)                        | The direction the crypto is moving                                                    | No       |
+| amount          | string                                                          | The amount of crypto currency acquired                                                | No       |
+| price           | string                                                          | The price of a single unit of the crypto currency; specified in the fiat currency     | No       |
+| fee             | string                                                          | The fee to execute the crypto purchase and withdrawal; specified in the fiat currency | No       |
+| transactionHash | string                                                          | The on-chain transaction hash of the activity item                                    | No       |
 
 #### ActivityItemFiat
 
-| Name          | Type                                                       | Description                               | Required |
-| ------------- | ---------------------------------------------------------- | ----------------------------------------- | -------- |
-| status        | [ActivityItemStatus](types-glossary.md#activityitemstatus) | The status of the fiat activity item      | No       |
-| currency      | [Currency](types-glossary.md#currency)                     | The fiat currency of the activity item    | No       |
-| amount        | string                                                     | The amount of fiat currency exchanged     | No       |
-| direction     | [Direction](types-glossary.md#direction)                   | The direction the fiat is moving          | No       |
-| fundingMethod | [FundingMethod](types-glossary.md#fundingmethod)           | The method used for fiat, if funded       | No       |
-| bankAccount   | [BankAccount](types-glossary.md#bankaccount)               | The Bank Account used for fiat, if funded | No       |
+| Name          | Type                                                            | Description                               | Required |
+| ------------- | --------------------------------------------------------------- | ----------------------------------------- | -------- |
+| status        | [ActivityItemStatus](types-glossary.md#activityitemstatus)      | The status of the fiat activity item      | No       |
+| currency      | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | The fiat currency of the activity item    | No       |
+| amount        | string                                                          | The amount of fiat currency exchanged     | No       |
+| direction     | [Direction](types-glossary.md#direction)                        | The direction the fiat is moving          | No       |
+| fundingMethod | [FundingMethod](types-glossary.md#fundingmethod)                | The method used for fiat, if funded       | No       |
+| bankAccount   | [BankAccount](types-glossary.md#bankaccount)                    | The Bank Account used for fiat, if funded | No       |
 
 #### ActivityItems
 
@@ -149,6 +149,22 @@ description: A complete list of models and enums
 | code       | string | Error code          | No       |
 | data       | object | Error data          | No       |
 
+#### EstimateAchRequest
+
+<table><thead><tr><th>Name</th><th width="139">Type</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>fiatAmount</td><td>string</td><td>The fiat amount to be exchanged</td><td>No</td></tr><tr><td>minCryptoAmount</td><td>string</td><td>The minimum amount of crypto to be exchanged for</td><td>No</td></tr><tr><td>cryptoCurrency</td><td><a href="types-glossary.md#fiat-currencies-and-crypto-tokens">Currency</a></td><td>The crypto currency to be purchased</td><td>Yes</td></tr><tr><td>type</td><td><a href="types-glossary.md#achtype">AchType</a></td><td>The type of ACH request</td><td>Yes</td></tr></tbody></table>
+
+#### EstimateAchResponse
+
+<table><thead><tr><th width="99">Name</th><th width="163">Type</th><th width="375">Description</th><th>Required</th></tr></thead><tbody><tr><td>fiat</td><td><a href="types-glossary.md#estimatefiat">EstimateFiat</a></td><td>The estimated fiat for the exchange</td><td>Yes</td></tr><tr><td>crypto</td><td><a href="types-glossary.md#estimatecrypto">EstimateCrypto</a></td><td>The estimated crypto for the exchange</td><td>Yes</td></tr></tbody></table>
+
+#### EstimateCrypto
+
+<table><thead><tr><th>Name</th><th width="137">Type</th><th width="319">Description</th><th>Required</th></tr></thead><tbody><tr><td>currency</td><td><a href="types-glossary.md#fiat-currencies-and-crypto-tokens">Currency</a></td><td>The crypto currency of the estimated exchange</td><td>Yes</td></tr><tr><td>direction</td><td><a href="types-glossary.md#direction">Direction</a></td><td>The direction the crypto is moving</td><td>Yes</td></tr><tr><td>amount</td><td>string</td><td>The amount of crypto currency estimated in the exchange </td><td>Yes</td></tr><tr><td>price</td><td>string</td><td>The price of a single unit of the crypto currency; specified in the fiat currency</td><td>Yes</td></tr><tr><td>ratioFee</td><td>string</td><td>The Ratio fee to execute the crypto transaction; specified in the fiat currency</td><td>Yes</td></tr><tr><td>networkFee</td><td>string</td><td>The network fee to execute the crypto transaction; specified in the fiat currency</td><td>Yes</td></tr></tbody></table>
+
+#### EstimateFiat
+
+<table><thead><tr><th>Name</th><th width="159">Type</th><th width="312">Description</th><th>Required</th></tr></thead><tbody><tr><td>currency</td><td><a href="types-glossary.md#fiat-currencies-and-crypto-tokens">Currency</a></td><td>The fiat currency of the estimated exchange</td><td>Yes</td></tr><tr><td>direction</td><td><a href="types-glossary.md#direction">Direction</a></td><td>The direction the fiat is moving</td><td>Yes</td></tr><tr><td>amount</td><td>string</td><td>The amount of fiat currency estimated in the exchange</td><td>Yes</td></tr><tr><td>fundingMethod</td><td><a href="types-glossary.md#fundingmethod">FundingMethod</a></td><td>The method used for fiat, if funded</td><td>Yes</td></tr></tbody></table>
+
 #### FirstFactorAuthResponse
 
 | Name       | Type                                   | Description                    | Required |
@@ -171,12 +187,12 @@ description: A complete list of models and enums
 
 #### InitiateAchRequest
 
-| Name           | Type                                   | Description                                | Required |
-| -------------- | -------------------------------------- | ------------------------------------------ | -------- |
-| fiatAmount     | string                                 | The amount in fiat to be exchanged         | Yes      |
-| cryptoCurrency | [Currency](types-glossary.md#currency) | The crypto currency to be purchased        | Yes      |
-| walletId       | string                                 | The ID of the wallet to receive the crypto | Yes      |
-| type           | [AchType](types-glossary.md#achtype)   | The type of ACH request                    | Yes      |
+| Name           | Type                                                            | Description                                | Required |
+| -------------- | --------------------------------------------------------------- | ------------------------------------------ | -------- |
+| fiatAmount     | string                                                          | The amount in fiat to be exchanged         | Yes      |
+| cryptoCurrency | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | The crypto currency to be purchased        | Yes      |
+| walletId       | string                                                          | The ID of the wallet to receive the crypto | Yes      |
+| type           | [AchType](types-glossary.md#achtype)                            | The type of ACH request                    | Yes      |
 
 #### Kyc
 
@@ -191,12 +207,12 @@ description: A complete list of models and enums
 
 #### NetworkFee
 
-| Name           | Type                                   | Description                   | Required |
-| -------------- | -------------------------------------- | ----------------------------- | -------- |
-| cryptoCurrency | [Currency](types-glossary.md#currency) | Crypto currency               | No       |
-| cryptoFee      | string                                 | Fee amount in crypto currency | No       |
-| fiatCurrency   | [Currency](types-glossary.md#currency) | Quoted fiat currency          | No       |
-| fiatFee        | string                                 | Fee amount in fiat currency   | No       |
+| Name           | Type                                                            | Description                   | Required |
+| -------------- | --------------------------------------------------------------- | ----------------------------- | -------- |
+| cryptoCurrency | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | Crypto currency               | No       |
+| cryptoFee      | string                                                          | Fee amount in crypto currency | No       |
+| fiatCurrency   | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | Quoted fiat currency          | No       |
+| fiatFee        | string                                                          | Fee amount in fiat currency   | No       |
 
 #### CreateClientSessionRequest
 
@@ -230,11 +246,11 @@ description: A complete list of models and enums
 
 #### Price
 
-| Name           | Type                                   | Description          | Required |
-| -------------- | -------------------------------------- | -------------------- | -------- |
-| cryptoCurrency | [Currency](types-glossary.md#currency) | Crypto currency      | No       |
-| fiatCurrency   | [Currency](types-glossary.md#currency) | Quoted fiat currency | No       |
-| price          | string                                 | Price                | No       |
+| Name           | Type                                                            | Description          | Required |
+| -------------- | --------------------------------------------------------------- | -------------------- | -------- |
+| cryptoCurrency | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | Crypto currency      | No       |
+| fiatCurrency   | [Currency](types-glossary.md#fiat-currencies-and-crypto-tokens) | Quoted fiat currency | No       |
+| price          | string                                                          | Price                | No       |
 
 #### RequestBankLinkResponse
 
