@@ -36,6 +36,7 @@
   * [Session Token and Wallet Signing](integration-guides/react-js-alpha/session-token-and-wallet-signing.md)
   * [Preset Orders](integration-guides/react-js-alpha/preset-orders.md)
   * [Callbacks](integration-guides/react-js-alpha/callbacks.md)
+  * [Theming](integration-guides/react-js-alpha/theming.md)
   * [Example](integration-guides/react-js-alpha/example.md)
   * [Reference](integration-guides/react-js-alpha/reference.md)
   * [Release History](integration-guides/react-js-alpha/release-history.md)
