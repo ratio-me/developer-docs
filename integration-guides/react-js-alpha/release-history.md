@@ -1,5 +1,14 @@
 # Release History
 
+### v0.0.5-alpha.14
+
+Date: July 11, 2023
+
+Notes:
+
+* fix: UI bug from buy crypto. fixed number format for ach call\
+
+
 ### v0.0.5-alpha.13
 
 Date: July 11, 2023
