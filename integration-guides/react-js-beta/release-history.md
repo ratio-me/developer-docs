@@ -1,5 +1,19 @@
 # Release History
 
+### v0.1.0-beta.1
+
+Date: July 14, 2023
+
+Notes:
+
+* Copy changes
+* "Forgot phone number" button emails support when clicked
+* add button to order complete that says "done"
+* UI fixes
+* Additional bug fixes
+
+***
+
 ### v0.0.5-alpha.15
 
 Date: July 14, 2023
