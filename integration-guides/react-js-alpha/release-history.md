@@ -1,5 +1,13 @@
 # Release History
 
+### v0.0.5-alpha.15
+
+Date: July 14, 2023
+
+Notes:
+
+* fix: updated autocomplete for forms to work correctly
+
 ### v0.0.5-alpha.14
 
 Date: July 11, 2023
