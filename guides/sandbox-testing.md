@@ -12,7 +12,10 @@ All user account creation requires:
 2. A unique email
    1. Please use standard email providers. If you use an email provider that is commonly associated with testing/throw away emails you will likely get flagged by our risk system
    2. We recommend Gmail because you can generate many unique addresses for the same normalized address. Reference [here](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html?sjid=16264266597320595453-NA)
-3. A unique phone number that can receive SMS codes. We recommend [https://smsreceivefree.com/](https://smsreceivefree.com/)
+3. A unique phone number that can receive SMS codes. For example:
+   * [https://oksms.org/](https://oksms.org/)
+   * [https://www.receivesms.co/](https://www.receivesms.co/)
+   * [https://smsreceivefree.com/](https://smsreceivefree.com/)
 
 ## User Information
 
