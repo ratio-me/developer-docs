@@ -6,7 +6,7 @@ description: Follow these steps to get started with Ratio
 
 ## Step 1: Obtain a ClientID & Secret
 
-Request Sandbox credentials by emailing us at [team@ratio.me](mailto:team@ratio.me)
+Get started with a sandbox account [here](https://dashboard.ratio.me/).
 
 ### Base URLs
 
